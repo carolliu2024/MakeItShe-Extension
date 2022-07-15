@@ -2923,7 +2923,7 @@ chrome.runtime.onMessage.addListener(
                 "from a content script:" + sender.tab.url :
                 "from the extension");
     if (request.greeting == "highlighting"){
-        alert ("Green Frames: The article has a majority of female words\Blue Frames: The article has a majority of male words\n\nTo remove the frames from the page, just uncheck the highlight button");
+        alert ("Green Frames: The article has a majority of female words\nBlue Frames: The article has a majority of male words\n\nTo remove the frames from the page, just uncheck the highlight button");
 
       highlighting = true;
       highlight();
