@@ -1,0 +1,382 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+
+<html>
+
+<head>
+    <title>Make it She</title>
+    <link rel="stylesheet" href="jquery.switchButton.css">
+    <!-- Script for the fontawesome icons -->
+    <script src="7ff2c0391b.js" crossorigin="anonymous"></script> 
+
+    <style>
+        * {
+            user-select: none;
+        }
+
+        a:focus {
+            outline: 0;
+        }
+
+        body {
+            margin: 10px;
+            width: 290px;
+        }
+
+        h1 {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 15px;
+            text-align: center;
+        }
+
+        #links-area {
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        #tweet {
+            margin-left: 10px;
+        }
+
+        #tweetB {
+            float: right;
+            width: 70px;
+            height: 22px;
+            border: none;
+            background-color: #1DA1F2;
+            color: white;
+            border-radius: 3px;
+            margin-right: 5px;
+        }
+
+        #fbShare {
+            float: right;
+            width: 70px;
+            height: 22px;
+            border: none;
+            background-color: #4267B2;
+            color: white;
+            border-radius: 3px;
+            margin-right: 5px;
+        }
+
+        .switch-wrapper {
+            float: right;
+            margin-top: 3px;
+        }
+
+        #basic-area {
+            overflow: hidden;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        #buttons-area {
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        #form-area {
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        #language {
+            float: left;
+            border: none;
+            color: white;
+            border-radius: 3px;
+            margin-right: 5px;
+            margin-left: 10px;
+        }
+
+        #trends {
+            float: left;
+            border: none;
+            color: white;
+            border-radius: 3px;
+            margin-right: 5px;
+            margin-left: 10px;
+        }
+
+        #highlight {
+            float: left;
+            border: none;
+            border-radius: 3px;
+            margin-left: 9px;
+        }
+        
+        #usertrendsdescription {
+            float: left;
+            border: none;
+            border-radius: 3px;
+            margin-left: 9px;
+        }
+
+        #form {
+            float: right;
+            border: none;
+            border-radius: 3px;
+            margin-left: 9px;
+            margin-right: 5px;
+        }
+
+        #email-content {
+            float: right;
+            border: none;
+            color: white;
+            border-radius: 3px;
+            margin-right: 5px;
+            margin-top: 5px;
+        }
+
+        #content {
+            display: none;
+        }
+
+        #disabled {
+            display: none;
+        }
+
+        a.canvasjs-chart-credit {
+            color: white !important;
+        }
+
+        /* Tooltip container */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Tooltip text */
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: #DCDCDC;
+            color: black;
+            text-align: center;
+            padding: 2px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 1;
+        }
+
+        /* Show the tooltip text when you mouse over the tooltip container */
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            top: -5px;
+            left: 105%;
+        }
+        
+        
+        .help-tip{
+            width: 10px;
+            left: 100px;
+            background-color: #DCDCDC;
+            color: black;
+            text-align: center;
+            padding: 2px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 1;
+}
+
+.help-tip:before{
+    content:'?';
+    font-weight: bold;
+    color:#fff;
+}
+
+.help-tip:hover p{
+    visibility:visible;
+    display:block;
+    z-index:1;
+    <!--transform-origin: 100% 0%;
+
+    -webkit-animation: fadeIn 0.3s ease-in-out;
+    animation: fadeIn 0.3s ease-in-out;-->
+
+}
+
+.help-tip p{    /* The tooltip */
+    visibility: hidden;
+            width: 120px;
+            background-color: #DCDCDC;
+            color: black;
+            text-align: center;
+            padding: 2px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 1;
+}
+
+<!--.help-tip p:before{ /* The pointer of the tooltip */
+    position: absolute;
+    content: '';
+    width:0;
+    height: 0;
+    border:6px solid transparent;
+    border-bottom-color:#1E2021;
+    right:10px;
+    top:-12px;
+}
+
+.help-tip p:after{ /* Prevents the tooltip from being hidden */
+    width:100%;
+    height:40px;
+    content:'';
+    position: absolute;
+    top:-40px;
+    left:0;
+}-->
+
+/* CSS animation */
+
+@-webkit-keyframes fadeIn {
+    0% { 
+        opacity:0; 
+        transform: scale(0.6);
+    }
+
+    100% {
+        opacity:100%;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    0% { opacity:0; }
+    100% { opacity:100%; }
+}
+
+    </style>
+
+</head>
+
+<body>
+
+    <div id="basic-area">
+        <div class="switch-wrapper">
+            <input id="on-off" type="checkbox" value="1" checked>
+        </div>
+        <!--<div id="language">
+            <div class="help-tip">
+                <p>You can use Make it She on webpages in various languages. Choose one of the languages in this drop-down menu.</p>
+            </div>
+            <select id="language-dropdown" data-placeholder="Choose a Language...">
+                <option value="English">English</option>
+                <option value="French">French</option>
+                <option value="German">German</option>
+                <option value="Spanish">Spanish</option>
+            </select>
+        </div> -->
+    </div>
+
+    <hr>
+
+    <div id="content">
+        <div id="loader" class="row text-center" style="display:none;text-align:center;">
+            <img src="Spinner-1s-200px.gif" alt="NotesReport" class="loader" style="width:50px;">
+        </div>
+        <div id="chartContainer" style="height: 210px; width: 100%; display: none"></div>
+        <div id="links-area">
+            <div id="tweet">
+                <button id="tweetB"><i class="fab fa-twitter"></i> Tweet</button>
+            </div>
+            <div id="facebook">
+                <button id="fbShare"><i class="fab fa-facebook-square"></i> Share</button>
+            </div>
+        </div>
+        <div id="trendContainer" style="height: 210px; width: 100%; display: none"></div>
+    </div>
+
+    <div id="pdf-content" style="display:none;">
+        <div id="pdf-text">
+            <div id="loading-info">
+                Extracting text ... hold tight!
+            </div>
+        </div>
+    </div>
+ 
+    <h1 id="disabled">Extension disabled</h1>
+
+    <div id="buttons-area">
+        <hr>
+        
+        <div id="highlight" style="text-align:center;">
+        <span style="letter-spacing: -0.5px;font-style:Calibri, Optima, Candara, Verdana, Geneva, sans-serif;font-weight:900;font-size: 13px">See the gender gap</span>
+         <p style="text-align:left;">Highlight the gendered words on this page to visualize the gender gap: <input class="highlighting" id="myCheck" type="checkbox" value="1"></p>
+            
+        </div> 
+        <hr>
+        <!--<div id="trends">
+            <input type="number" id="trendYears" placeholder="years" min="1" max="1000">
+            <button class="tooltip" id="trendButton" onclick="calculateTrends()" disabled >Show Trends 
+                <span class="tooltiptext">
+                    display overtime averages of gendered words on this page
+                </span>
+            </button>
+            <br> 
+        </div>-->
+        
+        
+        
+        <div id="usertrendsdescription" style="text-align:center;">
+            <br>
+            <span style="letter-spacing:-0.5px;font-style:Calibri, Optima, Candara, Verdana, Geneva, sans-serif;font-weight:900;font-size: 13px">See your personalized gender ratio</span>
+            <p style="text-align:left">How much online gender bias are you exposed to everyday? Our User trends tool calculates the average gender ratio on the top web pages you've visited recently</p>
+             <button class="tooltip" id="usertrends">User Trends
+                <!--<span class="tooltiptext">display overtime averages of gendered words for your top 10 visited websites</span>-->
+            </button>
+            <br>
+            <br>
+        </div>
+        
+        
+    </div>
+
+    <div id="host"></div>
+         
+    <div id="form-area">
+        <hr> 
+        <div id="form">
+            <span> Did we miss a gendered word or name on this page? Let us know! </span>
+            <div id="email-content">
+            <form id="myForm">
+                <input type="text" name="female_words" id="email-message-female" placeholder="Enter female word" maxlength="25" style="width: 132px;"/>
+                <input type="text" name="male_words" id="email-message-male" placeholder="Enter male word" maxlength="25" style="width: 118px;"/>
+            </form>
+                <button class="submitbutton" id="btn-send-message-female" disabled>Submit Female Word</button>
+                <button class="submitbutton" id="btn-send-message-male" disabled>Submit Male Word</button>
+            </div> 
+        </div>
+     </div>
+
+    <!--
+    <div id="links-area">
+        <hr> 
+        <div id="tweet">
+            <button id="tweetB"><i class="fab fa-twitter"></i> Tweet</button>
+        </div>
+        <div id="facebook">
+            <button id="fbShare"><i class="fab fa-facebook-square"></i> Share</button>
+        </div>
+    </div>
+    -->
+
+</body>
+
+<script src='jquery.min.js'></script>
+<script src="jquery-ui.min.js"></script>
+<script src="jquery.switchButton.js"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script src='smtp.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.1.266/build/pdf.min.js"></script>
+<script src='popup.js'></script> 
+
+</html>

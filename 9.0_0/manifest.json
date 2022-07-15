@@ -1,0 +1,27 @@
+{
+   "background": {
+      "persistent": false,
+      "scripts": [ "background.js" ]
+   },
+   "browser_action": {
+      "default_icon": "icon_off.png",
+      "default_popup": "popup.html"
+   },
+   "content_scripts": [ {
+      "css": [ "style.css" ],
+      "js": [ "jquery.min.js", "data/associative.js", "data/words.js", "data/fnames.js", "data/firstnames.js", "data/frenchwords.js", "data/spanishwords.js", "content.js" ],
+      "matches": [ "*://*/*" ],
+      "run_at": "document_end"
+   } ],
+   "content_security_policy": "script-src 'self' https://canvasjs.com/assets/script/canvasjs.min.js https://cdn.jsdelivr.net/npm/pdfjs-dist@2.1.266/build/pdf.min.js https://cdn.jsdelivr.net/npm/pdfjs-dist@2.1.266/build/pdf.worker.js; object-src 'self'",
+   "description": "[Bridge the online gender gap]",
+   "icons": {
+      "120": "icon_on.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlg8NJYL7O2DRV1q4Epa11bbRMBr9X1f9Dp6Pa2k3od6GKsff/TyZmw01G42tJ7E8kV/id2y1cY2HB9SuEaJ6RV1MMJ7pYfu3aSCyKJ7fSIAiNKpxqzH4AYD+buTRSANvHWoCeaHOezAe8E4xeiNe3oOdzfvbobBeuyXBzpUNIioDz2zUs1GZlemkA+a5/bI0U0ukUa+v3aquFTLSPQh1KT5TiQGo44f9Esxv81dE7EEyR7cxI39O6jIVcnq1QdQp8/gIxH6fAB80UDE8UzZ1NgRWWrfCnrcj7+HfY1WbJJLGXhDH+MOV/brO9Gj0o21zOEdKBaR+ped8xchGhEcB5wIDAQAB",
+   "manifest_version": 2,
+   "name": "Make it She",
+   "permissions": [ "activeTab", "storage", "tabs", "history" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "9.0"
+}
