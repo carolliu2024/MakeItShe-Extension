@@ -84,7 +84,14 @@ function setStats(stats) {
                 ]
             }]
         });
-        chart.render();
+
+        if (stats.stats.num==0){
+            $('#chartContainer').text("No gendered words found.");
+        } else {
+            chart.render();
+        }
+
+        
 
 
     }
