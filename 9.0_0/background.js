@@ -20,11 +20,11 @@ chrome.tabs.onActivated.addListener( function ( tab ) {
 
         if ( activated ) {
 
-            chrome.browserAction.setIcon({ path: "icon_on.png" });
+            chrome.action.setIcon({ path: "icon_on.png" });
 
         } else {
 
-            chrome.browserAction.setIcon({ path: "icon_off.png" });
+            chrome.action.setIcon({ path: "icon_off.png" });
 
         }
 
@@ -55,11 +55,11 @@ chrome.tabs.onUpdated.addListener( function ( tabId ) {
 
         if ( activated ) {
 
-            chrome.browserAction.setIcon({ path: "icon_on.png" });
+            chrome.action.setIcon({ path: "icon_on.png" });
 
         } else {
 
-            chrome.browserAction.setIcon({ path: "icon_off.png" });
+            chrome.action.setIcon({ path: "icon_off.png" });
 
         }
 
