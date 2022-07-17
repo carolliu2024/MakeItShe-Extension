@@ -2,10 +2,12 @@
 var activeTabDomain = false;
 var siteStateList = JSON.parse( localStorage.getItem('siteStateList') ) || {};
 
+// Run when active tab in a window changes (i.e. switch tabs)
 chrome.tabs.onActivated.addListener( function ( tab ) {
+    // console.log("onActivated?")
 
     localStorage.setItem('highlighted', 'no');
-    chrome.tabs.sendMessage(tabs[0].id, {greeting: "nohighlighting"}, function(response) {
+    chrome.tabs.sendMessage(tab.tabId, {greeting: "nohighlighting"}, function(response) {
       console.log(response.farewell);
       });
 
@@ -37,7 +39,9 @@ chrome.tabs.onActivated.addListener( function ( tab ) {
 
 });
 
+// When tab is updated (URL changes?)
 chrome.tabs.onUpdated.addListener( function ( tabId ) {
+    // console.log("onUpdated?")
 
     localStorage.setItem('highlighted', 'no');
     chrome.tabs.sendMessage(tabs[0].id, {greeting: "nohighlighting"}, function(response) {
@@ -72,7 +76,6 @@ chrome.tabs.onUpdated.addListener( function ( tabId ) {
 
 });
 
-//
 
 chrome.runtime.onMessage.addListener( function ( msg, sender,sendResponse ) {
 

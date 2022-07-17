@@ -85,6 +85,7 @@ function setStats(stats) {
             }]
         });
 
+        // If no gender word occurrences, don't render chart
         if (stats.stats.num==0){
             $('#chartContainer').text("No gendered words found.");
         } else {
@@ -159,7 +160,7 @@ var currentUrl = '';
 var newUrl = '';
 var tabCount = 0;
 
-
+// Extension enabled? also run if extension button clicked
 $('#on-off').bind('change', function (event) {
 
         console.log("off - on");
@@ -183,15 +184,15 @@ $('#on-off').bind('change', function (event) {
 });*/
         //localStorage.removeItem('highlighted');
 
-        console.log(currentUrl);
-        
+        console.log("currentUrl: ",currentUrl);
+
         var enabled = $('#on-off')[0].checked;
         
         /*chrome.storage.sync.get('highlighted', result => {
             console.log(result.highlighted);
         });*/
         var result = localStorage.getItem('highlighted');
-        console.log(result);
+        console.log("result: ",result);
 
         if (enabled) {
 
@@ -200,14 +201,14 @@ $('#on-off').bind('change', function (event) {
             $('#highlight').show();
             
             
-            
-            $( "#myCheck" ).prop( "disabled", false );
+            $( "#myCheck" ).prop( "disabled", false ); // Disabled elements are unclickable
             
             //chrome.storage.sync.get('highlighted', result => {
                 //console.log(result.highlighted);
                 
                 if (result === 'yes') {
                     $( "#myCheck" ).prop( "checked", true );
+                    localStorage.setItem('highlighted', 'yes');
                     //highlight();
                     }
                 else
@@ -231,9 +232,6 @@ $('#on-off').bind('change', function (event) {
 
                 }, 100);
                 
-                //console.log(stats.stats.done);
-                
-                //}
 
             });
 
@@ -302,7 +300,10 @@ document.addEventListener('DOMContentLoaded', () => {
         $('#disabled').hide();
         $('#highlight').show();
         $( "#myCheck" ).prop( "disabled", false );
-        localStorage.setItem('highlighted', 'no');
+        if (localStorage.getItem('highlighted') != 'yes'){
+            localStorage.setItem('highlighted', 'no');
+        }
+        
         /*if (count > 1) {    
         chrome.storage.sync.get('language', data => {
             document.getElementById('language-dropdown').value = data.language;
