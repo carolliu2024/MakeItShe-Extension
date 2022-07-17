@@ -66,11 +66,7 @@ function setStats(stats) {
     } else {
         $('#loader').hide();
         $('#chartContainer').show();
-        $('#chartContainer').css({
-            textAlign: 'center',
-            height: 'auto',
-            padding: '1em',
-        });
+        
 
         var chart = new CanvasJS.Chart("chartContainer", {
             animationEnabled: true,
@@ -99,6 +95,11 @@ function setStats(stats) {
 
         // If no gender word occurrences, don't render chart
         if (stats.stats.num==0){
+            $('#chartContainer').css({
+                textAlign: 'center',
+                height: 'auto',
+                padding: '1em',
+            });
             $('#chartContainer').text("No gendered words found.");
         } else {
             chart.render();
