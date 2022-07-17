@@ -27,6 +27,13 @@ function setStats(stats) {
                 chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', action: 'getStats' }, setStats);
                 
         });*/
+        $('#chartContainer').show();
+        $('#chartContainer').css({
+            textAlign: 'center',
+            height: 'auto',
+            padding: '1em',
+        });
+        $('#chartContainer').text("No gendered words found.");
         
         return;
         }
@@ -59,6 +66,11 @@ function setStats(stats) {
     } else {
         $('#loader').hide();
         $('#chartContainer').show();
+        $('#chartContainer').css({
+            textAlign: 'center',
+            height: 'auto',
+            padding: '1em',
+        });
 
         var chart = new CanvasJS.Chart("chartContainer", {
             animationEnabled: true,

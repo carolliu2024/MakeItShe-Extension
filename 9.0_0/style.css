@@ -48,3 +48,11 @@
     background: #DD0080;
     text-decoration: none;
 }
+
+#chartContainer{
+    letter-spacing: -0.5px;
+    font-style:Calibri, Optima, Candara, Verdana, Geneva, sans-serif;
+    font-weight:900;
+    font-size: 13px;
+    
+}
