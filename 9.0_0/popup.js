@@ -5,7 +5,7 @@ var activeDomain, currentUrl;
 function updateSiteStateList(site, state) {
 
     siteStateList[site] = state;
-    chrome.storage.local.set('siteStateList', JSON.stringify(siteStateList));
+    chrome.storage.local.set({'siteStateList': JSON.stringify(siteStateList)});
     console.log(chrome.storage.local.get('siteStateList'));
 
 };
@@ -130,7 +130,7 @@ function setStats(stats) {
       
       
       //chrome.storage.sync.set({highlighted: 'yes'});
-      chrome.storage.local.set('highlighted', 'yes');
+      chrome.storage.local.set({'highlighted': 'yes'});
     
   }
   
@@ -230,7 +230,7 @@ $('#on-off').bind('change', function (event) {
             
             //highlight();
             updateSiteStateList(activeDomain, true);
-            chrome.browserAction.setIcon({ path: "icon_on.png" });
+            chrome.action.setIcon({ path: "icon_on.png" });
 
             chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
 
@@ -257,7 +257,7 @@ $('#on-off').bind('change', function (event) {
             //highlight();
           //  $( "#myCheck" ).prop( "disabled", true );
             updateSiteStateList(activeDomain, false);
-            chrome.browserAction.setIcon({ path: "icon_off.png" });
+            chrome.action.setIcon({ path: "icon_off.png" });
 
             chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
 
@@ -336,7 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
             $('#highlight').show();
             $( "#myCheck" ).prop( "disabled", false );
             updateSiteStateList(activeDomain, true);
-            chrome.browserAction.setIcon({ path: "icon_on.png" });
+            chrome.action.setIcon({ path: "icon_on.png" });
 
             chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
 
@@ -365,7 +365,7 @@ document.addEventListener('DOMContentLoaded', () => {
             $('#myCheck').prop("checked", false);
           //  $( "#myCheck" ).prop( "disabled", true );
             updateSiteStateList(activeDomain, false);
-            chrome.browserAction.setIcon({ path: "icon_off.png" });
+            chrome.action.setIcon({ path: "icon_off.png" });
 
             chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
 
