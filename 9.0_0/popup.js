@@ -268,7 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('language-dropdown').value = data.language;
         });*/
     //}
-    siteStateList = JSON.parse(chrome.storage.local.get('siteStateList')) || {};
+    siteStateList = chrome.storage.local.get('siteStateList') || {};
     activeDomain = chrome.storage.local.get('activeDomain');
 
     /*chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {

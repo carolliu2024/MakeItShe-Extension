@@ -1,10 +1,11 @@
 var activeTabDomain = false;
 var siteStateList =  chrome.storage.local.get('siteStateList')  || {};
+// Note: localStorage replaced with chrome.storage.local after upgrading to Manifest v3
 
 chrome.tabs.onActivated.addListener( function ( tab ) {
 
-    chrome.storage.local.set('highlighted', 'no');
-    chrome.tabs.sendMessage(tabs[0].id, {greeting: "nohighlighting"}, function(response) {
+    chrome.storage.local.set({'highlighted': 'no'});
+    chrome.tabs.sendMessage(tab.tabId, {greeting: "nohighlighting"}, function(response) {
       console.log(response.farewell);
       });
 
@@ -13,7 +14,7 @@ chrome.tabs.onActivated.addListener( function ( tab ) {
 
         siteStateList =  chrome.storage.local.get('siteStateList')  || {};
         activeTabDomain = tabInfo.url.split('//')[1].split('/')[0];
-        chrome.storage.local.set( 'activeDomain', activeTabDomain );
+        chrome.storage.local.set({'activeDomain': activeTabDomain });
         chrome.extension.sendMessage({ event: 'changedDomain', domain: activeTabDomain });
         var activated = siteStateList[ activeTabDomain ] === true;
 
@@ -38,8 +39,8 @@ chrome.tabs.onActivated.addListener( function ( tab ) {
 
 chrome.tabs.onUpdated.addListener( function ( tabId ) {
 
-    chrome.storage.local.set('highlighted', 'no');
-    chrome.tabs.sendMessage(tabs[0].id, {greeting: "nohighlighting"}, function(response) {
+    chrome.storage.local.set({'highlighted': 'no'});
+    chrome.tabs.sendMessage(tab.tabId, {greeting: "nohighlighting"}, function(response) {
       console.log(response.farewell);
       });
     //alert('changing tab');
@@ -48,7 +49,7 @@ chrome.tabs.onUpdated.addListener( function ( tabId ) {
 
         siteStateList =  chrome.storage.local.get('siteStateList')  || {};
         activeTabDomain = tabInfo.url.split('//')[1].split('/')[0];
-        chrome.storage.local.set( 'activeDomain', activeTabDomain );
+        chrome.storage.local.set( {'activeDomain': activeTabDomain} );
         chrome.extension.sendMessage({ event: 'changedDomain', domain: activeTabDomain });
         var activated = siteStateList[ activeTabDomain ] === true;
 
