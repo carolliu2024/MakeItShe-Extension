@@ -1,10 +1,9 @@
-
 var activeTabDomain = false;
-var siteStateList = JSON.parse( localStorage.getItem('siteStateList') ) || {};
+var siteStateList =  chrome.storage.local.get('siteStateList')  || {};
 
 chrome.tabs.onActivated.addListener( function ( tab ) {
 
-    localStorage.setItem('highlighted', 'no');
+    chrome.storage.local.set('highlighted', 'no');
     chrome.tabs.sendMessage(tabs[0].id, {greeting: "nohighlighting"}, function(response) {
       console.log(response.farewell);
       });
@@ -12,9 +11,9 @@ chrome.tabs.onActivated.addListener( function ( tab ) {
 
     chrome.tabs.get( tab.tabId, function ( tabInfo ) {
 
-        siteStateList = JSON.parse( localStorage.getItem('siteStateList') ) || {};
+        siteStateList =  chrome.storage.local.get('siteStateList')  || {};
         activeTabDomain = tabInfo.url.split('//')[1].split('/')[0];
-        localStorage.setItem( 'activeDomain', activeTabDomain );
+        chrome.storage.local.set( 'activeDomain', activeTabDomain );
         chrome.extension.sendMessage({ event: 'changedDomain', domain: activeTabDomain });
         var activated = siteStateList[ activeTabDomain ] === true;
 
@@ -39,7 +38,7 @@ chrome.tabs.onActivated.addListener( function ( tab ) {
 
 chrome.tabs.onUpdated.addListener( function ( tabId ) {
 
-    localStorage.setItem('highlighted', 'no');
+    chrome.storage.local.set('highlighted', 'no');
     chrome.tabs.sendMessage(tabs[0].id, {greeting: "nohighlighting"}, function(response) {
       console.log(response.farewell);
       });
@@ -47,9 +46,9 @@ chrome.tabs.onUpdated.addListener( function ( tabId ) {
 
     chrome.tabs.get( tabId, function ( tabInfo ) {
 
-        siteStateList = JSON.parse( localStorage.getItem('siteStateList') ) || {};
+        siteStateList =  chrome.storage.local.get('siteStateList')  || {};
         activeTabDomain = tabInfo.url.split('//')[1].split('/')[0];
-        localStorage.setItem( 'activeDomain', activeTabDomain );
+        chrome.storage.local.set( 'activeDomain', activeTabDomain );
         chrome.extension.sendMessage({ event: 'changedDomain', domain: activeTabDomain });
         var activated = siteStateList[ activeTabDomain ] === true;
 

@@ -14,7 +14,7 @@
       "run_at": "document_end"
    } ],
    "content_security_policy": {
-      "extension_pages": "script-src 'self' https://canvasjs.com/assets/script/canvasjs.min.js https://cdn.jsdelivr.net/npm/pdfjs-dist@2.1.266/build/pdf.min.js https://cdn.jsdelivr.net/npm/pdfjs-dist@2.1.266/build/pdf.worker.js; object-src 'self'"
+      "extension_pages": "script-src 'self'; object-src 'self'"
    },
    "description": "[Bridge the online gender gap]",
    "icons": {
