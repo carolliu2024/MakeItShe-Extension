@@ -44,7 +44,7 @@ chrome.tabs.onUpdated.addListener( function ( tabId ) {
     // console.log("onUpdated?")
 
     chrome.storage.local.set({'highlighted': 'no'});
-    chrome.tabs.sendMessage(tab.tabId, {greeting: "nohighlighting"}, function(response) {
+    chrome.tabs.sendMessage(tabId, {greeting: "nohighlighting"}, function(response) {
       console.log(response.farewell);
       });
     //alert('changing tab');
