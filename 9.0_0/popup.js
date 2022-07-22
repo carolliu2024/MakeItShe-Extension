@@ -6,7 +6,7 @@ function updateSiteStateList(site, state) {
 
     siteStateList[site] = state;
     chrome.storage.local.set({'siteStateList': JSON.stringify(siteStateList)});
-    console.log(chrome.storage.local.get('siteStateList'));
+    console.log("siteStateList: ",chrome.storage.local.get('siteStateList'));
 
 };
 
@@ -288,6 +288,9 @@ document.addEventListener('DOMContentLoaded', () => {
     //}
     siteStateList = chrome.storage.local.get('siteStateList') || {};
     activeDomain = chrome.storage.local.get('activeDomain');
+    console.log("siteStateList: ", siteStateList)
+    console.log("activeDomain: ", activeDomain)
+    console.log("siteStateList[activeDomain]: ", siteStateList[activeDomain])
 
     /*chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
         chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', action: 'getStats' }, setStats);
@@ -297,7 +300,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // On / Off Button
 
     if (siteStateList[activeDomain] !== true) {
-
+        console.log('off');
         $('#on-off').switchButton({ checked: false, labels_placement: "left" });
         $('#content').hide();
         $('#disabled').show();
