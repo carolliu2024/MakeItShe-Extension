@@ -286,8 +286,19 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('language-dropdown').value = data.language;
         });*/
     //}
-    siteStateList = JSON.parse(localStorage.getItem('siteStateList')) || {};
-    activeDomain = localStorage.getItem('activeDomain');
+    var siteStateList;
+    var activeDomain;
+    chrome.storage.local.get('siteStateList', function (result) {
+        // console.log("result1: ", result);
+        siteStateList = result.siteStateList;
+    }) || {};
+    // resolve(siteStateList);
+    chrome.storage.local.get('activeDomain', function (result) {
+        // console.log("result2: ", result);
+
+        activeDomain = result.activeDomain;
+    });
+    // resolve(activeDomain);
     console.log("siteStateList: ", siteStateList)
     console.log("activeDomain: ", activeDomain)
     console.log("siteStateList[activeDomain]: ", siteStateList[activeDomain])
