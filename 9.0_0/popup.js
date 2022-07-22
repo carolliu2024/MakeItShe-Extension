@@ -66,7 +66,6 @@ function setStats(stats) {
     } else {
         $('#loader').hide();
         $('#chartContainer').show();
-        
 
         var chart = new CanvasJS.Chart("chartContainer", {
             animationEnabled: true,
@@ -105,9 +104,7 @@ function setStats(stats) {
             chart.render();
         }
 
-        
-
-
+    
     }
 
 };
@@ -165,8 +162,8 @@ chrome.tabs.onUpdated.addListener(function(activeInfo) {
     $('#myCheck').prop("checked", false);
     sessionStorage.setItem('highlighted', 'no');*/
     console.log('new tab');
-    localStorage.clear();
-    localStorage.removeItem('highlighted');
+    chrome.storage.local.clear();
+    chrome.storage.local.remove('highlighted');
 });
 
 var currentUrl = '';
@@ -221,7 +218,7 @@ $('#on-off').bind('change', function (event) {
                 
                 if (result === 'yes') {
                     $( "#myCheck" ).prop( "checked", true );
-                    localStorage.setItem('highlighted', 'yes');
+                    chrome.storage.local.set({'highlighted': 'yes'});
                     //highlight();
                     }
                 else
@@ -245,6 +242,9 @@ $('#on-off').bind('change', function (event) {
 
                 }, 100);
                 
+                //console.log(stats.stats.done);
+                
+                //}
 
             });
 
@@ -686,10 +686,10 @@ chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
 
         $('#usertrends').click(function (event) {
 
-
+            // chrome.extension or chrome.runtime?
             chrome.tabs.create({
                 active: true,
-                url: chrome.extension.getURL('usertrends.html')
+                url: chrome.runtime.getURL('usertrends.html')
             });
         
         });
