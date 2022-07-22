@@ -4,7 +4,6 @@ var siteStateList =  chrome.storage.local.get('siteStateList')  || {};
 
 // Run when active tab in a window changes (i.e. switch tabs)
 chrome.tabs.onActivated.addListener( function ( tab ) {
-    // console.log("onActivated?")
 
     chrome.storage.local.set({'highlighted': 'no'});
     chrome.tabs.sendMessage(tab.tabId, {greeting: "nohighlighting"}, function(response) {
@@ -17,7 +16,7 @@ chrome.tabs.onActivated.addListener( function ( tab ) {
         siteStateList =  chrome.storage.local.get('siteStateList')  || {};
         activeTabDomain = tabInfo.url.split('//')[1].split('/')[0];
         chrome.storage.local.set({'activeDomain': activeTabDomain });
-        // chrome.extension.sendMessage({ event: 'changedDomain', domain: activeTabDomain });
+        chrome.runtime.sendMessage({ event: 'changedDomain', domain: activeTabDomain });
         var activated = siteStateList[ activeTabDomain ] === true;
 
         if ( activated ) {
@@ -41,7 +40,6 @@ chrome.tabs.onActivated.addListener( function ( tab ) {
 
 // When tab is updated (URL changes?)
 chrome.tabs.onUpdated.addListener( function ( tabId ) {
-    // console.log("onUpdated?")
 
     chrome.storage.local.set({'highlighted': 'no'});
     chrome.tabs.sendMessage(tabId, {greeting: "nohighlighting"}, function(response) {
@@ -54,7 +52,7 @@ chrome.tabs.onUpdated.addListener( function ( tabId ) {
         siteStateList =  chrome.storage.local.get('siteStateList')  || {};
         activeTabDomain = tabInfo.url.split('//')[1].split('/')[0];
         chrome.storage.local.set( {'activeDomain': activeTabDomain} );
-        // chrome.extension.sendMessage({ event: 'changedDomain', domain: activeTabDomain });
+        chrome.runtime.sendMessage({ event: 'changedDomain', domain: activeTabDomain });
         var activated = siteStateList[ activeTabDomain ] === true;
 
         if ( activated ) {
