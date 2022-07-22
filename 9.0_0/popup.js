@@ -149,7 +149,7 @@ function setStats(stats) {
       
       
       //chrome.storage.sync.set({highlighted: 'no'});
-      chrome.storage.local.set('highlighted', 'no');
+      chrome.storage.local.set({'highlighted': 'no'});
       
       console.log('hi');
    
@@ -634,7 +634,7 @@ function getPdfContent(content) {
             // Count Male/Female Words
 
             for (var i = 0; i < words.length; i++) {
-
+                // First index where words[i] is found, otherwise -1
                 if (all_male_words.indexOf(words[i].toLowerCase()) >= 0) {
                     m_count++;
                 }

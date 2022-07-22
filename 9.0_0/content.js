@@ -185,6 +185,7 @@ for(var i=0; i<len; i++)
   }
 }
 
+// doesn't work
 function applyGoogleDocContent () {
 
     //console.log(window.location.href);
@@ -2493,6 +2494,7 @@ function highlight () {
 var number = 0;
 var links = [];
 
+// Not used
 function getLinks () {
     
     console.log('framing');
