@@ -8,7 +8,7 @@ var firstnames = fnames;
 var lastnames = ["Smith","Johnson","Williams","Brown","Jones","Miller","Davis","Garcia","Goodman","Rodriguez","Wilson","Martinez","Anderson","Taylor","Zhu","Thomas","Hernandez","Moore","Martin","Jackson","Thompson","White","Lopez","Lee","Gonzalez","Harris","Clark","Lewis","Robinson","Walker","Perez","Hall","Young","Allen","Sanchez","Wright","King","Scott","Green","Baker","Adams","Nelson","Hill","Ramirez","Campbell","Mitchell","Roberts","Carter","Phillips","Evans","Turner","Torres","Parker","Collins","Edwards","Stewart","Flores","Morris","Nguyen","Murphy","Rivera","Cook","Rogers","Morgan","Peterson","Cooper","Reed","Bailey","Bell","Gomez","Kelly","Howard","Ward","Cox","Diaz","Richardson","Wood","Watson","Brooks","Bennett","Gray","James","Reyes","Cruz","Hughes","Price","Myers","Long","Foster","Sanders","Ross","Morales","Powell","Sullivan","Russell","Ortiz","Jenkins","Gutierrez","Perry","Butler","Barnes","Fisher","Henderson","Coleman","Simmons","Patterson","Jordan","Reynolds","Hamilton","Graham","Kim","Gonzales","Alexander","Ramos","Wallace","Griffin","West","Cole","Hayes","Chavez","Gibson","Bryant","Ellis","Stevens","Murray","Ford","Marshall","Owens","Mcdonald","Harrison","Ruiz","Kennedy","Wells","Alvarez","Woods","Mendoza","Castillo","Olson","Webb","Washington","Tucker","Freeman","Burns","Henry","Vasquez","Snyder","Simpson","Crawford","Jimenez","Porter","Mason","Shaw","Gordon","Wagner","Hunter","Romero","Hicks","ixon","Hunt","Palmer","Robertson","Black","Holmes","Stone","Meyer","Boyd","Mills","Warren","Fox","Rose","Rice","Moreno","Schmidt","Patel","Ferguson","Nichols","Herrera","Medina","Ryan","Fernandez","Weaver","Daniels","Stephens","Gardner","Payne","Kelley","Dunn","Pierce","Arnold","Tran","Spencer","Peters","Hawkins","Grant","Hansen","Castro","Hoffman","Hart","Elliott","Cunningham","Knight","Bradley","Carroll","Hudson","Duncan","Armstrong","Berry","Andrews","Johnston","Ray","Lane","Riley","Carpenter","Perkins","Aguilar","Silva","Richards","Willis","Matthews","Chapman","Lawrence","Garza","Vargas","Watkins","Wheeler","Larson","Carlson","Harper","George","Greene","Burke","Guzman","Morrison","Munoz","Jacobs","Obrien","Lawson","Franklin","Lynch","Bishop","Carr","Salazar","Austin","Mendez","Gilbert","Jensen","Williamson","Montgomery","Harvey","Oliver","Howell","Dean","Hanson","Weber","Garrett","Sims","Burton","Fuller","Soto","Mccoy","Welch","Chen","Schultz","Walters","Reid","Fields","Walsh","Little","Fowler","Bowman","Davidson","May","Day","Schneider","Newman","Brewer","Lucas","Holland","Wong","Banks","Santos","Curtis","Pearson","Delgado","Valdez","Pena","Rios","Douglas","Sandoval","Barrett","Hopkins","Keller","Guerrero","Stanley","Bates","Alvarado","Beck","Ortega","Wade","Estrada","Contreras","Barnett","Caldwell","Santiago","Lambert","Powers","Chambers","Nunez","Craig","Leonard","Lowe","Rhodes","Byrd","Gregory","Shelton","Frazier","Becker","Maldonado","Fleming","Vega","Sutton","Cohen","Jennings","Parks","Mcdaniel","Watts","Barker","Norris","Vaughn","Vazquez","Holt","Schwartz","Steele","Benson","Neal","Dominguez","Horton","Terry","Wolfe","Hale","Lyons","Graves","Haynes","Miles","Park","Warner","Padilla","Bush","Thornton","Mccarthy","Mann","Zimmerman","Erickson","Fletcher","Mckinney","Page","Dawson","Joseph","Marquez","Reeves","Klein","Espinoza","Baldwin","Moran","Love","Robbins","Higgins","Ball","Cortez","Le","Griffith","Bowen","Sharp","Cummings","Ramsey","Hardy","Swanson","Barber","Acosta","Luna","Chandler","Blair","Daniel","Cross","Simon","Dennis","Oconnor","Quinn","Gross","Navarro","Moss","Fitzgerald","Doyle","Mclaughlin","Rojas","Rodgers","Stevenson","Singh","Yang","Figueroa","Harmon","Newton","Paul","Manning","Garner","Mcgee","Reese","Francis","Burgess","Adkins","Goodman","Curry","Brady","Christensen","Potter","Walton","Goodwin","Mullins","Molina","Webster","Fischer","Campos","Avila","Sherman","Todd","Chang","Blake","Malone","Wolf","Hodges","Juarez","Gill","Farmer","Hines","Gallagher","Duran","Hubbard","Cannon","Miranda","Wang","Saunders","Tate","Mack","Hammond","Carrillo","Townsend","Wise","Ingram","Barton","Mejia","Ayala","Schroeder","Hampton","Rowe","Parsons","Frank","Waters","Strickland","Osborne","Maxwell","Chan","Deleon","Norman","Harrington","Casey","Patton","Logan","Bowers","Mueller","Glover","Floyd","Hartman","Buchanan","Cobb","French","Kramer","Mccormick","Clarke","Tyler","Gibbs","Moody","Conner","Sparks","Mcguire","Leon","Bauer","Norton","Pope","Flynn","Hogan","Robles","Salinas","Yates","Lindsey","Lloyd","Marsh","Mcbride","Owen","Solis","Pham","Lang","Pratt","Lara","Brock","Ballard","Trujillo","Shaffer","Drake","Roman","Aguirre","Morton","Stokes","Lamb","Pacheco","Patrick","Cochran","Shepherd","Cain","Burnett","Hess","Li","Cervantes","Olsen","Briggs","Ochoa","Cabrera","Velasquez","Montoya","Roth","Meyers","Cardenas","Fuentes","Weiss","Hoover","Wilkins","Nicholson","Underwood","Short","Carson","Morrow","Colon","Holloway","Summers","Bryan","Petersen","Mckenzie","Serrano","Wilcox","Carey","Clayton","Poole","Calderon","Gallegos","Greer","Rivas","Guerra","Decker","Collier","Wall","Whitaker","Bass","Flowers","Davenport","Conley","Houston","Huff","Copeland","Hood","Monroe","Massey","Roberson","Combs","Franco","Larsen","Pittman","Randall","Skinner","Wilkinson","Kirby","Cameron","Bridges","Anthony","Richard","Kirk","Bruce","Singleton","Mathis","Bradford","Boone","Abbott","Charles","Allison","Sweeney","Atkinson","Horn","Jefferson","Rosales","York","Christian","Phelps","Farrell","Castaneda","Nash","Dickerson","Bond","Wyatt","Foley","Chase","Gates","Vincent","Mathews","Hodge","Garrison","Trevino","Villarreal","Heath","Dalton","Valencia","Callahan","Hensley","Atkins","Huffman","Roy","Boyer","Shields","Lin","Hancock","Grimes","Glenn","Cline","Delacruz","Camacho","Dillon","Parrish","Oneill","Melton","Booth","Kane","Berg","Harrell","Pitts","Savage","Wiggins","Brennan","Salas","Marks","Russo","Sawyer","Baxter","Golden","Hutchinson","Liu","Walter","Mcdowell","Wiley","Rich","Humphrey","Johns","Koch","Suarez","Hobbs","Beard","Gilmore","Ibarra","Keith","Macias","Khan","Andrade","Ware","Stephenson","Henson","Wilkerson","Dyer","Mcclure","Blackwell","Mercado","Tanner","Eaton","Clay","Barron","Beasley","Oneal","Preston","Small","Wu","Zamora","Macdonald","Vance","Snow","Mcclain","Stafford","Orozco","Barry","English","Shannon","Kline","Jacobson","Woodard","Huang","Kemp","Mosley","Prince","Merritt","Hurst","Villanueva","Roach","Nolan","Lam","Yoder","Mccullough","Lester","Santana","Valenzuela","Winters","Barrera","Leach","Orr","Berger","Mckee","Strong","Conway","Stein","Whitehead","Bullock","Escobar","Knox","Meadows","Solomon","Velez","Odonnell","Kerr","Stout","Blankenship","Browning","Kent","Lozano","Bartlett","Pruitt","Buck","Barr","Gaines","Durham","Gentry","Mcintyre","Sloan","Melendez","Rocha","Herman","Sexton","Moon","Hendricks","Rangel","Stark","Lowery","Hardin","Hull","Sellers","Ellison","Calhoun","Gillespie","Mora","Knapp","Mccall","Morse","Dorsey","Weeks","Nielsen","Livingston","Leblanc","Mclean","Bradshaw","Glass","Middleton","Buckley","Schaefer","Frost","Howe","House","Mcintosh","Ho","Pennington","Reilly","Hebert","Mcfarland","Hickman","Noble","Spears","Conrad","Arias","Galvan","Velazquez","Huynh","Frederick","Randolph","Cantu","Fitzpatrick","Mahoney","Peck","Villa","Michael","Donovan","Mcconnell","Walls","Boyle","Mayer","Zuniga","Giles","Pineda","Pace","Hurley","Mays","Mcmillan","Crosby","Ayers","Case","Bentley","Shepard","Everett","Pugh","David","Mcmahon","Dunlap","Bender","Hahn","Harding","Acevedo","Raymond","Blackburn","Duffy","Landry","Dougherty","Bautista","Shah","Potts","Arroyo","Valentine","Meza","Gould","Vaughan","Fry","Rush","Avery","Herring","Dodson","Clements","Sampson","Tapia","Bean","Lynn","Crane","Farley","Cisneros","Benton","Ashley","Mckay","Finley","Best","Blevins","Friedman","Moses","Sosa","Blanchard","Huber","Frye","Krueger","Bernard","Rosario","Rubio","Mullen","Benjamin","Haley","Chung","Moyer","Choi","Horne","Yu","Woodward","Ali","Nixon","Hayden","Rivers","Estes","Mccarty","Richmond","Stuart","Maynard","Brandt","Oconnell","Hanna","Sanford","Sheppard","Church","Burch","Levy","Rasmussen","Coffey","Ponce","Faulkner","Donaldson","Schmitt","Novak","Costa","Montes","Booker","Cordova","Waller","Arellano","Maddox","Mata","Bonilla","Stanton","Compton","Kaufman","Dudley","Mcpherson","Beltran","Dickson","Mccann","Villegas","Proctor","Hester","Cantrell","Daugherty","Cherry","Bray","Davila","Rowland","Levine","Madden","Spence","Good","Irwin","Werner","Krause","Petty","Whitney","Baird","Hooper","Pollard","Zavala","Jarvis","Holden","Haas","Hendrix","Mcgrath","Bird","Lucero","Terrell","Riggs","Joyce","Mercer","Rollins","Galloway","Duke","Odom","Andersen","Downs","Hatfield","Benitez","Archer","Huerta","Travis","Mcneil","Hinton","Zhang","Hays","Mayo","Fritz","Branch","Mooney","Ewing","Ritter","Esparza","Frey","Braun","Gay","Riddle","Haney","Kaiser","Holder","Chaney","Mcknight","Gamble","Vang","Cooley","Carney","Cowan","Forbes","Ferrell","Davies","Barajas","Shea","Osborn","Bright","Cuevas","Bolton","Murillo","Lutz","Duarte","Kidd","Key","Cooke"];
 //var lastnames_upper = ["SMITH","JOHNSON","WILLIAMS","BROWN","JONES","MILLER","DAVIS","GARCIA","RODRIGUEZ","WILSON","MARTINEZ","ANDERSON","TAYLOR","THOMAS","HERNANDEZ","MOORE","MARTIN","JACKSON","THOMPSON","WHITE","LOPEZ","LEE","GONZALEZ","HARRIS","CLARK","LEWIS","ROBINSON","WALKER","PEREZ","HALL","YOUNG","ALLEN","SANCHEZ","WRIGHT","KING","SCOTT","GREEN","BAKER","ADAMS","NELSON","HILL","RAMIREZ","CAMPBELL","MITCHELL","ROBERTS","CARTER","PHILLIPS","EVANS","TURNER","TORRES","PARKER","COLLINS","EDWARDS","STEWART","FLORES","MORRIS","NGUYEN","MURPHY","RIVERA","COOK","ROGERS","MORGAN","PETERSON","COOPER","REED","BAILEY","BELL","GOMEZ","KELLY","HOWARD","WARD","COX","DIAZ","RICHARDSON","WOOD","WATSON","BROOKS","BENNETT","GRAY","JAMES","REYES","CRUZ","HUGHES","PRICE","MYERS","LONG","FOSTER","SANDERS","ROSS","MORALES","POWELL","SULLIVAN","RUSSELL","ORTIZ","JENKINS","GUTIERREZ","PERRY","BUTLER","BARNES","FISHER","HENDERSON","COLEMAN","SIMMONS","PATTERSON","JORDAN","REYNOLDS","HAMILTON","GRAHAM","KIM","GONZALES","ALEXANDER","RAMOS","WALLACE","GRIFFIN","WEST","COLE","HAYES","CHAVEZ","GIBSON","BRYANT","ELLIS","STEVENS","MURRAY","FORD","MARSHALL","OWENS","MCDONALD","HARRISON","RUIZ","KENNEDY","WELLS","ALVAREZ","WOODS","MENDOZA","CASTILLO","OLSON","WEBB","WASHINGTON","TUCKER","FREEMAN","BURNS","HENRY","VASQUEZ","SNYDER","SIMPSON","CRAWFORD","JIMENEZ","PORTER","MASON","SHAW","GORDON","WAGNER","HUNTER","ROMERO","HICKS","IXON","HUNT","PALMER","ROBERTSON","BLACK","HOLMES","STONE","MEYER","BOYD","MILLS","WARREN","FOX","ROSE","RICE","MORENO","SCHMIDT","PATEL","FERGUSON","NICHOLS","HERRERA","MEDINA","RYAN","FERNANDEZ","WEAVER","DANIELS","STEPHENS","GARDNER","PAYNE","KELLEY","DUNN","PIERCE","ARNOLD","TRAN","SPENCER","PETERS","HAWKINS","GRANT","HANSEN","CASTRO","HOFFMAN","HART","ELLIOTT","CUNNINGHAM","KNIGHT","BRADLEY","CARROLL","HUDSON","DUNCAN","ARMSTRONG","BERRY","ANDREWS","JOHNSTON","RAY","LANE","RILEY","CARPENTER","PERKINS","AGUILAR","SILVA","RICHARDS","WILLIS","MATTHEWS","CHAPMAN","LAWRENCE","GARZA","VARGAS","WATKINS","WHEELER","LARSON","CARLSON","HARPER","GEORGE","GREENE","BURKE","GUZMAN","MORRISON","MUNOZ","JACOBS","OBRIEN","LAWSON","FRANKLIN","LYNCH","BISHOP","CARR","SALAZAR","AUSTIN","MENDEZ","GILBERT","JENSEN","WILLIAMSON","MONTGOMERY","HARVEY","OLIVER","HOWELL","DEAN","HANSON","WEBER","GARRETT","SIMS","BURTON","FULLER","SOTO","MCCOY","WELCH","CHEN","SCHULTZ","WALTERS","REID","FIELDS","WALSH","LITTLE","FOWLER","BOWMAN","DAVIDSON","MAY","DAY","SCHNEIDER","NEWMAN","BREWER","LUCAS","HOLLAND","WONG","BANKS","SANTOS","CURTIS","PEARSON","DELGADO","VALDEZ","PENA","RIOS","DOUGLAS","SANDOVAL","BARRETT","HOPKINS","KELLER","GUERRERO","STANLEY","BATES","ALVARADO","BECK","ORTEGA","WADE","ESTRADA","CONTRERAS","BARNETT","CALDWELL","SANTIAGO","LAMBERT","POWERS","CHAMBERS","NUNEZ","CRAIG","LEONARD","LOWE","RHODES","BYRD","GREGORY","SHELTON","FRAZIER","BECKER","MALDONADO","FLEMING","VEGA","SUTTON","COHEN","JENNINGS","PARKS","MCDANIEL","WATTS","BARKER","NORRIS","VAUGHN","VAZQUEZ","HOLT","SCHWARTZ","STEELE","BENSON","NEAL","DOMINGUEZ","HORTON","TERRY","WOLFE","HALE","LYONS","GRAVES","HAYNES","MILES","PARK","WARNER","PADILLA","BUSH","THORNTON","MCCARTHY","MANN","ZIMMERMAN","ERICKSON","FLETCHER","MCKINNEY","PAGE","DAWSON","JOSEPH","MARQUEZ","REEVES","KLEIN","ESPINOZA","BALDWIN","MORAN","LOVE","ROBBINS","HIGGINS","BALL","CORTEZ","LE","GRIFFITH","BOWEN","SHARP","CUMMINGS","RAMSEY","HARDY","SWANSON","BARBER","ACOSTA","LUNA","CHANDLER","BLAIR","DANIEL","CROSS","SIMON","DENNIS","OCONNOR","QUINN","GROSS","NAVARRO","MOSS","FITZGERALD","DOYLE","MCLAUGHLIN","ROJAS","RODGERS","STEVENSON","SINGH","YANG","FIGUEROA","HARMON","NEWTON","PAUL","MANNING","GARNER","MCGEE","REESE","FRANCIS","BURGESS","ADKINS","GOODMAN","CURRY","BRADY","CHRISTENSEN","POTTER","WALTON","GOODWIN","MULLINS","MOLINA","WEBSTER","FISCHER","CAMPOS","AVILA","SHERMAN","TODD","CHANG","BLAKE","MALONE","WOLF","HODGES","JUAREZ","GILL","FARMER","HINES","GALLAGHER","DURAN","HUBBARD","CANNON","MIRANDA","WANG","SAUNDERS","TATE","MACK","HAMMOND","CARRILLO","TOWNSEND","WISE","INGRAM","BARTON","MEJIA","AYALA","SCHROEDER","HAMPTON","ROWE","PARSONS","FRANK","WATERS","STRICKLAND","OSBORNE","MAXWELL","CHAN","DELEON","NORMAN","HARRINGTON","CASEY","PATTON","LOGAN","BOWERS","MUELLER","GLOVER","FLOYD","HARTMAN","BUCHANAN","COBB","FRENCH","KRAMER","MCCORMICK","CLARKE","TYLER","GIBBS","MOODY","CONNER","SPARKS","MCGUIRE","LEON","BAUER","NORTON","POPE","FLYNN","HOGAN","ROBLES","SALINAS","YATES","LINDSEY","LLOYD","MARSH","MCBRIDE","OWEN","SOLIS","PHAM","LANG","PRATT","LARA","BROCK","BALLARD","TRUJILLO","SHAFFER","DRAKE","ROMAN","AGUIRRE","MORTON","STOKES","LAMB","PACHECO","PATRICK","COCHRAN","SHEPHERD","CAIN","BURNETT","HESS","LI","CERVANTES","OLSEN","BRIGGS","OCHOA","CABRERA","VELASQUEZ","MONTOYA","ROTH","MEYERS","CARDENAS","FUENTES","WEISS","HOOVER","WILKINS","NICHOLSON","UNDERWOOD","SHORT","CARSON","MORROW","COLON","HOLLOWAY","SUMMERS","BRYAN","PETERSEN","MCKENZIE","SERRANO","WILCOX","CAREY","CLAYTON","POOLE","CALDERON","GALLEGOS","GREER","RIVAS","GUERRA","DECKER","COLLIER","WALL","WHITAKER","BASS","FLOWERS","DAVENPORT","CONLEY","HOUSTON","HUFF","COPELAND","HOOD","MONROE","MASSEY","ROBERSON","COMBS","FRANCO","LARSEN","PITTMAN","RANDALL","SKINNER","WILKINSON","KIRBY","CAMERON","BRIDGES","ANTHONY","RICHARD","KIRK","BRUCE","SINGLETON","MATHIS","BRADFORD","BOONE","ABBOTT","CHARLES","ALLISON","SWEENEY","ATKINSON","HORN","JEFFERSON","ROSALES","YORK","CHRISTIAN","PHELPS","FARRELL","CASTANEDA","NASH","DICKERSON","BOND","WYATT","FOLEY","CHASE","GATES","VINCENT","MATHEWS","HODGE","GARRISON","TREVINO","VILLARREAL","HEATH","DALTON","VALENCIA","CALLAHAN","HENSLEY","ATKINS","HUFFMAN","ROY","BOYER","SHIELDS","LIN","HANCOCK","GRIMES","GLENN","CLINE","DELACRUZ","CAMACHO","DILLON","PARRISH","ONEILL","MELTON","BOOTH","KANE","BERG","HARRELL","PITTS","SAVAGE","WIGGINS","BRENNAN","SALAS","MARKS","RUSSO","SAWYER","BAXTER","GOLDEN","HUTCHINSON","LIU","WALTER","MCDOWELL","WILEY","RICH","HUMPHREY","JOHNS","KOCH","SUAREZ","HOBBS","BEARD","GILMORE","IBARRA","KEITH","MACIAS","KHAN","ANDRADE","WARE","STEPHENSON","HENSON","WILKERSON","DYER","MCCLURE","BLACKWELL","MERCADO","TANNER","EATON","CLAY","BARRON","BEASLEY","ONEAL","PRESTON","SMALL","WU","ZAMORA","MACDONALD","VANCE","SNOW","MCCLAIN","STAFFORD","OROZCO","BARRY","ENGLISH","SHANNON","KLINE","JACOBSON","WOODARD","HUANG","KEMP","MOSLEY","PRINCE","MERRITT","HURST","VILLANUEVA","ROACH","NOLAN","LAM","YODER","MCCULLOUGH","LESTER","SANTANA","VALENZUELA","WINTERS","BARRERA","LEACH","ORR","BERGER","MCKEE","STRONG","CONWAY","STEIN","WHITEHEAD","BULLOCK","ESCOBAR","KNOX","MEADOWS","SOLOMON","VELEZ","ODONNELL","KERR","STOUT","BLANKENSHIP","BROWNING","KENT","LOZANO","BARTLETT","PRUITT","BUCK","BARR","GAINES","DURHAM","GENTRY","MCINTYRE","SLOAN","MELENDEZ","ROCHA","HERMAN","SEXTON","MOON","HENDRICKS","RANGEL","STARK","LOWERY","HARDIN","HULL","SELLERS","ELLISON","CALHOUN","GILLESPIE","MORA","KNAPP","MCCALL","MORSE","DORSEY","WEEKS","NIELSEN","LIVINGSTON","LEBLANC","MCLEAN","BRADSHAW","GLASS","MIDDLETON","BUCKLEY","SCHAEFER","FROST","HOWE","HOUSE","MCINTOSH","HO","PENNINGTON","REILLY","HEBERT","MCFARLAND","HICKMAN","NOBLE","SPEARS","CONRAD","ARIAS","GALVAN","VELAZQUEZ","HUYNH","FREDERICK","RANDOLPH","CANTU","FITZPATRICK","MAHONEY","PECK","VILLA","MICHAEL","DONOVAN","MCCONNELL","WALLS","BOYLE","MAYER","ZUNIGA","GILES","PINEDA","PACE","HURLEY","MAYS","MCMILLAN","CROSBY","AYERS","CASE","BENTLEY","SHEPARD","EVERETT","PUGH","DAVID","MCMAHON","DUNLAP","BENDER","HAHN","HARDING","ACEVEDO","RAYMOND","BLACKBURN","DUFFY","LANDRY","DOUGHERTY","BAUTISTA","SHAH","POTTS","ARROYO","VALENTINE","MEZA","GOULD","VAUGHAN","FRY","RUSH","AVERY","HERRING","DODSON","CLEMENTS","SAMPSON","TAPIA","BEAN","LYNN","CRANE","FARLEY","CISNEROS","BENTON","ASHLEY","MCKAY","FINLEY","BEST","BLEVINS","FRIEDMAN","MOSES","SOSA","BLANCHARD","HUBER","FRYE","KRUEGER","BERNARD","ROSARIO","RUBIO","MULLEN","BENJAMIN","HALEY","CHUNG","MOYER","CHOI","HORNE","YU","WOODWARD","ALI","NIXON","HAYDEN","RIVERS","ESTES","MCCARTY","RICHMOND","STUART","MAYNARD","BRANDT","OCONNELL","HANNA","SANFORD","SHEPPARD","CHURCH","BURCH","LEVY","RASMUSSEN","COFFEY","PONCE","FAULKNER","DONALDSON","SCHMITT","NOVAK","COSTA","MONTES","BOOKER","CORDOVA","WALLER","ARELLANO","MADDOX","MATA","BONILLA","STANTON","COMPTON","KAUFMAN","DUDLEY","MCPHERSON","BELTRAN","DICKSON","MCCANN","VILLEGAS","PROCTOR","HESTER","CANTRELL","DAUGHERTY","CHERRY","BRAY","DAVILA","ROWLAND","LEVINE","MADDEN","SPENCE","GOOD","IRWIN","WERNER","KRAUSE","PETTY","WHITNEY","BAIRD","HOOPER","POLLARD","ZAVALA","JARVIS","HOLDEN","HAAS","HENDRIX","MCGRATH","BIRD","LUCERO","TERRELL","RIGGS","JOYCE","MERCER","ROLLINS","GALLOWAY","DUKE","ODOM","ANDERSEN","DOWNS","HATFIELD","BENITEZ","ARCHER","HUERTA","TRAVIS","MCNEIL","HINTON","ZHANG","HAYS","MAYO","FRITZ","BRANCH","MOONEY","EWING","RITTER","ESPARZA","FREY","BRAUN","GAY","RIDDLE","HANEY","KAISER","HOLDER","CHANEY","MCKNIGHT","GAMBLE","VANG","COOLEY","CARNEY","COWAN","FORBES","FERRELL","DAVIES","BARAJAS","SHEA","OSBORN","BRIGHT","CUEVAS","BOLTON","MURILLO","LUTZ","DUARTE","KIDD","KEY","COOKE"];
 var initials = ["A.", "B.", "C.", "D.", "E.", "F.", "G.", "H.", "I.", "J.", "K.", "L.", "M.", "N.", "O.", "P.", "Q.", "R.","S.", "T.", "U.","V.", "W.", "X.", "Y.", "Z.", "A","B","C","D","E","F","G","H","I", "J","K","L","M","N","O","P","Q","R","S","T","U", "V","W","X", "Y", "Z"];
-var excluded = ["Of", "of", "Forbes", "Jr", "Junior", "Senior", "Sr", "Le", "le", "la", "La", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "VIIII", "X", "S", "s", "COVID", "Medical", "Prize", "San", "New", "O", "area", "Center", "Building", "Street", "Zoo", "Santa", "Saint", "St", "Sea", "New", "Centre", "Îles", "Lake", "County", "School", "High", "Secondary", "Primary", "College", "Port", "Hurricane", "Complex", "Management", "Mountain", "River", "Park", "Institute", "School", "Expedition", "Area", "University", "Center", "Building", "Circle", "Street", "Zoo", "San", "Saint", "Santa", "City", "Island", "Islands", "Award", "award", "awards", "Highway", "Mountain", "Mount", "Mt", "College", "University","A", "Not", "Is", "Are", "The", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Expedition"];
+var excluded = ["Of", "of", "Forbes", "Jr", "Junior", "Senior", "Sr", "Le", "le", "la", "La", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "VIIII", "X", "S", "s", "COVID", "Medical", "Prize", "San", "New", "O", "area", "Center", "Building", "Street", "Zoo", "Santa", "Saint", "St", "St.", "Sea", "New", "Centre", "Îles", "Lake", "County", "School", "High", "Secondary", "Primary", "College", "Port", "Hurricane", "Complex", "Management", "Mountain", "River", "Park", "Institute", "School", "Expedition", "Area", "University", "Center", "Building", "Circle", "Street", "Zoo", "San", "Saint", "Santa", "City", "Island", "Islands", "Award", "award", "awards", "Highway", "Mountain", "Mount", "Mt", "College", "University","A", "Not", "Is", "Are", "The", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Expedition"];
 
 function capitalize(str) {
   const lower = str.toLowerCase();
@@ -38,7 +38,7 @@ var ffnames = [];
 
 
 
-var notnames = ["April", "May", "June", "August", "America", "India", "China", "Israel"];
+var notnames = ["April", "May", "June", "August", "America", "India", "China", "Israel", "Louis"];
 var prepos = ["In", "During", "On", "Of", "From", "Beginning", "in", "during", "on", "of", "from", "beginning"];
 
 //var femalefirstnames = Object.values(name_dict);
@@ -86,22 +86,6 @@ function changeLang(word_dict) {
     //all_female_words = Object.values( word_dict ).concat( Object.values( name_dict ) );;
     all_female_words = Object.values (word_dict);
 }
-
-/*function recalculateP(lang) {
-  if (lang === "English") {
-      word_dict = window.english_word_dict;
-  } else if (lang === "German") {
-      word_dict = window.german_word_dict;
-  } else {
-      Error; //other languages must be filled in here once available
-  }
-  all_words = Object.assign( {}, name_dict, word_dict );
-  regex_word = new RegExp( "\\b" + Object.keys( word_dict ).join("\\b|\\b"), "gi" );
-  regex_name = new RegExp( "\\b" + Object.keys( name_dict ).join("|"), "g" );
-  all_male_words = Object.keys( word_dict).concat( Object.keys( name_dict ) );;
-  all_female_words = Object.values( word_dict ).concat( Object.values( name_dict ) );;
-  applyContent();
-}*/
 
 let language = 'English';
 chrome.storage.sync.get('language', data => {
@@ -185,7 +169,6 @@ for(var i=0; i<len; i++)
   }
 }
 
-// doesn't work
 function applyGoogleDocContent () {
 
     //console.log(window.location.href);
@@ -331,134 +314,23 @@ function applyContent (windowObject) {
     if ( window.isDone ) return;
 
     $(windowObject).find("a, p, i, div,span, h1, h2, h3, h4, h5, li, label").contents().filter( function () {
-    //$(windowObject).contents().filter( function () {
-
-        /*if (this.parentNode.nodeName === "SCRIPT" || this.parentNode.nodeName ==="STYLE" || this.parentNode.nodeName === "IMG"
-            || this.parentNode.nodeName === "LI" || this.parentNode.nodeName === "UL" || this.parentNode.nodeName === "IFRAME"
-            || this.parentNode.nodeName === "NOSCRIPT" || this.parentNode.nodeName === "CITE"){
-            return false;
-        }*/
         
         var res = [];
         var res1 = [];
         if (this.nodeType === 3)
         {
-        
-            /*var parentTag = this.parentNode.tagName;
-            if (parentTag === 'H1' || parentTag === 'H2' || parentTag === 'H3' || parentTag === 'H4' || parentTag === 'H5') {
-                return false;
-            }*/
-            
-            /*if (this.parentNode.nodeName === "A") {
-                if (this.nodeValue.length < 3) {
-                }
-                else {
-                    return false;
-                }
-            }
-            
-            if (this.parentNode.parentNode.nodeName === "LI" || this.parentNode.parentNode.parentNode.nodeName === "LI"){
-                return false;
-            }
-            
-            var outertag = this.parentNode.outerHTML;
-            outertag = outertag.substring(0, outertag.indexOf('>'));
-            res = outertag.match(strip);
-            
-            var outertag1 = this.parentNode.parentNode.outerHTML;
-            outertag1 = outertag1.substring(0, outertag1.indexOf('>'));
-            res1 = outertag1.match(strip);
-            
-            if (Array.isArray(res1) && res1.length > 0){
-                
-                return false;
-            }*/
         }
         else {
             return false;
         }
-        
-        /*if (Array.isArray(res) && res.length > 0) {
-            return false;
-        }*/
 
         return true;
         
         
-        
-        //return this.nodeType === 3 && this.id !== 'adContent' && this.id !== 'dockedBanner' && this.id !== 'google_image_div';
-
     }).replaceWith( function () {
 
-        /*var str = this.nodeValue;
-        var temp_words = str.split(/('|-|:|;|\/|\s+)/);
-        var words = [];
-
-        for ( var i = 0; i < temp_words.length; i ++ ) {
-
-            var current_word = temp_words[i].trim().replace( /[.,\/#!$%\^&\*;:{}=\_`'"?~()]/g, "" );
-
-            if ( current_word != '' ) {
-
-                words[ words.length ] = current_word;
-
-            }
-
-        }
-
-        if ( words.length == 0 ) {
-
-            return str;
-
-        }
-
-        // Delete surname after Mr, Ms, M, Mme, Lady, Lord
-
-        for ( var i = 0; i < words.length; i ++ ) {
-
-            var w = words[ i ].replace( /[!?,.;`' ]/, '' );
-
-            if ( w === 'Mr' || w === 'Ms' || w === 'M' || w === 'Mme' || w === 'Lady' || w === 'Lord' ) {
-
-                words.splice( i + 1, 1 );
-
-            }
-
-        }
-        
-        for ( var i = 0; i < words.length; i ++ ) {
-
-             if ( all_female_words.indexOf( words[ i ].toLowerCase()) >= 0 || femalefirstnames.indexOf(words[i]) >= 0 || temp_female_last_names.indexOf(words[i]) >= 0 || ffnames.indexOf(words[i] ) >= 0) {
-
-                f_count ++;
-                numObservations++;
-                temp_female_words.push(words[i]);
-
-            }
-            
-            
-            if ( all_male_words.indexOf( words[ i ].toLowerCase() ) >= 0 || malefirstnames.indexOf(words[i]) >= 0 || temp_male_last_names.indexOf(words[i]) >= 0 || mfnames.indexOf(words[i] ) >= 0) {
-
-                if (temp_female_words.indexOf(words[i]) === -1) {
-                    m_count ++;
-                    numObservations++;
-                    temp_male_words.push(words[i]);
-                }
-
-            }
-
-        }*/
         
         var hasit = this.parentNode.hasAttribute('passed');
-        //console.log(hasit);
-        if (hasit === true) {
-                var attr = this.parentNode.getAttributeNode("passed").value;
-            
-                if (attr === 'alreadypassed') {
-                        //console.log('yes');
-                        return;
-                }
-          }
         
         var att = document.createAttribute("passed");       // Create a "class" attribute
                 att.value = "alreadypassed";
@@ -539,28 +411,9 @@ function applyContent (windowObject) {
 
         }
         
-        //console.log(words);
-
-        /*var isHeading = false;
-
-        var parentTag = this.parentNode.tagName;
-            if (parentTag === 'H1' || parentTag === 'H2' || parentTag === 'H3' || parentTag === 'H4' || parentTag === 'H5') {
-                isHeading = true;
-            }
-            
-        var parentParentTag = this.parentNode.parentNode.tagName;
-            if (parentParentTag === 'H1' || parentParentTag === 'H2' || parentParentTag === 'H3' || parentParentTag === 'H4' || parentParentTag === 'H5') {
-                isHeading = true;
-            }*/
-        
 
         var allUppercase = false;
 
-        /*if (isHeading === false) {
-            allUppercase = false;
-        }*/
-
-        //if (isHeading === true) {
         if (words.length > 3) {
 
                 allUppercase = true;
@@ -667,14 +520,19 @@ function applyContent (windowObject) {
             m_l_begin = n;
             
             //if (malefirstnames.indexOf(words[i]) >= 0 && /[A-Z]/.test(nextWord[0]) && nextWord.length > 1){
-            if ((malefirstnames.indexOf(words[i]) >= 0 || words[i] === 'Mr' || words[i] === 'Mister') && words[i-1] !== 'The' && excluded.indexOf(nextWord) === -1 && next_first !== '(' && initials.indexOf(nextWord) === -1 && last !== '.' && last !== '!' && last !== '?' && last !== ',' && last !== ';' && last !== ':' && last !== '/' &&  /[A-Z]/.test(nextWord[0]) && (!(/[A-Z]/.test(nextNextWord[0])) || nextNextWord === undefined || next_last === '.' || next_last === '!' || next_last === '?' || next_last === ',' || next_last === '/' ) && ( words[i-1] !== 'Lake' && words[i+1] !== 'County' && words[i+1] !== 'Lake' && words[i+1] !== 'School' && words[i+1] !== 'High' && words[i+1] !== 'Secondary' && words[i+1] !== 'Primary' && words[i+1] !== 'College' && words[i-1] !== 'Port' && words[i+1] !== 'Mountain' && words[i-2] !== 'City' && words[i-2] !== 'city' && words[i+1] !== 'City' && words[i+1] !== 'Highway' && words[i+1] !== 'Islands' && words[i+1] !== 'award' && words[i+1] !== 'awards'  && words[i+1] !== 'Park' && words[i+1] !== 'Institute' && words[i+1] !== 'School' && words[i+1] !== 'area' && words[i+1] !== 'University' && words[i+1] !== 'Center' && words[i+1] !== 'Building' && words[i+1] !== 'Circle' && words[i+1] !== 'Street' && words[i+1] !== 'Zoo' && words[i-1] !== 'San' && words[i-1] !== 'Saint' && words[i-1] !== 'Santa' && words[i-1] !== 'St' && words[i-1] !== 'Sao' && words[i-1] !== 'New' && words[i-1] !== 'O' && words[i-1] !== 's')) {
+            if ((malefirstnames.indexOf(words[i]) >= 0 || words[i] === 'Mr' || words[i] === 'Mister') && words[i-1] !== 'The' 
+            && excluded.indexOf(nextWord) === -1 && next_first !== '(' && initials.indexOf(nextWord) === -1 && last !== '.' 
+            && last !== '!' && last !== '?' && last !== ',' && last !== ';' && last !== ':' && last !== '/' &&  /[A-Z]/.test(nextWord[0]) 
+            && (!(/[A-Z]/.test(nextNextWord[0])) || nextNextWord === undefined || next_last === '.' || next_last === '!' || next_last === '?' || next_last === ',' || next_last === '/' ) && ( words[i-1] !== 'Lake' && words[i+1] !== 'County' && words[i+1] !== 'Lake' && words[i+1] !== 'School' 
+            && words[i+1] !== 'High' && words[i+1] !== 'Secondary' && words[i+1] !== 'Primary' && words[i+1] !== 'College' && words[i-1] !== 'Port' && words[i+1] !== 'Mountain' && words[i-2] !== 'City' && words[i-2] !== 'city' && words[i+1] !== 'City' && words[i+1] !== 'Highway' 
+            && words[i+1] !== 'Islands' && words[i+1] !== 'award' && words[i+1] !== 'awards'  && words[i+1] !== 'Park' && words[i+1] !== 'Institute' && words[i+1] !== 'School' && words[i+1] !== 'area' && words[i+1] !== 'University' && words[i+1] !== 'Center' && words[i+1] !== 'Building' && words[i+1] !== 'Circle' 
+            && words[i+1] !== 'Street' && words[i+1] !== 'Zoo' && words[i-1] !== 'San' && words[i-1] !== 'Saint' && words[i-1] !== 'Santa' && words[i-1] !== 'St' 
+            && words[i-1] !== 'St.' && words[i-1] !== 'Sao' && words[i-1] !== 'New' && words[i-1] !== 'O' && words[i-1] !== 's')) {
             
                //if( lastnames.indexOf(words[i+1]) >= 0 || lastnames_upper.indexOf(words[i + 1]) >= 0)
               // if( intials.indexOf(words[i + 1]) === -1)   
                     temp_male_last_names.push(words[i+1]);
                     console.log('PUSHING LAST NAME (I+1)');
-                console.log(words[i+1]);
-                console.log(words[i]);
               
            }
            
@@ -753,17 +611,15 @@ function applyContent (windowObject) {
             m_m_begin = n_next;
             
             //if (malefirstnames.indexOf(words[i]) >= 0 && /[A-Z]/.test(nextWord[0]) && initials.indexOf(nextWord) >= 0 && /[A-Z]/.test(nextNextWord[0]))
-            if (malefirstnames.indexOf(words[i]) >= 0 && /[A-Z]/.test(nextWord[0]) && words[i-1] !== 'The' && last !== '/' && last !== ':' && /[A-Z]/.test(nextNextWord[0]) && !(/[A-Z]/.test(nextNextWord[1])) && (next_last !== '.' && next_last !== '!' && next_last !== '?' && next_last !== ',' && next_last !== '/' && next_last !== ':' && next_last !== ';' || initials.indexOf(nextWord) >= 0)){
+            if (malefirstnames.indexOf(words[i]) >= 0 && /[A-Z]/.test(nextWord[0]) && words[i-1] !== 'The' 
+            && last !== '/' && last !== ':' && /[A-Z]/.test(nextNextWord[0]) && !(/[A-Z]/.test(nextNextWord[1])) && (next_last !== '.' 
+            && next_last !== '!' && next_last !== '?' && next_last !== ',' && next_last !== '/' && next_last !== ':' && next_last !== ';' || initials.indexOf(nextWord) >= 0)){
             
                 console.log("NEXT FIRST", next_first);
                 console.log("NEXT LAST", next_last);
                 if (words[i+1] !== 'Is' && words[i+1] !== 'And' && words[i+1] !== 'Or' && words[i+1] !== 'Are' && words[i+1] !== 'Was'){
                     temp_male_last_names.push(words[i+2]);
                 }
-                console.log('PUSHING LAST NAME (I+2)');
-                console.log(words[i+2]);
-                console.log(words[i+1]);
-                console.log(words[i]);
                         
             }
             
@@ -796,9 +652,14 @@ function applyContent (windowObject) {
 
                 //if (temp_female_words.indexOf(words[i]) === -1) {
                 
-                    if (malefirstnames.indexOf(words[i]) >= 0 && (words[i-1] === 'Lake' || words[i+1] === 'County' || words[i+1] === 'Lake' || words[i+1] === 'School' || words[i+1] === 'High' || words[i+1] === 'Secondary' || words[i+1] === 'Primary' || words[i+1] === 'College' || words[i-1] === 'Port' || words[i-1] === 'Hurricane' || words[i-1] === 's' || words[i+1] === 't' || words[i+1] === 'Mountain' || words[i+1] === 'Park' || words[i+1] === 'Institute' || words[i+1] === 'School' || words[i-2] === 'city' || words[i-2] === 'City' || words[i+1] === 'City' || words[i+1] === 'Islands' || words[i+1] === 'River' || words[i+1] === 'award' || words[i+1] === 'awards' || words[i+1] === 'Park' || words[i+1] === 'Institute' || words[i+1] === 'School' || words[i+1] === 'Highway' || words[i+1] === 'area' || words[i+1] === 'University' || words[i+1] === 'College' || words[i+1] === 'Center' || words[i+1] === 'Building' || words[i+1] === 'Circle' || words[i+1] === 'Street' || words[i+1] === 'Zoo' || words[i-1] === 'San' || words[i-1] === 'Saint' || words[i-1] === 'Santa' || words[i-1] === 'St' || words[i-1] === 'Sao' || words[i-1] === 'New' || words[i-1] === 'O' || words[i-1] === 'Mount' || words[i-1] === 'Saint' || words[i-1] === 'Centre' || words[i-1] === 'Îles' )) {
+                    if (malefirstnames.indexOf(words[i]) >= 0 && (words[i-1] === 'Lake' || words[i+1] === 'County' || words[i+1] === 'Lake' || words[i+1] === 'School' || words[i+1] === 'High' || words[i+1] === 'Secondary' 
+                    || words[i+1] === 'Primary' || words[i+1] === 'College' || words[i-1] === 'Port' || words[i-1] === 'Hurricane' || words[i-1] === 's' || words[i+1] === 't' || words[i+1] === 'Mountain' || words[i+1] === 'Park' 
+                    || words[i+1] === 'Institute' || words[i+1] === 'School' || words[i-2] === 'city' || words[i-2] === 'City' || words[i+1] === 'City' || words[i+1] === 'Islands' || words[i+1] === 'River' || words[i+1] === 'award' || words[i+1] === 'awards' || words[i+1] === 'Park' || words[i+1] === 'Institute' 
+                    || words[i+1] === 'School' || words[i+1] === 'Highway' || words[i+1] === 'area' || words[i+1] === 'University' || words[i+1] === 'College' || words[i+1] === 'Center' || words[i+1] === 'Building' || words[i+1] === 'Circle' || words[i+1] === 'Street' || words[i+1] === 'Zoo' || words[i-1] === 'San' || words[i-1] === 'Saint' 
+                    || words[i-1] === 'Santa' || words[i-1] === 'St' || words[i-1] === 'St.' || words[i-1] === 'Sao' 
+                    || words[i-1] === 'New' || words[i-1] === 'O' || words[i-1] === 'Mount' || words[i-1] === 'Saint' || words[i-1] === 'Centre' || words[i-1] === 'Îles' )) {
                         male_do_not_count++;
-                        male_name_no_count = words[i];
+                        male_name_no_count.add(words[i].toUpperCase());
                     }
                     else if (words[i] === 'Everest' && (words[i-1] === 'the' || words[i-1] === 'climb')) {
                     
@@ -818,19 +679,6 @@ function applyContent (windowObject) {
             }
 
         }
-        
-        //console.log(temp_female_words);
-        //console.log(temp_male_words);
-        
-        //console.log(temp_female_last_names);
-        //console.log(temp_male_last_names);
-        
-        /*if (temp_female_words.length === 0 ){
-            temp_female_words.push('she');
-        }
-        if (temp_male_words.length === 0 ) {
-            temp_male_words.push('he');
-        }*/
 
     if (m_count + f_count != 0) {
     
@@ -850,9 +698,19 @@ function applyContent (windowObject) {
 });
     console.log("FEMALE", temp_female_words);
     console.log("MALE", temp_male_words);
+    console.log("MALE NO COUNT");
+    console.log(male_name_no_count);
 
     window.isDone = true;
-    
+
+    const male_filtered = temp_male_words.filter(x => !male_name_no_count.has(x.toUpperCase()));
+    temp_male_words = male_filtered;
+    console.log(temp_male_words);
+    //console.log("Male out", male_filtered);
+
+    //const diff = temp_male_words.filter(x => !male_filtered.includes(x));
+    //console.log(diff);
+
     if (temp_male_words.length + temp_female_words.length != 0) {
     
         m_percent = Math.round( temp_male_words.length / (temp_male_words.length + temp_female_words.length) * 100 );
@@ -870,271 +728,6 @@ function applyContent (windowObject) {
     return f_percent;
   
 };
-
-//var words = [];
-
-/*function googleDocHighlight () {
-
-highlighting = true;
-
-$('.kix-wordhtmlgenerator-word-node').contents().filter( function () {
-    
-    return this.nodeType === 3;
-    
-}).replaceWith (function () {
-
-    var str = this.nodeValue;
-    console.log(str);
-    var temp_words = str.split(/('|:|;|\/|\s+)/);
-    var words = [];
-
-        for ( var i = 0; i < temp_words.length; i ++ ) {
-
-            var current_word = temp_words[i].trim().replace( /[.,\/#!$%\^&\*;:{}=\_`'"?~()]/g, "" );
-
-            if ( current_word != '' ) {
-
-                words[ words.length ] = current_word;
-
-            }
-
-        }
-
-        if ( words.length == 0 ) {
-
-            return str;
-
-        }
-        //console.log(words);
-
-        // Delete surname after Mr, Ms, M, Mme, Lady, Lord
-
-        for ( var i = 0; i < words.length; i ++ ) {
-
-            var w = words[ i ].replace( /[!?,.;`' ]/, '' );
-
-            if ( w === 'Mr' || w === 'Ms' || w === 'M' || w === 'Mme' || w === 'Lady' || w === 'Lord' ) {
-
-                words.splice( i + 1, 1 );
-
-            }
-
-        }
-
-
-        //find last names
-        for (var i = 0; i < words.length - 1; i ++){
-            
-            if (femalefirstnames.indexOf(words[i]) >= 0 && words[i + 1].length > 1){
-                
-                if( lastnames.indexOf(words[i+1]) >= 0 || lastnames_upper.indexOf(words[i + 1]) >= 0)
-               // if( intials.indexOf(words[i + 1]) === -1)
-                     temp_female_last_names.push(words[i+1]);           
-            
-            }
-        }
-        
-         for (var i = 0; i < words.length - 1; i ++){
-            
-            if (malefirstnames.indexOf(words[i]) >= 0 && words[i + 1].length > 1){
-            
-               if( lastnames.indexOf(words[i+1]) >= 0 || lastnames_upper.indexOf(words[i + 1]) >= 0)
-              // if( intials.indexOf(words[i + 1]) === -1)   
-                    temp_male_last_names.push(words[i+1]);
-              
-           }
-            
-        }
-        
-        //account for middle names/initials
-        for (var i = 0; i < words.length - 1; i ++){
-            
-            if (femalefirstnames.indexOf(words[i]) >= 0 && initials.indexOf(words[i+1]) >= 0)
-            
-                temp_female_last_names.push(words[i+2]);
-                         
-            
-        }
-        
-         for (var i = 0; i < words.length - 1; i ++){
-            
-            if (malefirstnames.indexOf(words[i]) >= 0 && initials.indexOf(words[i+1]) >= 0)
-            
-                temp_male_last_names.push(words[i+2]);
-                        
-            
-        }
-        
-        for ( var i = 0; i < words.length; i ++ ) {
-
-            if ( all_male_words.indexOf( words[ i ].toLowerCase() ) >= 0 || malefirstnames.indexOf(words[i]) >= 0 || temp_male_last_names.indexOf(words[i]) >= 0 || mfnames.indexOf(words[i].toUpperCase() ) >= 0) {
-
-                m_count ++;
-                temp_male_words.push(words[i]);
-
-            }
-
-            if ( all_female_words.indexOf( words[ i ].toLowerCase()) >= 0 || femalefirstnames.indexOf(words[i]) >= 0 || temp_female_last_names.indexOf(words[i]) >= 0 || ffnames.indexOf(words[i].toUpperCase() ) >= 0) {
-
-                f_count ++;
-                temp_female_words.push(words[i]);
-
-            }
-
-        }
-        
-
-        var regex_word = new RegExp( "\\b" + Object.keys( word_dict ).join("\\b|\\b") + Object.values( word_dict ).join("\\b|\\b") + temp_female_last_names.join("|") + temp_male_last_names.join("|"), "gi" );
-        var regex_lastname = new RegExp( "\\b" + temp_female_last_names.join("|") + temp_male_last_names.join("|"), "gi" );
-        var regex_name = new RegExp( "\\b" + malefirstnames.join("|") +  femalefirstnames.join("|"), "g" );
-        var regex_trial = new RegExp("\\b" + temp_male_words.join("|\\b") + temp_female_words.join("|\\b"), "g");
-
-        //console.log("HIGHLIGHT FEMALE", temp_female_words);
-        //console.log("HIGHLIGHT MALE", temp_male_words);
-
-        str = str.replace( regex_trial, function ( matched, index, input ) {
-            
-            console.log(matched);
-            //console.log(words);
-            console.log(temp_male_words);
-            //console.log(temp_female_words);
-            console.log("INDEX", index);
-            console.log("INPUT", input);
-            
-            var lastSymbol = input[ index + matched.length ] || '';
-
-            if ( lastSymbol !== '"' && lastSymbol !== '`' && lastSymbol !== "'" && lastSymbol !== '' && lastSymbol !== ',' && lastSymbol !== '.' && lastSymbol !== ')' && lastSymbol !== ';' && lastSymbol !== '!' && lastSymbol !== '?' && lastSymbol !== ' ' ) {
-
-                //console.log('returning matched');
-                return matched;
-
-            }
-            console.log('did not return matched');
-
-            if ( matched === 'Mr' || matched === 'M' || matched === 'Lord' ) {
-
-                // Delete surname after Mr, Ms, M, Mme, Lady, Lord
-                turnMr = true;
-
-            }
-
-          //if ( words.indexOf( matched ) >= 0 && (temp_male_words.indexOf(matched) >= 0) ) {
-          if (temp_male_words.indexOf(matched) >= 0) {
-                console.log("WORDS", words);
-                var i = temp_male_words.indexOf(matched);
-                console.log("MATCHED LENGTH", matched.length);
-                console.log(i);
-                console.log(matched);
-                
-                //this.parentNode.style.backgroundColor = orchid;
-                console.log('TURN PURPLE');
-
-                return '<span class="makeitshe ignore-css replacement" style = "background-color: orchid">' + temp_male_words[i] + '</span>';
-
-            }
-          
-            //if ( words.indexOf( matched ) >= 0 && (temp_female_words.indexOf(matched) >= 0)) {
-            if (temp_female_words.indexOf(matched) >= 0) {
-                var i = temp_female_words.indexOf(matched);
-                console.log(matched);
-
-                //this.parentNode.style.backgroundColor = lightgreen;
-                console.log('TURN GREEN');
-                
-                return '<span class="makeitshe ignore-css replacement" style = "background-color: lightgreen">' + temp_female_words[i] + '</span>';
-
-            } else {
-
-                return matched;
-
-            }
-
-        });
-
-        str = str.replace( regex_name, function ( matched ) {
-            
-            var i = words.indexOf(matched);
-            console.log(matched);
-          
-            function hasNum (myString) {
-              return /\d/.test(myString);
-              }
-
-            if ( turnMr === true && words.length === 1 ) {
-
-                turnMr = false;
-                return matched;
-
-            }
-
-          
-          
-            if ( words.indexOf( matched ) >= 0 && (malefirstnames.indexOf ( matched ) >= 0 || femalefirstnames.indexOf(matched) >= 0) && highlighting === true) {
-              
-                 if (notnames.indexOf (matched) >= 0 ){
-                   
-                   if (prepos.includes( words[i - 1]) || hasNum (words [ i + 1]) )
-                   
-                      return matched;
-                   
-                 }
-              
-                 if ( temp_male_words.indexOf (matched) >= 0) {
-
-                      //this.parentNode.style.backgroundColor = orchid;
-                      
-                      return '<span class="makeitshe ignore-css replacement" style = "background-color: orchid">' + words[i] + '</span>';   
-
-                    } 
-
-              //this.parentNode.style.backgroundColor = lightgreen;
-              
-              return '<span class="makeitshe ignore-css replacement" style = "background-color: lightgreen">' + words[i] + '</span>';
-            }
-
-          else {
-
-                return matched;
-
-            }
-
-        });
-        
-        str = str.replace( regex_lastname, function ( matched ) {
-            
-            var i = words.indexOf(matched);
-            console.log(matched);
-                  
-          
-            if ( words.indexOf( matched ) >= 0 && highlighting === true) {
-
-              
-                 if ( temp_male_last_names.indexOf (matched) >= 0) {
-
-                        //this.parentNode.style.backgroundColor = orchid;
-
-                      return '<span class="makeitshe ignore-css replacement" style = "background-color: orchid">' + words[i] + '<span class="ignore-css tooltiptext">' + matched + '</span>' + '</span>';   
-
-                    } 
-
-                //this.parentNode.style.backgroundColor = lightgreen;
-                
-              return '<span class="makeitshe ignore-css replacement" style = "background-color: lightgreen">' + words[i] + '<span class="ignore-css tooltiptext">' + matched + '</span>' + '</span>';
-            }
-
-          else {
-
-                return matched;
-
-            }
-
-        });
-
-        return str;
-
-    });
-
-}*/
 
 var links_m_count = 0;
 var links_f_count = 0;
@@ -1283,14 +876,14 @@ function applyLinks (windowObject) {
         
         var hasit = this.parentNode.hasAttribute('passed');
         //console.log(hasit);
-        if (hasit === true) {
+        /*if (hasit === true) {
                 var attr = this.parentNode.getAttributeNode("passed").value;
             
                 if (attr === 'alreadypassed') {
                         //console.log('yes');
                         return;
                 }
-          }
+          }*/
         
         var att = document.createAttribute("passed");       // Create a "class" attribute
                 att.value = "alreadypassed";
@@ -1499,7 +1092,14 @@ function applyLinks (windowObject) {
             m_l_begin = n;
             
             //if (malefirstnames.indexOf(words[i]) >= 0 && /[A-Z]/.test(nextWord[0]) && nextWord.length > 1){
-            if ((malefirstnames.indexOf(words[i]) >= 0 || words[i] === 'Mr' || words[i] === 'Mister') && words[i-1] !== 'The' && excluded.indexOf(nextWord) === -1 && next_first !== '(' && initials.indexOf(nextWord) === -1 && last !== '.' && last !== '!' && last !== '?' && last !== ',' && last !== ';' && last !== ':' && last !== '/' &&  /[A-Z]/.test(nextWord[0]) && (!(/[A-Z]/.test(nextNextWord[0])) || nextNextWord === undefined || next_last === '.' || next_last === '!' || next_last === '?' || next_last === ',' || next_last === '/' ) && ( words[i-1] !== 'Lake' && words[i+1] !== 'County' && words[i+1] !== 'Lake' && words[i+1] !== 'School' && words[i+1] !== 'High' && words[i+1] !== 'Secondary' && words[i+1] !== 'Primary' && words[i+1] !== 'College' && words[i-1] !== 'Port' && words[i+1] !== 'Mountain' && words[i-2] !== 'city' && words[i-2] !== 'City' && words[i+1] !== 'City' && words[i+1] !== 'Highway' && words[i+1] !== 'River' && words[i+1] !== 'Islands' && words[i+1] !== 'award' && words[i+1] !== 'awards'  && words[i+1] !== 'Park' && words[i+1] !== 'Institute' && words[i+1] !== 'School' && words[i+1] !== 'area' && words[i+1] !== 'University' && words[i+1] !== 'Center' && words[i+1] !== 'Building' && words[i+1] !== 'Circle' && words[i+1] !== 'Street' && words[i+1] !== 'Zoo' && words[i-1] !== 'San' && words[i-1] !== 'Saint' && words[i-1] !== 'Santa' && words[i-1] !== 'St' && words[i-1] !== 'Sao' && words[i-1] !== 'New' && words[i-1] !== 'O' && words[i-1] !== 's')) {
+            if ((malefirstnames.indexOf(words[i]) >= 0 || words[i] === 'Mr' || words[i] === 'Mister') && words[i-1] !== 'The' 
+            && excluded.indexOf(nextWord) === -1 && next_first !== '(' && initials.indexOf(nextWord) === -1 && last !== '.' && last !== '!' && last !== '?' && last !== ',' && last !== ';' 
+            && last !== ':' && last !== '/' &&  /[A-Z]/.test(nextWord[0]) && (!(/[A-Z]/.test(nextNextWord[0])) || nextNextWord === undefined 
+            | next_last === '.' || next_last === '!' || next_last === '?' || next_last === ',' || next_last === '/' ) && ( words[i-1] !== 'Lake' && words[i+1] !== 'County' && words[i+1] !== 'Lake' && words[i+1] !== 'School' 
+            && words[i+1] !== 'High' && words[i+1] !== 'Secondary' && words[i+1] !== 'Primary' && words[i+1] !== 'College' 
+            && words[i-1] !== 'Port' && words[i+1] !== 'Mountain' && words[i-2] !== 'city' && words[i-2] !== 'City' && words[i+1] !== 'City' && words[i+1] !== 'Highway' && words[i+1] !== 'River' && words[i+1] !== 'Islands' && words[i+1] !== 'award' && words[i+1] !== 'awards'  
+            && words[i+1] !== 'Park' && words[i+1] !== 'Institute' && words[i+1] !== 'School' && words[i+1] !== 'area' && words[i+1] !== 'University' && words[i+1] !== 'Center' && words[i+1] !== 'Building' && words[i+1] !== 'Circle' && words[i+1] !== 'Street' && words[i+1] !== 'Zoo' && words[i-1] !== 'San' && words[i-1] !== 'Saint' && words[i-1] !== 'Santa' 
+            && words[i-1] !== 'St' && words[i-1] !== 'Sao' && words[i-1] !== 'New' && words[i-1] !== 'O' && words[i-1] !== 's')) {
             
                //if( lastnames.indexOf(words[i+1]) >= 0 || lastnames_upper.indexOf(words[i + 1]) >= 0)
               // if( intials.indexOf(words[i + 1]) === -1)   
@@ -1618,7 +1218,15 @@ function applyLinks (windowObject) {
 
                 //if (temp_female_words.indexOf(words[i]) === -1) {
                 
-                    if (malefirstnames.indexOf(words[i]) >= 0 && (words[i-1] === 'Lake' || words[i+1] === 'County' || words[i+1] === 'Lake' || words[i+1] === 'School' || words[i+1] === 'High' || words[i+1] === 'Secondary' || words[i+1] === 'Primary' || words[i+1] === 'College' || words[i-1] === 'Port' || words[i-1] === 'Hurricane' || words[i-1] === 's' || words[i+1] === 't' || words[i+1] === 'Mountain' || words[i+1] === 'Park' || words[i+1] === 'Institute' || words[i+1] === 'School' || words[i-2] === 'city' || words[i-2] === 'City' || words[i+1] === 'City' || words[i+1] === 'Islands' || words[i+1] === 'River' || words[i+1] === 'award' || words[i+1] === 'awards' || words[i+1] === 'Park' || words[i+1] === 'Institute' || words[i+1] === 'School' || words[i+1] === 'Highway' || words[i+1] === 'area' || words[i+1] === 'University' || words[i+1] === 'College' || words[i+1] === 'Center' || words[i+1] === 'Building' || words[i+1] === 'Circle' || words[i+1] === 'Street' || words[i+1] === 'Zoo' || words[i-1] === 'San' || words[i-1] === 'Saint' || words[i-1] === 'Santa' || words[i-1] === 'St' || words[i-1] === 'Sao' || words[i-1] === 'New' || words[i-1] === 'O' || words[i-1] === 'Mount' || words[i-1] === 'Saint' || words[i-1] === 'Centre' || words[i-1] === 'Îles' )) {
+                    if (malefirstnames.indexOf(words[i]) >= 0 && (words[i-1] === 'Lake' || words[i+1] === 'County' || words[i+1] === 'Lake' || words[i+1] === 'School' || words[i+1] === 'High' 
+                    || words[i+1] === 'Secondary' || words[i+1] === 'Primary' || words[i+1] === 'College' || words[i-1] === 'Port' || words[i-1] === 'Hurricane' 
+                    || words[i-1] === 's' || words[i+1] === 't' || words[i+1] === 'Mountain' || words[i+1] === 'Park' || words[i+1] === 'Institute' 
+                    || words[i+1] === 'School' || words[i-2] === 'city' || words[i-2] === 'City' || words[i+1] === 'City' || words[i+1] === 'Islands' 
+                    || words[i+1] === 'River' || words[i+1] === 'award' || words[i+1] === 'awards' || words[i+1] === 'Park' || words[i+1] === 'Institute' 
+                    || words[i+1] === 'School' || words[i+1] === 'Highway' || words[i+1] === 'area' || words[i+1] === 'University' || words[i+1] === 'College' 
+                    || words[i+1] === 'Center' || words[i+1] === 'Building' || words[i+1] === 'Circle' || words[i+1] === 'Street' || words[i+1] === 'Zoo' 
+                    || words[i-1] === 'San' || words[i-1] === 'Saint' || words[i-1] === 'Santa' || words[i-1] === 'St' || words[i-1] === 'Sao' || words[i-1] === 'New' 
+                    || words[i-1] === 'O' || words[i-1] === 'Mount' || words[i-1] === 'Saint' || words[i-1] === 'Centre' || words[i-1] === 'Îles' )) {
                         male_do_not_count++;
                         male_name_no_count = words[i];
                     }
@@ -1676,9 +1284,9 @@ function applyLinks (windowObject) {
 };
 
 var male_do_not_count = 0;
-var male_name_no_count = '';
+var male_name_no_count = new Set();
 var female_do_not_count = 0;
-var female_name_no_count = '';
+var female_name_no_count = [];
 var counter = 0;
 
 function highlight () {
@@ -1691,92 +1299,8 @@ function highlight () {
         temp_male_last_names = [];
     }
     counter++;
-
-    //$('body').not(".ghost .thumbcaption .infobox vcard td").find("a, p, b, i, div,span, h1, h2, h3, h4, h5, li, label").contents().filter( function () {
         $('body').not(".ghost .thumbcaption .infobox vcard td").find("a, p, b, div, span, h1, h2, h3, h4, h5, label").contents().filter( function () {
 
-
-        //$('body').not(".ghost .thumbcaption .infobox vcard td").find("p").contents().filter( function () {
-
-    //$('body').contents().filter( function () {
-        
-        
-        /*if (this.nodeType === 3) {
-        
-            
-            var parentClass = this.parentNode.getAttribute('class');
-            
-            if (parentClass === 'makeitshe ignore-css replacement' || parentClass === 'ignore-css tooltiptext') {
-                
-                return false;
-                
-            }
-
-            var parentTag = this.parentNode.tagName;
-            if (parentTag === 'H1' || parentTag === 'H2' || parentTag === 'H3' || parentTag === 'H4' || parentTag === 'H5') {
-                return false;
-            }
-            
-            if (this.parentNode.nodeName === "SCRIPT" || this.parentNode.nodeName ==="STYLE" || this.parentNode.nodeName === "IMG"
-            || this.parentNode.nodeName === "LI" || this.parentNode.nodeName === "UL" || this.parentNode.nodeName === "IFRAME"
-            || this.parentNode.nodeName === "NOSCRIPT" || this.parentNode.nodeName === "CITE"){
-            return false;
-        }
-            
-            var title = this.parentNode.getAttribute('data-type');
-            
-            if (title === "Title") {
-                return false;
-            }
-            
-            
-        
-        }
-        else {
-            return false;
-        }
-        
-        var res = [];
-        var res1 = [];
-        if (this.nodeType === 3)
-        {
-        
-            
-            if (this.parentNode.nodeName === "A") {
-                if (this.nodeValue.length < 3) {
-                }
-                else {
-                    return false;
-                }
-            }
-            
-            if (this.parentNode.parentNode.nodeName === "LI" || this.parentNode.parentNode.parentNode.nodeName === "LI"){
-                return false;
-            }
-            
-            var outertag = this.parentNode.outerHTML;
-            outertag = outertag.substring(0, outertag.indexOf('>'));
-            res = outertag.match(strip);
-            
-            var outertag1 = this.parentNode.parentNode.outerHTML;
-            outertag1 = outertag1.substring(0, outertag1.indexOf('>'));
-            res1 = outertag1.match(strip);
-            
-            if (Array.isArray(res1) && res1.length > 0){
-                
-                return false;
-            }
-        }
-        else {
-            return false;
-        }
-        
-        if (Array.isArray(res) && res.length > 0) {
-            return false;
-        }
-        
-   
-        return true;*/
         
         var parentClass = this.parentNode.getAttribute('class');
             
@@ -1803,53 +1327,16 @@ function highlight () {
         
         var thisElement = this;
         
-        //console.log(thisElement);
         
         if (!isElementInViewport(thisElement.parentNode))
             return false;
             
             
-        /*var parentTag = this.parentNode.tagName;
-            if (parentTag === 'H1' || parentTag === 'H2' || parentTag === 'H3' || parentTag === 'H4' || parentTag === 'H5') {
-                return false;
-            }
-            
-        var parentParentTag = this.parentNode.parentNode.tagName;
-            if (parentParentTag === 'H1' || parentParentTag === 'H2' || parentParentTag === 'H3' || parentParentTag === 'H4' || parentParentTag === 'H5') {
-                return false;
-            }*/
-        
-            
-        /*if (this.parentNode.nodeName === "SCRIPT" || this.parentNode.nodeName ==="STYLE" || this.parentNode.nodeName === "IMG"
-            || this.parentNode.nodeName === "LI" || this.parentNode.nodeName === "UL" || this.parentNode.nodeName === "IFRAME"
-            || this.parentNode.nodeName === "NOSCRIPT" || this.parentNode.nodeName === "CITE"){
-            return false;
-        }*/
         
         return this.nodeType === 3 && this.id !== 'adContent' && this.id !== 'dockedBanner' && this.id !== 'google_image_div';
 
     }).replaceWith( function () {
 
-        
-         /*var hasit = this.parentNode.hasAttribute('highlighted');
-        //console.log(hasit);
-        if (hasit === true) {
-                var attr = this.parentNode.getAttributeNode("highlighted").value;
-            
-                if (attr === 'alreadyhighlighted') {
-                        //console.log('yes');
-                        return;
-                }
-          }
-        
-        var att = document.createAttribute("highlighted");       // Create a "class" attribute
-                att.value = "alreadyhighlighted";
-        this.parentNode.setAttributeNode(att);*/
-        
-        /*var hasit = this.parentNode.hasAttribute('name');
-        
-        if (hasit === true && (this.parentNode.getAttributeNode("name").value === malehighlight || this.parentNode.getAttributeNode("name").value === femalehighlight))
-            return;*/
         
         var str = this.nodeValue;
         console.log(str);
@@ -1925,29 +1412,9 @@ function highlight () {
             }
 
         }
-        
-        //console.log(words);
-
-        /*var isHeading = false;
-
-        var parentTag = this.parentNode.tagName;
-            if (parentTag === 'H1' || parentTag === 'H2' || parentTag === 'H3' || parentTag === 'H4' || parentTag === 'H5') {
-                isHeading = true;
-            }
-            
-        var parentParentTag = this.parentNode.parentNode.tagName;
-            if (parentParentTag === 'H1' || parentParentTag === 'H2' || parentParentTag === 'H3' || parentParentTag === 'H4' || parentParentTag === 'H5') {
-                isHeading = true;
-            }*/
-        
 
         var allUppercase = false;
 
-        /*if (isHeading === false) {
-            allUppercase = false;
-        }*/
-
-        //if (isHeading === true) {
         if (words.length > 3) {
 
                 allUppercase = true;
@@ -1992,12 +1459,6 @@ function highlight () {
             var next_last = substring_next[substring_next.length - 1];
             var next_first = str.substr(n_next - 1, 1);
             
-            //var nextNextLength = (words[i+2]).length;
-            //regexNextNext = new RegExp('\\' + words[i+2], "g");
-            //var n_next_next = str.search(regexNextNext);
-            //var substring_next_next = str.substr(n_next_next, nextNextLength + 1);
-            //var next_next_last = substring_next_next[substring_next_next.length - 1];
-            
 
             
             var nextWord = words[i+1];
@@ -2006,12 +1467,8 @@ function highlight () {
             f_l_begin = n;
 
             
-            //if (femalefirstnames.indexOf(words[i]) >= 0 && /[A-Z]/.test(nextWord[0]) && nextWord.length > 1){
             if ((femalefirstnames.indexOf(words[i]) >= 0 || words[i] === 'Ms' || words[i] === 'Mrs' || words[i] === 'Miss') && temp_male_last_names.indexOf(words[i+1]) === -1 && words[i-1] !== 'The' && excluded.indexOf(nextWord) === -1 && next_first !== '(' && initials.indexOf(nextWord) === -1 && last !== '.' && last !== '!' && last !== '?' && last !== ',' && last !== ';' && last !== ':' && last !== '/' &&  /[A-Z]/.test(nextWord[0]) && (!(/[A-Z]/.test(nextNextWord[0])) || nextNextWord === undefined || next_last === '.' || next_last === '!' || next_last === '?' || next_last === ',' || next_last === '/' )){
-                
 
-                //if( lastnames.indexOf(words[i+1]) >= 0 || lastnames_upper.indexOf(words[i + 1]) >= 0)
-               // if( intials.indexOf(words[i + 1]) === -1)
                      temp_female_last_names.push(words[i+1]);           
             
             }
@@ -2054,10 +1511,19 @@ function highlight () {
             m_l_begin = n;
             
             //if (malefirstnames.indexOf(words[i]) >= 0 && /[A-Z]/.test(nextWord[0]) && nextWord.length > 1){
-            if ((malefirstnames.indexOf(words[i]) >= 0 || words[i] === 'Mr' || words[i] === 'Mister') && words[i-1] !== 'The' && temp_female_last_names.indexOf(words[i+1]) === -1 && excluded.indexOf(nextWord) === -1 && next_first !== '(' && initials.indexOf(nextWord) === -1 && last !== '.' && last !== '!' && last !== '?' && last !== ',' && last !== ';' && last !== ':' && last !== '/' &&  /[A-Z]/.test(nextWord[0]) && (!(/[A-Z]/.test(nextNextWord[0])) || nextNextWord === undefined || next_last === '.' || next_last === '!' || next_last === '?' || next_last === ',' || next_last === '/' ) && ( words[i-1] !== 'Lake' && words[i+1] !== 'County' && words[i+1] !== 'Lake' && words[i+1] !== 'School' && words[i+1] !== 'High' && words[i+1] !== 'Secondary' && words[i+1] !== 'Primary' && words[i+1] !== 'College' && words[i-1] !== 'Port' && words[i+1] !== 'Mountain' && words[i-2] !== 'city' && words[i-2] !== 'City' && words[i+1] !== 'City' && words[i+1] !== 'Highway' && words[i+1] !== 'River' && words[i+1] !== 'Islands' && words[i+1] !== 'award' && words[i+1] !== 'awards' && words[i+1] !== 'area' && words[i+1] !== 'Park' && words[i+1] !== 'Institute' && words[i+1] !== 'School' && words[i+1] !== 'University' && words[i+1] !== 'Center' && words[i+1] !== 'Building' && words[i+1] !== 'Circle' && words[i+1] !== 'Street' && words[i+1] !== 'Zoo' && words[i-1] !== 'San' && words[i-1] !== 'Saint' && words[i-1] !== 'Santa' && words[i-1] !== 'St' && words[i-1] !== 'Sao' && words[i-1] !== 'New' && words[i-1] !== 'O' && words[i-1] !== 's')) {
-            
-               //if( lastnames.indexOf(words[i+1]) >= 0 || lastnames_upper.indexOf(words[i + 1]) >= 0)
-              // if( intials.indexOf(words[i + 1]) === -1)   
+            if ((malefirstnames.indexOf(words[i]) >= 0 || words[i] === 'Mr' || words[i] === 'Mister') && words[i-1] !== 'The' 
+            && temp_female_last_names.indexOf(words[i+1]) === -1 && excluded.indexOf(nextWord) === -1 
+            && next_first !== '(' && initials.indexOf(nextWord) === -1 && last !== '.' && last !== '!' && last !== '?' 
+            && last !== ',' && last !== ';' && last !== ':' && last !== '/' &&  /[A-Z]/.test(nextWord[0]) && (!(/[A-Z]/.test(nextNextWord[0])) 
+            || nextNextWord === undefined || next_last === '.' || next_last === '!' || next_last === '?' || next_last === ',' || next_last === '/' ) 
+            && ( words[i-1] !== 'Lake' && words[i+1] !== 'County' && words[i+1] !== 'Lake' && words[i+1] !== 'School' && words[i+1] !== 'High' 
+            && words[i+1] !== 'Secondary' && words[i+1] !== 'Primary' && words[i+1] !== 'College' && words[i-1] !== 'Port' && words[i+1] !== 'Mountain' 
+            && words[i-2] !== 'city' && words[i-2] !== 'City' && words[i+1] !== 'City' && words[i+1] !== 'Highway' && words[i+1] !== 'River' 
+            && words[i+1] !== 'Islands' && words[i+1] !== 'award' && words[i+1] !== 'awards' && words[i+1] !== 'area' && words[i+1] !== 'Park' 
+            && words[i+1] !== 'Institute' && words[i+1] !== 'School' && words[i+1] !== 'University' && words[i+1] !== 'Center' && words[i+1] !== 'Building' 
+            && words[i+1] !== 'Circle' && words[i+1] !== 'Street' && words[i+1] !== 'Zoo' && words[i-1] !== 'San' && words[i-1] !== 'Saint' 
+            && words[i-1] !== 'Santa' && words[i-1] !== 'St' && words[i-1] !== 'Sao' && words[i-1] !== 'New' && words[i-1] !== 'O' && words[i-1] !== 's')) {
+
                     temp_male_last_names.push(words[i+1]);
                     console.log('PUSHING LAST NAME (I+1)');
                 console.log(words[i+1]);
@@ -2083,14 +1549,12 @@ function highlight () {
         for (var i = 0; i < words.length - 2; i ++){
             
              var thisLength = words[i].length;
-            //var regexThis = new RegExp('\\' + words[i], "g");
-            //var n = str.search(regexThis);
+
             var n = str.indexOf(words[i], f_m_begin);
             var substring = str.substr(n, thisLength + 1);
             var last = substring[substring.length - 1];
             
             var nextLength = (words[i+1]).length;
-            //regexNext = new RegExp('\\' + words[i+1], "g");
             var n_next = str.indexOf(words[i+1], f_m_begin);
             var substring_next = str.substr(n_next, nextLength + 1);
             var next_last = substring_next[substring_next.length - 1];
@@ -2105,7 +1569,6 @@ function highlight () {
             
             f_m_begin = n_next;
             
-            //if (femalefirstnames.indexOf(words[i]) >= 0 && /[A-Z]/.test(nextWord[0]) && initials.indexOf(nextWord) >= 0 && /[A-Z]/.test(nextNextWord[0]) )
             if (femalefirstnames.indexOf(words[i]) >= 0 && /[A-Z]/.test(nextWord[0]) && next_first !== '«' && words[i-1] !== 'The' && last !== '/' && last !== ':' && /[A-Z]/.test(nextNextWord[0]) && !(/[A-Z]/.test(nextNextWord[1])) && (next_last !== '.' && next_last !== '!' && next_last !== '?' && next_last !== ',' && next_last !== '/' && next_last !== ':' && next_last !== ';' || initials.indexOf(nextWord) >=0))
             {
                 console.log("NEXT FIRST", next_first);
@@ -2164,31 +1627,6 @@ function highlight () {
         var m_last_count = 0;
         var f_last_count = 0;
         
-        /*for (var i = 0; i < namesInBoth.length; i++) {
-        
-            m_last_count = 0;
-            f_last_count = 0;
-            for (var j = 0; j < temp_female_last_names; j++) {
-                if (temp_female_last_names[j] === namesInBoth[i])
-                    f_last_count++;
-            }
-            for (var k = 0; k < temp_male_last_names; k++) {
-                if (temp_male_last_names[k] === namesInBoth[i])
-                    m_last_count++;
-            }
-            
-            if (f_last_count > m_last_count) {
-                temp_male_last_names = temp_male_last_names.filter (x => x !== namesInBoth[i]);
-        
-            }
-            else if ( m_last_count > f_last_count ) {
-                temp_female_last_names = temp_female_last_names.filter (x => x !== namesInBoth[i]);
-            }
-            
-        }*/
-        
-
-        
          for ( var i = 0; i < words.length; i ++ ) {
 
             if ( typeof words[i] !== "undefined" && all_female_words.indexOf( words[ i ].toLowerCase()) >= 0 || femalefirstnames.indexOf(words[i]) >= 0 || temp_female_last_names.indexOf(words[i]) >= 0 || ffnames.indexOf(words[i].toUpperCase() ) >= 0 && excluded.indexOf(words[i]) === -1) {
@@ -2209,7 +1647,15 @@ function highlight () {
 
                 //if (temp_female_words.indexOf(words[i]) === -1) {
                 
-                    if (malefirstnames.indexOf(words[i]) >= 0 && ( words[i-1] === 'Lake' || words[i+1] === 'County' || words[i+1] === 'Lake' || words[i+1] === 'School' || words[i+1] === 'High' || words[i+1] === 'Secondary' || words[i+1] === 'Primary' || words[i+1] === 'College' || words[i-1] === 'Port' || words[i-1] === 'Hurricane' || words[i-1] === 's' || words[i+1] === 't' || words[i+1] === 'Mountain' || words[i-2] === 'city' || words[i-2] === 'City' || words[i+1] === 'City' || words[i+1] === 'Islands' || words[i+1] === 'River' || words[i+1] === 'award' || words[i+1] === 'awards' || words[i+1] === 'Park' || words[i+1] === 'Institute' || words[i+1] === 'School' || words[i+1] === 'Highway' || words[i+1] === 'area' || words[i+1] === 'University' || words[i+1] === 'College' || words[i+1] === 'Center' || words[i+1] === 'Building' || words[i+1] === 'Circle' || words[i+1] === 'Street' || words[i+1] === 'Zoo' || words[i-1] === 'San' || words[i-1] === 'Saint' || words[i-1] === 'Santa' || words[i-1] === 'St' || words[i-1] === 'Sao' || words[i-1] === 'New' || words[i-1] === 'O' || words[i-1] === 'Mount' || words[i-1] === 'Saint' || words[i-1] === 'Centre' || words[i-1] === 'Îles' )) {
+                    if (malefirstnames.indexOf(words[i]) >= 0 && ( words[i-1] === 'Lake' || words[i+1] === 'County' || words[i+1] === 'Lake' 
+                    || words[i+1] === 'School' || words[i+1] === 'High' || words[i+1] === 'Secondary' || words[i+1] === 'Primary' 
+                    || words[i+1] === 'College' || words[i-1] === 'Port' || words[i-1] === 'Hurricane' || words[i-1] === 's' || words[i+1] === 't' 
+                    || words[i+1] === 'Mountain' || words[i-2] === 'city' || words[i-2] === 'City' || words[i+1] === 'City' || words[i+1] === 'Islands' 
+                    || words[i+1] === 'River' || words[i+1] === 'award' || words[i+1] === 'awards' || words[i+1] === 'Park' || words[i+1] === 'Institute' 
+                    || words[i+1] === 'School' || words[i+1] === 'Highway' || words[i+1] === 'area' || words[i+1] === 'University' || words[i+1] === 'College' 
+                    || words[i+1] === 'Center' || words[i+1] === 'Building' || words[i+1] === 'Circle' || words[i+1] === 'Street' || words[i+1] === 'Zoo' 
+                    || words[i-1] === 'San' || words[i-1] === 'Saint' || words[i-1] === 'Santa' || words[i-1] === 'St' || words[i-1] === 'Sao' || words[i-1] === 'New' 
+                    || words[i-1] === 'O' || words[i-1] === 'Mount' || words[i-1] === 'Saint' || words[i-1] === 'Centre' || words[i-1] === 'Îles' )) {
                         male_do_not_count++;
                         male_name_no_count = words[i];
                     }
@@ -2227,44 +1673,19 @@ function highlight () {
 
         }
         
-        //console.log(temp_female_words);
-        //console.log(temp_male_words);
-        
-        console.log(temp_female_last_names);
-        console.log(temp_male_last_names);
-        
-        console.log(temp_female_words);
-        console.log(temp_male_words);
-        
-        /*if (temp_female_words.length === 0 ){
-            temp_female_words.push('she');
-        }
-        if (temp_male_words.length === 0 ) {
-            temp_male_words.push('he');
-        }*/
         
         //var regex_word = new RegExp( "\\b" + Object.keys( word_dict ).join("\\b|\\b") + Object.values( word_dict ).join("\\b|\\b") + temp_female_last_names.join("|") + temp_male_last_names.join("|"), "gi" );
         var regex_word = new RegExp( "\\b" + Object.keys( word_dict ).join("\\b|\\b") + Object.values( word_dict ).join("\\b|\\b"), "gi");
         var regex_lastname = new RegExp( "\\b" + temp_female_last_names.join("|\\b") + temp_male_last_names.join("|"), "gi" );
         var regex_name = new RegExp( "\\b" + malefirstnames.join("|\\b") +  femalefirstnames.join("|"), "g" );
         var regex_trial = new RegExp("\\b" + temp_female_words.join("\\b|\\b") + "|" + "\\b" + temp_male_words.join("\\b|\\b"), "g");
-        //console.log(regex_trial);
-        
-  
-        
-        //console.log(str);
-        
-        //for (var i = 0; i <= words.length; i++) {
-         //   words[i] = words[i].replace("'s", "");
-        //}
-        //str = str.replace("'s", "");
+
         var start = 0;
 
         str = str.replace( regex_trial, function ( matched, index, input ) {
             
             console.log(matched);
-            //console.log(matched+"'s");
-            //console.log(parentClass);
+
             var lastSymbol = input[ index + matched.length ] || '';
             
             if (lastSymbol.charCodeAt(0) === 8217) {
@@ -2285,17 +1706,9 @@ function highlight () {
                 turnMr = true;
 
             }
-           
-          /*if (matched === "Allen") {
-            if (words.indexOf(matched) >= 0)
-                console.log('Allen matches words');
-            if(temp_male_words.indexOf(matched) >= 0)
-                console.log('Allen matches temp male words');
-        }*/
             
 
           if ( words.indexOf( matched ) >= 0  && (temp_male_words.indexOf(matched) >= 0) && highlighting === true && excluded.indexOf(matched) === -1 ) {
-          //if ( words.indexOf( matched ) >= 0 && (all_male_words.indexOf(matched) >= 0) && highlighting === true ) {
                 var i = words.indexOf(matched, start);
                 start = i + 1;
                 console.log("Previous word", words[i-1]);
@@ -2347,7 +1760,7 @@ function highlight () {
                 else if (i !== 0 && (words[i - 1] === 'Ms' || words[i - 1] === 'Mrs' || words[i - 1] === 'Miss' || femalefirstnames.indexOf(words[i-1]) >= 0 ))
                     return '<span class="makeitshe ignore-css replacement" name="femalehighlight">' + matched +  '</span><span class="ignore-css tooltiptext">' + matched +  '</span></span>';
                 else
-                    return '<span class="makeitshe ignore-css replacement" name="malehighlight">' + matched +  '</span><span class="ignore-css tooltiptext">' + matched +  '</span></span>';
+                    return '<span class="makeitshe ignore-css replacement" name="malehighlight">' + matched + '</span><span class="ignore-css tooltiptext">' + matched + '</span></span>';
 
             }
           
@@ -2402,7 +1815,7 @@ function highlight () {
                     //return matched;
                     return '<span class="makeitshe ignore-css replacement" name="femalehighlight">' + matched + '</span><span class="ignore-css tooltiptext">' + matched + '</span></span>';
 
-            } 
+            }
             
             else {
 
@@ -2412,78 +1825,6 @@ function highlight () {
 
         });
 
-        /*str = str.replace( regex_name, function ( matched ) {
-            
-            var i = words.indexOf(matched);
-          
-            function hasNum (myString) {
-              return /\d/.test(myString);
-              }
-
-            if ( turnMr === true && words.length === 1 ) {
-
-                turnMr = false;
-                return matched;
-
-            }
-
-          
-          
-            if ( words.indexOf( matched ) >= 0 && (malefirstnames.indexOf ( matched ) >= 0 || temp_male_words.indexOf(matched) >= 0 || femalefirstnames.indexOf(matched) >= 0 || temp_female_words.indexOf(matched) >= 0) && highlighting === true) {
-              
-                 /*if (notnames.indexOf (matched) >= 0 ){
-                   
-                   if (prepos.includes( words[i - 1]) || hasNum (words [ i + 1]) )
-                   
-                      return matched;
-                   
-                 }
-              
-                 if ( temp_male_words.indexOf (matched) >= 0) {
-
-                      return '<span class="makeitshe ignore-css replacement" name="malehighlight">' + words[i] + '</span>';//'<span class="ignore-css tooltiptext">' + matched + '</span></span>';   
-
-                    } 
-
-
-              return '<span class="makeitshe ignore-css replacement" name="femalehighlight">' + words[i] + '</span>';//'<span class="ignore-css tooltiptext">' + matched + '</span></span>';
-            }
-
-          else {
-
-                return matched;
-
-            }
-
-        });
-        
-        str = str.replace( regex_lastname, function ( matched ) {
-            
-            var i = words.indexOf(matched);
-                  
-          
-            if ( words.indexOf( matched ) >= 0 && highlighting === true) {
-
-              
-                 if ( temp_male_last_names.indexOf (matched) >= 0) {
-
-                      return '<span class="makeitshe ignore-css replacement" name="malehighlight">' + words[i] + '</span>';//'<span class="ignore-css tooltiptext">' + matched + '</span></span>';   
-
-                    } 
-
-
-              return '<span class="makeitshe ignore-css replacement" name="femalehighlight">' + words[i] + '</span>';//'<span class="ignore-css tooltiptext">' + matched + '</span></span>';
-            }
-
-          else {
-
-                return matched;
-
-            }
-
-        });*/
-        
-
         return str;
 
     });
@@ -2491,10 +1832,65 @@ function highlight () {
 
 };
 
+var highlightFlag = false;
+function highlightNew() {
+    if (!highlightFlag) {
+        let fem_words = new Set(temp_female_words);
+        fem_words.forEach(function(word) {
+            let regex = new RegExp('\\b(' + word + ')\\b', "g");
+            $("body").children().each(function () {
+                $(this).html($(this).html().replace(regex, `<span class='fem-highlight'>${word}</span>`));
+            });
+            /*document.body.innerHTML = document.body.innerHTML.replace(regex, 
+                `<span class='fem-highlight'>${word}</span>`);*/
+        });
+        let male_words = new Set(temp_male_words);
+        male_words.forEach(function(word) {
+            let regex = new RegExp('\\b(' + word + ')\\b', "g");
+            $("body").children().each(function () {
+                $(this).html($(this).html().replace(regex, `<span class='male-highlight'>${word}</span>`));
+            });
+            /*document.body.innerHTML = document.body.innerHTML.replace(regex, 
+                `<span class='male-highlight'>${word}</span>`);*/
+        });
+    }
+    else {
+        var femalehighlight = $('[class=no-fem-highlight]');
+        var malehighlight = $('[class=no-male-highlight]');
+        for (var i = 0; i < femalehighlight.length; i++) {
+                femalehighlight[i].className = femalehighlight[i].className.replace(/no-fem-highlight/, 'fem-highlight');
+        }
+        for (var i = 0; i < malehighlight.length; i++) {
+            malehighlight[i].className = malehighlight[i].className.replace(/no-male-highlight/, 'male-highlight');
+        }
+    }
+    /*
+    for (let i = 0; i < fem_words.length; i++) {
+        let regex = new RegExp('\\b(' + temp_female_words[i] + ')\\b', "g");
+        document.body.innerHTML = document.body.innerHTML.replace(regex, 
+            `<span class='fem-highlight'>${temp_female_words[i]}</span>`);
+    }
+    for (let i = 0; i < temp_male_words.length; i++) {
+        let regex = new RegExp('\\b(' + temp_male_words[i] + ')\\b', "g");
+        document.body.innerHTML = document.body.innerHTML.replace(regex, 
+            `<span class='male-highlight'>${temp_male_words[i]}</span>`);
+    }*/
+};
+
+function unHighlight() {
+    var femalehighlight = $('[class=fem-highlight]');
+    var malehighlight = $('[class=male-highlight]');
+    for (var i = 0; i < femalehighlight.length; i++) {
+            femalehighlight[i].className = femalehighlight[i].className.replace(/fem-highlight/, 'no-fem-highlight');
+    }
+    for (var i = 0; i < malehighlight.length; i++) {
+        malehighlight[i].className = malehighlight[i].className.replace(/male-highlight/, 'no-male-highlight');
+    }
+};
+
 var number = 0;
 var links = [];
 
-// Not used
 function getLinks () {
     
     console.log('framing');
@@ -2519,14 +1915,7 @@ function getLinks () {
         var hostname = window.location.host;
         var slashes = "//";
         var link = "";
-        //if (this.getAttribute('href').endsWith('.html')) {
-            
-            //link = protocol + slashes + hostname + this.getAttribute('href');
-            //links.push(link);
-            
-            //var adArray = [];
 
-                //links.push(this.getAttribute('href'));
                 if (links.indexOf(this.getAttribute('href')) === -1) {
                     links.push(this.getAttribute('href'));
                 }
@@ -2564,10 +1953,6 @@ function getLinks () {
                 
                 }*/
                 if (fMajority >= 50) {
-                    /*var att = document.createAttribute("style");
-                    att.value = "border:solid green 2px;";
-                    currentElement.parentNode.setAttributeNode(att);
-                    counts++;*/
                     
                     var att = document.createAttribute("name");
                     att.value = "femaleframe";
@@ -2579,10 +1964,6 @@ function getLinks () {
                     
                 }
                 else if (fMajority < 50) {
-                    /*var att = document.createAttribute("style");
-                    att.value = "border:solid purple 2px;";
-                    currentElement.parentNode.setAttributeNode(att);
-                    counts++;*/
                     
                     var att = document.createAttribute("name");
                     att.value = "maleframe";
@@ -2667,35 +2048,28 @@ function onVisibilityChange(el, callback) {
 
 
 function showHighlighting() {
-    console.log('showing highlighting');
-    var malehighlight = $('[name=malehighlight]');
-    console.log(malehighlight);
-    for (var i = 0; i < malehighlight.length; i++) {
-        //if (isElementInViewport(malehighlight[i])){
-            malehighlight[i].style.backgroundColor = 'lightskyblue';
-      //}
-    }
-    var femalehighlight = $('[name=femalehighlight]');
-    console.log(femalehighlight);
-    for (var i = 0; i < femalehighlight.length; i++) {
-        //if (isElementInViewport(femalehighlight[i])){
-            femalehighlight[i].style.backgroundColor = 'lightgreen';
+    if (highlighting == true) {
+        console.log('showing highlighting');
+        var malehighlight = $('[name=malehighlight]');
+        console.log(malehighlight);
+        console.log("yes");
+        for (var i = 0; i < malehighlight.length; i++) {
+            //if (isElementInViewport(malehighlight[i])){
+                malehighlight[i].style.backgroundColor = 'lightskyblue';
         //}
+        }
+        var femalehighlight = $('[name=femalehighlight]');
+        console.log(femalehighlight);
+        for (var i = 0; i < femalehighlight.length; i++) {
+            //if (isElementInViewport(femalehighlight[i])){
+                femalehighlight[i].style.backgroundColor = 'lightgreen';
+            //}
+        }
     }
 }
 
 function hideHighlighting() {
     console.log('hiding highlighting');
-    var malehighlight = $('[name=malehighlight]');
-    //console.log(maleframe);
-    for (var i = 0; i < malehighlight.length; i++) {
-      malehighlight[i].style.backgroundColor = 'none';
-    }
-    var femalehighlight = $('[name=femalehighlight]');
-    //console.log(femaleframe);
-    for (var i = 0; i < femalehighlight.length; i++) {
-      femalehighlight[i].style.backgroundColor = 'none';
-    }
 }
 
 //
@@ -2768,7 +2142,7 @@ chrome.runtime.onMessage.addListener( function ( msg, sender, sendResponse ) {
         $('.makeitshe').each( function ( index, el ) {
 
             var original_html = $( '.tooltiptext', $( this ) ).html();
-            el.outerHTML = original_html;
+            el.textContent = original_html;
 
         });
 
@@ -2776,14 +2150,6 @@ chrome.runtime.onMessage.addListener( function ( msg, sender, sendResponse ) {
 
     }
 
-});
-
-
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-    if (request.highlight === true) {
-        highlightText(document.body);
-        sendResponse({messageStatus: "received"});
-    }
 });
 
 
@@ -2821,9 +2187,9 @@ function autocomplete(inp, arr) {
 
               b = document.createElement("DIV");
               /*make the matching letters bold:*/
-              b.innerHTML = "<strong>" + valueSuggestion + "</strong>";
+              b.textContent = "<strong>" + valueSuggestion + "</strong>";
               /*insert a input field that will hold the current array item's value:*/
-              b.innerHTML += "<input type='hidden' value='" + valueSuggestion + "'>";
+              b.textContent += "<input type='hidden' value='" + valueSuggestion + "'>";
               /*execute a function when someone clicks on the item value (DIV element):*/
               b.addEventListener("click", function(e) {
                   /*insert the value for the autocomplete text field:*/
@@ -2924,65 +2290,41 @@ chrome.runtime.onMessage.addListener(
     console.log(sender.tab ?
                 "from a content script:" + sender.tab.url :
                 "from the extension");
-    if (request.greeting == "highlighting"){
-        alert ("Green Frames: The article has a majority of female words\nBlue Frames: The article has a majority of male words\n\nTo remove the frames from the page, just uncheck the highlight button");
+        if (request.greeting == "highlighting"){
+            alert ("Green Frames: The article has a majority of female words\nBlue Frames: The article has a majority of male words\n\nTo remove the frames from the page, just uncheck the highlight button");
 
-      highlighting = true;
-      highlight();
-      //getLinks();
-      showHighlighting();
-      showFrames();
-      //hideTooltip();
-      //console.log('removing highlights');
-      $(window).scroll(function () {
-        //applyContent(document.body);
-        highlight();
-        showHighlighting();
-        //getLinks();
-        showFrames();
-      });
-      
-      if (window.location.href.includes('docs.google')) {
-        googleDocHighlight();
-    }
-      
-      sendResponse({farewell: "goodbye"});
-    }
+            highlighting = true;
+            //highlight();
+            highlightNew();
+            //getLinks();
+            //showHighlighting();
+            showFrames();
+            //hideTooltip();
+            //console.log('removing highlights');
+            $(window).scroll(function () {
+                //applyContent(document.body);
+                //highlight();
+                //showHighlighting();
+                //getLinks();
+                //showFrames();
+            });
+        
+            sendResponse({farewell: "goodbye"});
+        }
+
+        if (request.greeting == "nohighlighting"){
+            alert("Unhighlighting")
+            //highlighting = false;
+            highlightFlag = true;
+            unHighlight();
+            $(window).unbind('scroll');
+            //showHighlighting();
+            //hideHighlighting();
+            //hideFrames();
+            console.log('hiding highlighting');
+            sendResponse({farewell: "goodbye"});
+        }
   });
-
-chrome.runtime.onMessage.addListener(
-  function(request, sender, sendResponse) {
-    console.log(sender.tab ?
-                "from a content script:" + sender.tab.url :
-                "from the extension");
-    if (request.greeting == "nohighlighting"){
-      highlighting = false;
-      highlight();
-      $(window).unbind('scroll');
-      hideHighlighting();
-      hideFrames();
-      console.log('hiding highlighting');
-      sendResponse({farewell: "goodbye"});
-    }
-  });
-  
-  chrome.runtime.onMessage.addListener(
-  function(request, sender, sendResponse) {
-    console.log(sender.tab ?
-                "from a content script:" + sender.tab.url :
-                "from the extension");
-    if (request.greeting == "removehighlight"){
-      highlighting = false;
-      highlight();
-      $(window).unbind('scroll');
-      hideHighlighting();
-      hideFrames();
-      console.log('hiding highlighting');
-      sendResponse({farewell: "stop"});
-    }
-  });
-
-
 
 
  var message_suggestions = {

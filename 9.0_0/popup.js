@@ -5,8 +5,8 @@ var activeDomain, currentUrl;
 function updateSiteStateList(site, state) {
 
     siteStateList[site] = state;
-    chrome.storage.local.set({'siteStateList': JSON.stringify(siteStateList)});
-    console.log("siteStateList: ",chrome.storage.local.get('siteStateList'));
+    localStorage.setItem('siteStateList', JSON.stringify(siteStateList));
+    console.log(localStorage.getItem('siteStateList'));
 
 };
 
@@ -27,13 +27,6 @@ function setStats(stats) {
                 chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', action: 'getStats' }, setStats);
                 
         });*/
-        $('#chartContainer').show();
-        $('#chartContainer').css({
-            textAlign: 'center',
-            height: 'auto',
-            padding: '1em',
-        });
-        $('#chartContainer').text("No gendered words found.");
         
         return;
         }
@@ -66,7 +59,6 @@ function setStats(stats) {
     } else {
         $('#loader').hide();
         $('#chartContainer').show();
-        
 
         var chart = new CanvasJS.Chart("chartContainer", {
             animationEnabled: true,
@@ -92,20 +84,7 @@ function setStats(stats) {
                 ]
             }]
         });
-
-        // If no gender word occurrences, don't render chart
-        if (stats.stats.num==0){
-            $('#chartContainer').css({
-                textAlign: 'center',
-                height: 'auto',
-                padding: '1em',
-            });
-            $('#chartContainer').text("No gendered words found.");
-        } else {
-            chart.render();
-        }
-
-        
+        chart.render();
 
 
     }
@@ -130,7 +109,7 @@ function setStats(stats) {
       
       
       //chrome.storage.sync.set({highlighted: 'yes'});
-      chrome.storage.local.set({'highlighted': 'yes'});
+      localStorage.setItem('highlighted', 'yes');
     
   }
   
@@ -149,7 +128,7 @@ function setStats(stats) {
       
       
       //chrome.storage.sync.set({highlighted: 'no'});
-      chrome.storage.local.set({'highlighted': 'no'});
+      localStorage.setItem('highlighted', 'no');
       
       console.log('hi');
    
@@ -173,7 +152,7 @@ var currentUrl = '';
 var newUrl = '';
 var tabCount = 0;
 
-// Extension enabled? also run if extension button clicked
+
 $('#on-off').bind('change', function (event) {
 
         console.log("off - on");
@@ -197,14 +176,14 @@ $('#on-off').bind('change', function (event) {
 });*/
         //localStorage.removeItem('highlighted');
 
-        console.log("currentUrl: ",currentUrl);
-
+        console.log(currentUrl);
+        
         var enabled = $('#on-off')[0].checked;
         
         /*chrome.storage.sync.get('highlighted', result => {
             console.log(result.highlighted);
         });*/
-        var result = chrome.storage.local.get('highlighted');
+        var result = localStorage.getItem('highlighted');
         console.log(result);
 
         if (enabled) {
@@ -214,14 +193,14 @@ $('#on-off').bind('change', function (event) {
             $('#highlight').show();
             
             
-            $( "#myCheck" ).prop( "disabled", false ); // Disabled elements are unclickable
+            
+            $( "#myCheck" ).prop( "disabled", false );
             
             //chrome.storage.sync.get('highlighted', result => {
                 //console.log(result.highlighted);
                 
                 if (result === 'yes') {
                     $( "#myCheck" ).prop( "checked", true );
-                    localStorage.setItem('highlighted', 'yes');
                     //highlight();
                     }
                 else
@@ -230,7 +209,7 @@ $('#on-off').bind('change', function (event) {
             
             //highlight();
             updateSiteStateList(activeDomain, true);
-            chrome.action.setIcon({ path: "icon_on.png" });
+            chrome.browserAction.setIcon({ path: "icon_on.png" });
 
             chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
 
@@ -245,6 +224,9 @@ $('#on-off').bind('change', function (event) {
 
                 }, 100);
                 
+                //console.log(stats.stats.done);
+                
+                //}
 
             });
 
@@ -257,7 +239,7 @@ $('#on-off').bind('change', function (event) {
             //highlight();
           //  $( "#myCheck" ).prop( "disabled", true );
             updateSiteStateList(activeDomain, false);
-            chrome.action.setIcon({ path: "icon_off.png" });
+            chrome.browserAction.setIcon({ path: "icon_off.png" });
 
             chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
 
@@ -286,11 +268,8 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('language-dropdown').value = data.language;
         });*/
     //}
-    siteStateList = chrome.storage.local.get('siteStateList') || {};
-    activeDomain = chrome.storage.local.get('activeDomain');
-    console.log("siteStateList: ", siteStateList)
-    console.log("activeDomain: ", activeDomain)
-    console.log("siteStateList[activeDomain]: ", siteStateList[activeDomain])
+    siteStateList = JSON.parse(localStorage.getItem('siteStateList')) || {};
+    activeDomain = localStorage.getItem('activeDomain');
 
     /*chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
         chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', action: 'getStats' }, setStats);
@@ -300,7 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // On / Off Button
 
     if (siteStateList[activeDomain] !== true) {
-        console.log('off');
+
         $('#on-off').switchButton({ checked: false, labels_placement: "left" });
         $('#content').hide();
         $('#disabled').show();
@@ -316,10 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
         $('#disabled').hide();
         $('#highlight').show();
         $( "#myCheck" ).prop( "disabled", false );
-        if (chrome.storage.local.get('highlighted') != 'yes'){
-            chrome.storage.local.set({'highlighted': 'no'});
-        }
-        
+        localStorage.setItem('highlighted', 'no');
         /*if (count > 1) {    
         chrome.storage.sync.get('language', data => {
             document.getElementById('language-dropdown').value = data.language;
@@ -339,7 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
             $('#highlight').show();
             $( "#myCheck" ).prop( "disabled", false );
             updateSiteStateList(activeDomain, true);
-            chrome.action.setIcon({ path: "icon_on.png" });
+            chrome.browserAction.setIcon({ path: "icon_on.png" });
 
             chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
 
@@ -368,7 +344,7 @@ document.addEventListener('DOMContentLoaded', () => {
             $('#myCheck').prop("checked", false);
           //  $( "#myCheck" ).prop( "disabled", true );
             updateSiteStateList(activeDomain, false);
-            chrome.action.setIcon({ path: "icon_off.png" });
+            chrome.browserAction.setIcon({ path: "icon_off.png" });
 
             chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
 
@@ -567,7 +543,7 @@ function getPdfContent(content) {
 
     var pdfjsLib = window['pdfjs-dist/build/pdf'];
 
-    pdfjsLib.GlobalWorkerOptions.workerSrc = './external_files/pdf.worker.js';
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@2.1.266/build/pdf.worker.js';
 
     pdfjsLib.getDocument(url).then(function (pdf) {
         var pdfDocument = pdf;
@@ -634,7 +610,7 @@ function getPdfContent(content) {
             // Count Male/Female Words
 
             for (var i = 0; i < words.length; i++) {
-                // First index where words[i] is found, otherwise -1
+
                 if (all_male_words.indexOf(words[i].toLowerCase()) >= 0) {
                     m_count++;
                 }
@@ -689,7 +665,7 @@ chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
 
             chrome.tabs.create({
                 active: true,
-                url: chrome.extension.getURL('usertrends.html')
+                url: chrome.runtime.getURL('usertrends.html')
             });
         
         });
@@ -735,7 +711,7 @@ function getPdfContent1(url) {
     var pdfjsLib = window['pdfjs-dist/build/pdf'];
     console.log(pdfjsLib);
     // The workerSrc property shall be specified.
-    pdfjsLib.GlobalWorkerOptions.workerSrc = './external_files/pdf.worker.js';
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@2.1.266/build/pdf.worker.js';
     var pdfDoc = null,
         pageNum = 1,
         pageRendering = false,
