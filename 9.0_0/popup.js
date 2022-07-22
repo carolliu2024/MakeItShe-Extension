@@ -288,6 +288,9 @@ document.addEventListener('DOMContentLoaded', () => {
     //}
     siteStateList = JSON.parse(localStorage.getItem('siteStateList')) || {};
     activeDomain = localStorage.getItem('activeDomain');
+    console.log("siteStateList: ", siteStateList)
+    console.log("activeDomain: ", activeDomain)
+    console.log("siteStateList[activeDomain]: ", siteStateList[activeDomain])
 
     /*chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
         chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', action: 'getStats' }, setStats);
