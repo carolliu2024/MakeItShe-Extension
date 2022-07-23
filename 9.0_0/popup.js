@@ -169,103 +169,95 @@ chrome.tabs.onUpdated.addListener(function(activeInfo) {
 var currentUrl = '';
 var newUrl = '';
 var tabCount = 0;
-
+chrome.storage.local.set({'on': false});
 // Extension enabled? also run if extension button clicked
-$('#on-off').bind('change', function (event) {
+$('.switch-wrapper').bind('click', function (event) {
 
         console.log("off - on");
         tabCount++;
-        /*chrome.tabs.query({ 'active': true, 'lastFocusedWindow': true }, function (tabs) {
-    
-    if (tabCount === 1) {
-    currentUrl = tabs[0].url;
-    console.log(currentUrl);
-    }
-    else {
-        newUrl = tabs[0].url;
-        if (currentUrl !== newUrl) {
-            $('#myCheck').prop("checked", false);
-            sessionStorage.setItem('highlighted', 'no');
-            currentUrl = newUrl;
-        }
-    
-    }
-    // $('#send-ref-mail').attr('href', 'mailto:makeitshe@gmail.com?subject=Reference Site&body=' + currentUrl);
-});*/
-        //localStorage.removeItem('highlighted');
+        chrome.storage.local.get('on').then(function (res){
+            console.log("res",res['on']);
+            enabled = res['on'];
+            console.log("enabled?: ",enabled);
+            enabled = !enabled;
+            console.log("switch enabled: ",enabled);
+            chrome.storage.local.set({'on': enabled});
+            console.log("currentUrl: ",currentUrl);
 
-        console.log("currentUrl: ",currentUrl);
+            // var enabled = $('#on-off')[0].checked;
+            
+            /*chrome.storage.sync.get('highlighted', result => {
+                console.log(result.highlighted);
+            });*/
+            var result = chrome.storage.local.get('highlighted');
+            console.log(result);
 
-        var enabled = $('#on-off')[0].checked;
+            if (enabled) {
+
+                $('#content').show();
+                $('#disabled').hide();
+                $('#highlight').show();
+                
+                
+                $( "#myCheck" ).prop( "disabled", false ); // Disabled elements are unclickable
+                
+                //chrome.storage.sync.get('highlighted', result => {
+                    //console.log(result.highlighted);
+                    
+                    if (result === 'yes') {
+                        $( "#myCheck" ).prop( "checked", true );
+                        chrome.storage.local.set({'highlighted': 'yes'});
+                        //highlight();
+                        }
+                    else
+                        $( "#myCheck" ).prop( "checked", false );
+                //});
+                
+                //highlight();
+                updateSiteStateList(activeDomain, true);
+                chrome.action.setIcon({ path: "icon_on.png" });
+
+                chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+
+                    chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', activate: true });
+                    
+                    //while (document.getElementById("chartContainer").style.display === 'none') {
+                    console.log('turn on extension');
+                    
+                    setTimeout(function () {
+
+                        chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', action: 'getStats' }, setStats);
+
+                    }, 100);
+                    
+                    //console.log(stats.stats.done);
+                    
+                    //}
+
+                });
+
+            } else {
+
+                $('#content').hide();
+                $('#disabled').show();
+                $('#highlight').hide();
+                $('#myCheck').prop("checked", false);
+                //highlight();
+                //  $( "#myCheck" ).prop( "disabled", true );
+                updateSiteStateList(activeDomain, false);
+                chrome.action.setIcon({ path: "icon_off.png" });
+
+                chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+
+                    chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', activate: false });
+
+                });
+
+            }
+        });
+
+
         
-        /*chrome.storage.sync.get('highlighted', result => {
-            console.log(result.highlighted);
-        });*/
-        var result = chrome.storage.local.get('highlighted');
-        console.log(result);
-
-        if (enabled) {
-
-            $('#content').show();
-            $('#disabled').hide();
-            $('#highlight').show();
-            
-            
-            $( "#myCheck" ).prop( "disabled", false ); // Disabled elements are unclickable
-            
-            //chrome.storage.sync.get('highlighted', result => {
-                //console.log(result.highlighted);
-                
-                if (result === 'yes') {
-                    $( "#myCheck" ).prop( "checked", true );
-                    chrome.storage.local.set({'highlighted': 'yes'});
-                    //highlight();
-                    }
-                else
-                    $( "#myCheck" ).prop( "checked", false );
-            //});
-            
-            //highlight();
-            updateSiteStateList(activeDomain, true);
-            chrome.action.setIcon({ path: "icon_on.png" });
-
-            chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-
-                chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', activate: true });
-                
-                //while (document.getElementById("chartContainer").style.display === 'none') {
-                console.log('turn on extension');
-                
-                setTimeout(function () {
-
-                    chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', action: 'getStats' }, setStats);
-
-                }, 100);
-                
-                //console.log(stats.stats.done);
-                
-                //}
-
-            });
-
-        } else {
-
-            $('#content').hide();
-            $('#disabled').show();
-            $('#highlight').hide();
-            $('#myCheck').prop("checked", false);
-            //highlight();
-          //  $( "#myCheck" ).prop( "disabled", true );
-            updateSiteStateList(activeDomain, false);
-            chrome.action.setIcon({ path: "icon_off.png" });
-
-            chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-
-                chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', activate: false });
-
-            });
-
-        }
 
     });
  
