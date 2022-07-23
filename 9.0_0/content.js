@@ -2316,7 +2316,7 @@ chrome.runtime.onMessage.addListener(
         }
 
         if (request.greeting == "nohighlighting"){
-            alert("Unhighlighting")
+            // alert("Unhighlighting")
             //highlighting = false;
             highlightFlag = true;
             unHighlight();
