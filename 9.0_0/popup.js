@@ -5,8 +5,8 @@ var activeDomain, currentUrl;
 function updateSiteStateList(site, state) {
 
     siteStateList[site] = state;
-    chrome.storage.local.set({'siteStateList': JSON.stringify(siteStateList)});
-    console.log("siteStateList: ",chrome.storage.local.get('siteStateList'));
+    chrome.storage.sync.set({'siteStateList': JSON.stringify(siteStateList)});
+    console.log("siteStateList: ",chrome.storage.sync.get('siteStateList'));
 
 };
 
@@ -127,7 +127,7 @@ function setStats(stats) {
       
       
       //chrome.storage.sync.set({highlighted: 'yes'});
-      chrome.storage.local.set({'highlighted': 'yes'});
+      chrome.storage.sync.set({'highlighted': 'yes'});
     
   }
   
@@ -146,7 +146,7 @@ function setStats(stats) {
       
       
       //chrome.storage.sync.set({highlighted: 'no'});
-      chrome.storage.local.set({'highlighted': 'no'});
+      chrome.storage.sync.set({'highlighted': 'no'});
       
       console.log('hi');
    
@@ -162,41 +162,49 @@ chrome.tabs.onUpdated.addListener(function(activeInfo) {
     $('#myCheck').prop("checked", false);
     sessionStorage.setItem('highlighted', 'no');*/
     console.log('new tab');
-    chrome.storage.local.clear();
-    chrome.storage.local.remove('highlighted');
+    chrome.storage.sync.clear();
+    chrome.storage.sync.remove('highlighted');
 });
 
 var currentUrl = '';
 var newUrl = '';
 var tabCount = 0;
-chrome.storage.local.set({'on': false}); //Initialized?
+chrome.storage.sync.set({'on': false}); //Initialized?
 
-function toggleExtension(){ // set on-off
-    chrome.storage.local.get('on', obj => {
-        chrome.storage.local.set({
-          on: !obj.on,
-        });
-    });
-}
+// async function toggleExtension(){ // set on-off
+//     await chrome.storage.sync.get('on', obj => {
+//         console.log("'on' before toggle: ", obj.on);
+//         chrome.storage.sync.set({
+//           on: !obj.on,
+//         }, function(){
+//             chrome.storage.sync.get('on', obj =>{
+//                 console.log("'on' after toggle: ", obj.on);
+//             });
+//         });
+
+//     });
+// }
 
 // Extension enabled? also run if extension button clicked
-$('#on-off').bind('change', function (event) {
+$('#on-off').switchButton({ checked: false, labels_placement: "left" });
 
+$('#on-off').bind('change', function (event) {
         console.log("off - on");
         tabCount++;
-        toggleExtension();
-        chrome.storage.local.get('on').then(function (res){
-            console.log("res",res['on']);
-            enabled = res['on'];
+        // toggleExtension();
+        chrome.storage.sync.get('on', obj => {
+            chrome.storage.sync.set({'on': !obj.on});
+            console.log("obj.on: ",obj.on);
+            enabled = obj.on;
             // console.log("enabled?: ",enabled);
             // enabled = !enabled;
             // console.log("switch enabled: ",enabled);
-            // chrome.storage.local.set({'on': enabled});
+            // chrome.storage.sync.set({'on': enabled});
             console.log("currentUrl: ",currentUrl);
 
             // var enabled = $('#on-off')[0].checked;
 
-            var result = chrome.storage.local.get('highlighted');
+            var result = chrome.storage.sync.get('highlighted');
             console.log(result);
 
             if (enabled) {
@@ -213,7 +221,7 @@ $('#on-off').bind('change', function (event) {
                     
                     if (result === 'yes') {
                         $( "#myCheck" ).prop( "checked", true );
-                        chrome.storage.local.set({'highlighted': 'yes'});
+                        chrome.storage.sync.set({'highlighted': 'yes'});
                         //highlight();
                         }
                     else
@@ -261,7 +269,8 @@ $('#on-off').bind('change', function (event) {
                 });
 
             }
-        });
+        } //end of then function
+        );
 
 
         
@@ -285,47 +294,51 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('language-dropdown').value = data.language;
         });*/
     //}
-    siteStateList = chrome.storage.local.get('siteStateList') || {};
-    activeDomain = chrome.storage.local.get('activeDomain');
-    console.log("siteStateList: ", siteStateList)
-    console.log("activeDomain: ", activeDomain)
-    console.log("siteStateList[activeDomain]: ", siteStateList[activeDomain])
+    siteStateList = chrome.storage.sync.get('siteStateList') || {};
+    activeDomain = chrome.storage.sync.get('activeDomain');
+    console.log("siteStateList: ", siteStateList);
+    console.log("activeDomain: ", activeDomain);
+    console.log("siteStateList[activeDomain]: ", siteStateList[activeDomain]);
 
     /*chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
         chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', action: 'getStats' }, setStats);
         highlight();
     });*/
+    chrome.storage.local.get('on', obj => {
+        var activated = obj.on;
+        console.log("activated: ", activated);
+        // On / Off Button
+        if (activated !== true) {
+            console.log('off');
+            // $('#on-off').switchButton({ checked: false, labels_placement: "left" });
+            $('#content').hide();
+            $('#disabled').show();
+            $('#highlight').hide();
+            $( "#myCheck" ).prop( "disabled", true );
     
-    // On / Off Button
 
-    if (siteStateList[activeDomain] !== true) {
-        console.log('off');
-        $('#on-off').switchButton({ checked: false, labels_placement: "left" });
-        $('#content').hide();
-        $('#disabled').show();
-        $('#highlight').hide();
-        $( "#myCheck" ).prop( "disabled", true );
- 
+        } else {
 
-    } else {
+            // $('#on-off').switchButton({ checked: true, labels_placement: "left" });
+            console.log('on');
+            $('#content').show();
+            $('#disabled').hide();
+            $('#highlight').show();
+            $( "#myCheck" ).prop( "disabled", false );
+            if (chrome.storage.sync.get('highlighted') != 'yes'){
+                chrome.storage.sync.set({'highlighted': 'no'});
+            }
+            
+            /*if (count > 1) {    
+            chrome.storage.sync.get('language', data => {
+                document.getElementById('language-dropdown').value = data.language;
+            });
+        }*/
 
-        $('#on-off').switchButton({ checked: true, labels_placement: "left" });
-        console.log('on');
-        $('#content').show();
-        $('#disabled').hide();
-        $('#highlight').show();
-        $( "#myCheck" ).prop( "disabled", false );
-        if (chrome.storage.local.get('highlighted') != 'yes'){
-            chrome.storage.local.set({'highlighted': 'no'});
         }
-        
-        /*if (count > 1) {    
-        chrome.storage.sync.get('language', data => {
-            document.getElementById('language-dropdown').value = data.language;
-        });
-    }*/
-
-    }
+    });
+    
+    
 
     /*$('#on-off').bind('change', function (event) {
 
