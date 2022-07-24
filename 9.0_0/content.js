@@ -1,3 +1,6 @@
+// Main content script (check manifest.json for other content scripts)
+// Content scripts: run on top of existing website. Are extra css and js files on top of a website.
+//                  Loaded once websites are opened, and active until corresponding tabs close
 var turn_on = false; // Default
 var name_dict = window.name_dict;
 var word_dict = window.english_word_dict;

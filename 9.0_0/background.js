@@ -1,3 +1,7 @@
+// background.js: scripts run outside a page, but within a browser
+// Activated once when extension is installed, and stays active if >= 1 listener.
+// i.e. background.js runs in the background of Google Chrome.
+
 var activeTabDomain = false;
 var siteStateList =  chrome.storage.sync.get('siteStateList')  || {};
 // Note: localStorage replaced with chrome.storage.sync after upgrading to Manifest v3

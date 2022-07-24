@@ -1,3 +1,5 @@
+// popup.js: supposed to be used as  UI; main functionality should be in background.js or content scripts
+// acts like an individual website
 var siteStateList;
 var activeDomain, currentUrl;
 
