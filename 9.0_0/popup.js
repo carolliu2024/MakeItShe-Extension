@@ -169,26 +169,33 @@ chrome.tabs.onUpdated.addListener(function(activeInfo) {
 var currentUrl = '';
 var newUrl = '';
 var tabCount = 0;
-chrome.storage.local.set({'on': false});
+chrome.storage.local.set({'on': false}); //Initialized?
+
+function toggleExtension(){ // set on-off
+    chrome.storage.local.get('on', obj => {
+        chrome.storage.local.set({
+          on: !obj.on,
+        });
+    });
+}
+
 // Extension enabled? also run if extension button clicked
-$('.switch-wrapper').bind('click', function (event) {
+$('#on-off').bind('change', function (event) {
 
         console.log("off - on");
         tabCount++;
+        toggleExtension();
         chrome.storage.local.get('on').then(function (res){
             console.log("res",res['on']);
             enabled = res['on'];
-            console.log("enabled?: ",enabled);
-            enabled = !enabled;
-            console.log("switch enabled: ",enabled);
-            chrome.storage.local.set({'on': enabled});
+            // console.log("enabled?: ",enabled);
+            // enabled = !enabled;
+            // console.log("switch enabled: ",enabled);
+            // chrome.storage.local.set({'on': enabled});
             console.log("currentUrl: ",currentUrl);
 
             // var enabled = $('#on-off')[0].checked;
-            
-            /*chrome.storage.sync.get('highlighted', result => {
-                console.log(result.highlighted);
-            });*/
+
             var result = chrome.storage.local.get('highlighted');
             console.log(result);
 
