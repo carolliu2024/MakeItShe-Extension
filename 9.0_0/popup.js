@@ -321,6 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
             $('#disabled').show();
             $('#highlight').hide();
             $( "#myCheck" ).prop( "disabled", true );
+            
     
 
         } else {
@@ -331,9 +332,25 @@ document.addEventListener('DOMContentLoaded', () => {
             $('#disabled').hide();
             $('#highlight').show();
             $( "#myCheck" ).prop( "disabled", false );
+
+            chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    
+                chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', activate: true });
+                
+                //while (document.getElementById("chartContainer").style.display === 'none') {
+                console.log('turn on extension');
+                
+                setTimeout(function () {
+
+                    chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', action: 'getStats' }, setStats);
+
+                }, 100);
+            });
+
             if (chrome.storage.sync.get('highlighted') != 'yes'){
                 chrome.storage.sync.set({'highlighted': 'no'});
             }
+
             
             /*if (count > 1) {    
             chrome.storage.sync.get('language', data => {
@@ -401,11 +418,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', action: 'getStats' }, setStats);
     
                     }, 100);
-                    
-                    //console.log(stats.stats.done);
-                    
-                    //}
-    
                 });
     
             } else {
