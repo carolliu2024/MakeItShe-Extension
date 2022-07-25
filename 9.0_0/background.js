@@ -1,13 +1,17 @@
 // background.js: scripts run outside a page, but within a browser
 // Activated once when extension is installed, and stays active if >= 1 listener.
 // i.e. background.js runs in the background of Google Chrome.
-
+// Note: chrome.storage lets content scripts access user data without background page
+console.log("background.js running");
 var activeTabDomain = false;
 var siteStateList =  chrome.storage.sync.get('siteStateList')  || {};
+
 // Note: localStorage replaced with chrome.storage.sync after upgrading to Manifest v3
+
 
 // Run when active tab in a window changes (i.e. switch tabs)
 chrome.tabs.onActivated.addListener( function ( tab ) {
+    console.log("background: tabs.onActivated");
 
     chrome.storage.sync.set({'highlighted': 'no'});
     chrome.tabs.sendMessage(tab.tabId, {greeting: "nohighlighting"}, function(response) {
@@ -46,6 +50,7 @@ chrome.tabs.onActivated.addListener( function ( tab ) {
 
 // When tab is updated (URL changes?)
 chrome.tabs.onUpdated.addListener( function ( tabId ) {
+    console.log("background: tabs.onUpdated");
 
     chrome.storage.sync.set({'highlighted': 'no'});
     chrome.tabs.sendMessage(tabId, {greeting: "nohighlighting"}, function(response) {

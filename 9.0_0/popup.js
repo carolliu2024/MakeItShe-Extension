@@ -2,6 +2,26 @@
 // acts like an individual website
 var siteStateList;
 var activeDomain, currentUrl;
+console.log("on is set");
+chrome.storage.sync.get('on', obj => {
+    console.log("on1?: ", obj.on); // Is extension "on"?
+    if (typeof obj.on == 'undefined'){
+        // Initialize if undefined (installed for 1st time)
+        chrome.storage.sync.set({'on': false}); 
+        $('#on-off').switchButton({ checked: false, labels_placement: "left" });
+    } else {
+        chrome.storage.sync.set({'on': obj.on}); 
+        $('#on-off').switchButton({ checked: obj.on, labels_placement: "left" });
+    }
+    chrome.storage.sync.get('on', obj => {
+        console.log("on2?: ", obj.on); // Is extension "on"?
+    });
+});
+
+// Extension enabled? also run if extension button clicked
+
+
+
 
 
 function updateSiteStateList(site, state) {
@@ -171,113 +191,95 @@ chrome.tabs.onUpdated.addListener(function(activeInfo) {
 var currentUrl = '';
 var newUrl = '';
 var tabCount = 0;
-chrome.storage.sync.set({'on': false}); //Initialized?
 
-// async function toggleExtension(){ // set on-off
-//     await chrome.storage.sync.get('on', obj => {
-//         console.log("'on' before toggle: ", obj.on);
-//         chrome.storage.sync.set({
-//           on: !obj.on,
-//         }, function(){
-//             chrome.storage.sync.get('on', obj =>{
-//                 console.log("'on' after toggle: ", obj.on);
-//             });
-//         });
+// $('#on-off').bind('change', function (event) {
+//         console.log("---------on-off bind---------");
+//         tabCount++;
+//         // toggleExtension();
+//         chrome.storage.sync.get('on', obj => {
+//             chrome.storage.sync.set({'on': !obj.on});
+//             console.log("obj.on: ",obj.on);
+//             enabled = obj.on;
+//             // console.log("enabled?: ",enabled);
+//             // enabled = !enabled;
+//             // console.log("switch enabled: ",enabled);
+//             // chrome.storage.sync.set({'on': enabled});
+//             console.log("currentUrl: ",currentUrl);
 
-//     });
-// }
+//             // var enabled = $('#on-off')[0].checked;
 
-// Extension enabled? also run if extension button clicked
-$('#on-off').switchButton({ checked: false, labels_placement: "left" });
+//             var result = chrome.storage.sync.get('highlighted');
+//             console.log(result);
 
-$('#on-off').bind('change', function (event) {
-        console.log("off - on");
-        tabCount++;
-        // toggleExtension();
-        chrome.storage.sync.get('on', obj => {
-            chrome.storage.sync.set({'on': !obj.on});
-            console.log("obj.on: ",obj.on);
-            enabled = obj.on;
-            // console.log("enabled?: ",enabled);
-            // enabled = !enabled;
-            // console.log("switch enabled: ",enabled);
-            // chrome.storage.sync.set({'on': enabled});
-            console.log("currentUrl: ",currentUrl);
+//             if (enabled) {
 
-            // var enabled = $('#on-off')[0].checked;
-
-            var result = chrome.storage.sync.get('highlighted');
-            console.log(result);
-
-            if (enabled) {
-
-                $('#content').show();
-                $('#disabled').hide();
-                $('#highlight').show();
+//                 $('#content').show();
+//                 $('#disabled').hide();
+//                 $('#highlight').show();
                 
                 
-                $( "#myCheck" ).prop( "disabled", false ); // Disabled elements are unclickable
+//                 $( "#myCheck" ).prop( "disabled", false ); // Disabled elements are unclickable
                 
-                //chrome.storage.sync.get('highlighted', result => {
-                    //console.log(result.highlighted);
+//                 //chrome.storage.sync.get('highlighted', result => {
+//                     //console.log(result.highlighted);
                     
-                    if (result === 'yes') {
-                        $( "#myCheck" ).prop( "checked", true );
-                        chrome.storage.sync.set({'highlighted': 'yes'});
-                        //highlight();
-                        }
-                    else
-                        $( "#myCheck" ).prop( "checked", false );
-                //});
+//                     if (result === 'yes') {
+//                         $( "#myCheck" ).prop( "checked", true );
+//                         chrome.storage.sync.set({'highlighted': 'yes'});
+//                         //highlight();
+//                         }
+//                     else
+//                         $( "#myCheck" ).prop( "checked", false );
+//                 //});
                 
-                //highlight();
-                updateSiteStateList(activeDomain, true);
-                chrome.action.setIcon({ path: "icon_on.png" });
+//                 //highlight();
+//                 updateSiteStateList(activeDomain, true);
+//                 chrome.action.setIcon({ path: "icon_on.png" });
 
-                chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+//                 chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
 
-                    chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', activate: true });
+//                     chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', activate: true });
                     
-                    //while (document.getElementById("chartContainer").style.display === 'none') {
-                    console.log('turn on extension');
+//                     //while (document.getElementById("chartContainer").style.display === 'none') {
+//                     console.log('turn on extension');
                     
-                    setTimeout(function () {
+//                     setTimeout(function () {
 
-                        chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', action: 'getStats' }, setStats);
+//                         chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', action: 'getStats' }, setStats);
 
-                    }, 100);
+//                     }, 100);
                     
-                    //console.log(stats.stats.done);
+//                     //console.log(stats.stats.done);
                     
-                    //}
+//                     //}
 
-                });
+//                 });
 
-            } else {
+//             } else {
 
-                $('#content').hide();
-                $('#disabled').show();
-                $('#highlight').hide();
-                $('#myCheck').prop("checked", false);
-                //highlight();
-                //  $( "#myCheck" ).prop( "disabled", true );
-                updateSiteStateList(activeDomain, false);
-                chrome.action.setIcon({ path: "icon_off.png" });
+//                 $('#content').hide();
+//                 $('#disabled').show();
+//                 $('#highlight').hide();
+//                 $('#myCheck').prop("checked", false);
+//                 //highlight();
+//                 //  $( "#myCheck" ).prop( "disabled", true );
+//                 updateSiteStateList(activeDomain, false);
+//                 chrome.action.setIcon({ path: "icon_off.png" });
 
-                chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+//                 chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
 
-                    chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', activate: false });
+//                     chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', activate: false });
 
-                });
+//                 });
 
-            }
-        } //end of then function
-        );
+//             }
+//         } //end of then function
+//         );
 
 
         
 
-    });
+//     });
  
 /*$('.closebtn').on('click', function () {
 
@@ -289,6 +291,7 @@ $('#on-off').bind('change', function (event) {
 var count = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
+    console.log("---------DOMContentLoaded---------");
     
     count++;
     //if (count > 1) {    
@@ -306,8 +309,9 @@ document.addEventListener('DOMContentLoaded', () => {
         chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', action: 'getStats' }, setStats);
         highlight();
     });*/
-    chrome.storage.local.get('on', obj => {
+    chrome.storage.sync.get('on', obj => {
         var activated = obj.on;
+        console.log("obj: ", obj);
         console.log("activated: ", activated);
         // On / Off Button
         if (activated !== true) {
@@ -338,61 +342,98 @@ document.addEventListener('DOMContentLoaded', () => {
         }*/
 
         }
+        
+        });
+    $('#on-off').bind('change', function (event) {
+        console.log("---------on-off bind---------");
+        chrome.storage.sync.get('on', obj => {
+            tabCount++;
+            // toggleExtension();
+            enabled = !obj.on;
+            console.log("enabled (!obj.on): ", enabled);
+            chrome.storage.sync.set({'on': enabled});
+            
+            // console.log("enabled?: ",enabled);
+            // enabled = !enabled;
+            // console.log("switch enabled: ",enabled);
+            // chrome.storage.sync.set({'on': enabled});
+            console.log("currentUrl: ",currentUrl);
+    
+            // var enabled = $('#on-off')[0].checked;
+    
+            var result = chrome.storage.sync.get('highlighted');
+            console.log(result);
+    
+            if (enabled) {
+    
+                $('#content').show();
+                $('#disabled').hide();
+                $('#highlight').show();
+                
+                
+                $( "#myCheck" ).prop( "disabled", false ); // Disabled elements are unclickable
+                
+                //chrome.storage.sync.get('highlighted', result => {
+                    //console.log(result.highlighted);
+                    
+                    if (result === 'yes') {
+                        $( "#myCheck" ).prop( "checked", true );
+                        chrome.storage.sync.set({'highlighted': 'yes'});
+                        //highlight();
+                        }
+                    else
+                        $( "#myCheck" ).prop( "checked", false );
+                //});
+                
+                //highlight();
+                updateSiteStateList(activeDomain, true);
+                chrome.action.setIcon({ path: "icon_on.png" });
+    
+                chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    
+                    chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', activate: true });
+                    
+                    //while (document.getElementById("chartContainer").style.display === 'none') {
+                    console.log('turn on extension');
+                    
+                    setTimeout(function () {
+    
+                        chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', action: 'getStats' }, setStats);
+    
+                    }, 100);
+                    
+                    //console.log(stats.stats.done);
+                    
+                    //}
+    
+                });
+    
+            } else {
+    
+                $('#content').hide();
+                $('#disabled').show();
+                $('#highlight').hide();
+                $('#myCheck').prop("checked", false);
+                //highlight();
+                //  $( "#myCheck" ).prop( "disabled", true );
+                updateSiteStateList(activeDomain, false);
+                chrome.action.setIcon({ path: "icon_off.png" });
+    
+                chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    
+                    chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', activate: false });
+    
+                });
+    
+            }
+        } //end of then function
+        );
+        
     });
-    
-    
 
-    /*$('#on-off').bind('change', function (event) {
 
-        var enabled = $('#on-off')[0].checked;
 
-        if (enabled) {
 
-            $('#content').show();
-            $('#disabled').hide();
-            $('#highlight').show();
-            $( "#myCheck" ).prop( "disabled", false );
-            updateSiteStateList(activeDomain, true);
-            chrome.action.setIcon({ path: "icon_on.png" });
-
-            chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-
-                chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', activate: true });
-                
-                //while (document.getElementById("chartContainer").style.display === 'none') {
-                console.log('turn on extension');
-                
-                setTimeout(function () {
-
-                    chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', action: 'getStats' }, setStats);
-
-                }, 100);
-                
-                //console.log(stats.stats.done);
-                
-                //}
-
-            });
-
-        } else {
-
-            $('#content').hide();
-            $('#disabled').show();
-            $('#highlight').hide();
-            $('#myCheck').prop("checked", false);
-          //  $( "#myCheck" ).prop( "disabled", true );
-            updateSiteStateList(activeDomain, false);
-            chrome.action.setIcon({ path: "icon_off.png" });
-
-            chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-
-                chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', activate: false });
-
-            });
-
-        }
-
-    });*/
 
 /*document.getElementById('language-dropdown').onchange = function () {
   chrome.storage.sync.set({language: this.value});
