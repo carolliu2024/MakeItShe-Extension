@@ -1,8 +1,11 @@
 // popup.js: supposed to be used as  UI; main functionality should be in background.js or content scripts
 // acts like an individual website
+// Please write comments for future programmers about what your code does
 var siteStateList;
 var activeDomain, currentUrl;
+
 console.log("on is set");
+// 'on' flag: true/false, indicates whether extension is turned on.
 chrome.storage.sync.get('on', obj => {
     console.log("on1?: ", obj.on); // Is extension "on"?
     if (typeof obj.on == 'undefined'){
@@ -17,10 +20,6 @@ chrome.storage.sync.get('on', obj => {
         console.log("on2?: ", obj.on); // Is extension "on"?
     });
 });
-
-// Extension enabled? also run if extension button clicked
-
-
 
 
 
@@ -309,6 +308,7 @@ document.addEventListener('DOMContentLoaded', () => {
         chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', action: 'getStats' }, setStats);
         highlight();
     });*/
+    // Extension enabled?
     chrome.storage.sync.get('on', obj => {
         var activated = obj.on;
         console.log("obj: ", obj);
