@@ -1840,7 +1840,7 @@ function highlight () {
 
 var highlightFlag = false;
 function highlightNew() {
-    if (!highlightFlag) {
+    if (highlightFlag) {
         console.log("highlightFlag = false");
         let fem_words = new Set(temp_female_words);
         fem_words.forEach(function(word) {
