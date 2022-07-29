@@ -306,8 +306,9 @@ function applyGoogleDocContent () {
 };
 
 function applyContent (windowObject) {
+    console.log("applyContent running");
 
-    console.log(window.isDone);
+    console.log("window.isDone: ", window.isDone);
     //numObservations = 0;
     m_count = 0;
     f_count = 0;
@@ -1840,8 +1841,10 @@ function highlight () {
 var highlightFlag = false;
 function highlightNew() {
     if (!highlightFlag) {
+        console.log("highlightFlag = false");
         let fem_words = new Set(temp_female_words);
         fem_words.forEach(function(word) {
+            console.log("fem_words");
             let regex = new RegExp('\\b(' + word + ')\\b', "g");
             $("body").children().each(function () {
                 $(this).html($(this).html().replace(regex, `<span class='fem-highlight'>${word}</span>`));
@@ -1860,6 +1863,7 @@ function highlightNew() {
         });
     }
     else {
+        console.log("highlightFlag = true");
         var femalehighlight = $('[class=no-fem-highlight]');
         var malehighlight = $('[class=no-male-highlight]');
         for (var i = 0; i < femalehighlight.length; i++) {
@@ -1874,8 +1878,6 @@ function highlightNew() {
         let regex = new RegExp('\\b(' + temp_female_words[i] + ')\\b', "g");
         document.body.innerHTML = document.body.innerHTML.replace(regex, 
             `<span class='fem-highlight'>${temp_female_words[i]}</span>`);
-    }
-                    } 
     }
     for (let i = 0; i < temp_male_words.length; i++) {
         let regex = new RegExp('\\b(' + temp_male_words[i] + ')\\b', "g");
@@ -2055,9 +2057,9 @@ function onVisibilityChange(el, callback) {
 
 
 function showHighlighting() {
-    if (highlighting == true) {
+    if (highlightFlag == true) {
         console.log('showing highlighting');
-        var malehighlight = $('[name=malehighlight]');
+        var malehighlight = $('[class=male-highlight]');
         console.log(malehighlight);
         console.log("yes");
         for (var i = 0; i < malehighlight.length; i++) {
@@ -2065,7 +2067,7 @@ function showHighlighting() {
                 malehighlight[i].style.backgroundColor = 'lightskyblue';
         //}
         }
-        var femalehighlight = $('[name=femalehighlight]');
+        var femalehighlight = $('[class=fem-highlight]');
         console.log(femalehighlight);
         for (var i = 0; i < femalehighlight.length; i++) {
             //if (isElementInViewport(femalehighlight[i])){
@@ -2298,28 +2300,30 @@ chrome.runtime.onMessage.addListener(
                 "from a content script:" + sender.tab.url :
                 "from the extension");
         if (request.greeting == "highlighting"){
+            console.log("request.greeting == 'highlighting'");
             alert ("Green Frames: The article has a majority of female words\nBlue Frames: The article has a majority of male words\n\nTo remove the frames from the page, just uncheck the highlight button");
 
             highlighting = true;
-            //highlight();
+            // highlight();
             highlightNew();
             //getLinks();
-            //showHighlighting();
+            // showHighlighting();
             showFrames();
             //hideTooltip();
             //console.log('removing highlights');
             $(window).scroll(function () {
                 //applyContent(document.body);
-                //highlight();
-                //showHighlighting();
+                // highlight();
+                // showHighlighting();
                 //getLinks();
-                //showFrames();
+                // showFrames();
             });
         
             sendResponse({farewell: "goodbye"});
         }
 
         if (request.greeting == "nohighlighting"){
+            console.log("request.greeting == 'nohighlighting'");
             // alert("Unhighlighting")
             //highlighting = false;
             highlightFlag = true;
@@ -2327,7 +2331,7 @@ chrome.runtime.onMessage.addListener(
             $(window).unbind('scroll');
             //showHighlighting();
             //hideHighlighting();
-            //hideFrames();
+            // hideFrames();
             console.log('hiding highlighting');
             sendResponse({farewell: "goodbye"});
         }

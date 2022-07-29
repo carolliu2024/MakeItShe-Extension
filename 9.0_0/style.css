@@ -56,3 +56,19 @@
     font-size: 13px;
     
 }
+
+.male-highlight {
+    background-color: lightskyblue; 
+}
+
+.fem-highlight {
+    background-color: lightgreen;
+}
+
+.no-fem-highlight {
+    background-color: none;
+}
+
+.no-male-highlight {
+    background-color: none;
+}

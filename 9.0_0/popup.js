@@ -135,7 +135,7 @@ function setStats(stats) {
     
     
   //highlight  
-    
+  
  function highlight (){
   
   if ($('#myCheck').prop("checked") == true){
@@ -174,7 +174,7 @@ function setStats(stats) {
   }
   
   
-}
+} 
 
 $('.highlighting').on('click', highlight);
 
@@ -287,6 +287,16 @@ var tabCount = 0;
     
     }); */
 
+// chrome.storage.sync.get('highlighted', obj => {
+//     var highlighted = obj.highlighted
+//     console.log("highlighted = ", highlighted);
+//     if (highlighted.highlighted == 'yes'){
+//         $( "#myCheck" ).prop( "checked", true );
+//     } else {
+//         $( "#myCheck" ).prop( "checked", false );
+//     }
+// });
+
 var count = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -311,8 +321,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Extension enabled?
     chrome.storage.sync.get('on', obj => {
         var activated = obj.on;
-        console.log("obj: ", obj);
-        console.log("activated: ", activated);
+        // console.log("obj: ", obj);
+        // console.log("activated: ", activated);
+        
         // On / Off Button
         if (activated !== true) {
             console.log('off');
@@ -321,10 +332,9 @@ document.addEventListener('DOMContentLoaded', () => {
             $('#disabled').show();
             $('#highlight').hide();
             $( "#myCheck" ).prop( "disabled", true );
-            
-    
 
-        } else {
+
+        } else { // activated == true
 
             // $('#on-off').switchButton({ checked: true, labels_placement: "left" });
             console.log('on');
@@ -332,6 +342,15 @@ document.addEventListener('DOMContentLoaded', () => {
             $('#disabled').hide();
             $('#highlight').show();
             $( "#myCheck" ).prop( "disabled", false );
+            chrome.storage.sync.get('highlighted', obj => {
+                highlighted = obj.highlighted
+                console.log("highlighted = ", highlighted);
+                if (highlighted == 'yes'){
+                    $( "#myCheck" ).prop( "checked", true );
+                } else {
+                    $( "#myCheck" ).prop( "checked", false );
+                }
+            });
 
             chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     
@@ -347,9 +366,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 100);
             });
 
-            if (chrome.storage.sync.get('highlighted') != 'yes'){
-                chrome.storage.sync.set({'highlighted': 'no'});
-            }
+            // if (chrome.storage.sync.get('highlighted') != 'yes'){
+            //     chrome.storage.sync.set({'highlighted': 'no'});
+            // }
 
             
             /*if (count > 1) {    
@@ -379,14 +398,13 @@ document.addEventListener('DOMContentLoaded', () => {
             // var enabled = $('#on-off')[0].checked;
     
             var result = chrome.storage.sync.get('highlighted');
-            console.log(result);
+            console.log("highlighted: ", result);
     
             if (enabled) {
     
                 $('#content').show();
                 $('#disabled').hide();
                 $('#highlight').show();
-                
                 
                 $( "#myCheck" ).prop( "disabled", false ); // Disabled elements are unclickable
                 
@@ -438,7 +456,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
     
             }
-        } //end of then function
+        } 
         );
         
     });
@@ -502,6 +520,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+// $('#myCheck').bind('click', function (event) {
+//     chrome.storage.sync.get('highlighted', obj => {
+//         highlighted = obj.highlighted;
+//         console.log("AAAAAAAAAAAaa highlighted = ", highlighted);
+//         if ((typeof highlighted == 'undefined') || highlighted == 'no'){
+//             chrome.storage.sync.set({'highlighted': 'yes'});
+//             console.log("highlighted set to yes");
+//         } else {
+//             chrome.storage.sync.set({'highlighted': 'no'});
+//         }
+//     });
+    
+// });
 
 
 //janani's edits
