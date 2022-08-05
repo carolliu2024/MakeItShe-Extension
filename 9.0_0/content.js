@@ -274,6 +274,7 @@ function applyGoogleDocContent () {
                 //numObservations++;
                 temp_male_words.push(words[i]);
 
+
             }
 
             if ( all_female_words.indexOf( words[ i ].toLowerCase()) >= 0 || femalefirstnames.indexOf(words[i]) >= 0 || temp_female_last_names.indexOf(words[i]) >= 0 || ffnames.indexOf(words[i] ) >= 0) {
@@ -305,6 +306,10 @@ function applyGoogleDocContent () {
   
 };
 
+
+
+
+// Male/Female word counting done here
 function applyContent (windowObject) {
     console.log("applyContent running");
 
@@ -318,11 +323,14 @@ function applyContent (windowObject) {
     temp_male_last_names = [];
   
     if ( window.isDone ) return;
-
+    
+    // Find these tags in windowObject
     $(windowObject).find("a, p, i, div,span, h1, h2, h3, h4, h5, li, label").contents().filter( function () {
         
         var res = [];
         var res1 = [];
+        // Get text nodes
+        // nodeType == 3 -> text node
         if (this.nodeType === 3)
         {
         }
@@ -334,8 +342,17 @@ function applyContent (windowObject) {
         
         
     }).replaceWith( function () {
+        // Set word as no highlight, or highlight class
+        // function setHighlightClass(word, gender){
+        //     let regex = new RegExp('\\b(' + word + ')\\b', "g");
+        //     if (gender == 'male'){
+        //         $(this).html().replace(regex, `<span class='male-highlight' style='border-style:solid; border-color:red'>${word}</span>`);
+        //     } else {
+        //         $(this).html().replace(regex, `<span class='fem-highlight' style='border-style:solid; border-color:red'>${word}</span>`);
+        //     }
+        // }
 
-        
+        // this = windowObject
         var hasit = this.parentNode.hasAttribute('passed');
         
         var att = document.createAttribute("passed");       // Create a "class" attribute
@@ -343,7 +360,7 @@ function applyContent (windowObject) {
         this.parentNode.setAttributeNode(att);
         
         var str = this.nodeValue;
-        console.log(str);
+        console.log("str = ",str);
 
         var temp_words = str.split(/('|\(|,|-|:|;|\.|\/|\s+)/);
         var words = [];
@@ -351,6 +368,8 @@ function applyContent (windowObject) {
         var split = false;
         var rest = '';
 
+        // CLEANING STRING
+        // Get words between quotes
         for ( var i = 0; i < temp_words.length; i ++ ) {
 
             var current_word = temp_words[i].trim().replace( /[\/#!$%\^&\*;:{}=\_`'"?~)]/g, "" );
@@ -392,8 +411,9 @@ function applyContent (windowObject) {
             return str;
 
         }
-        
-        console.log(words);
+        // words CLEANING DONE
+        // WORDS: array of words
+        console.log("words = ",words);
 
         // Delete surname after Mr, Ms, M, Mme, Lady, Lord
 
@@ -404,6 +424,8 @@ function applyContent (windowObject) {
             if ( w === 'Mr' || w === 'Lord' && /[A-Z]/.test(words[i+1]) ) {
 
                 temp_male_words.push(words[i+1]);
+                // setHighlightClass(words[i+1], 'male');
+                
                 //words.splice( i + 1, 1 );
 
             }
@@ -411,6 +433,7 @@ function applyContent (windowObject) {
             if ( (w === 'Ms'  || w === 'Mme' || w === 'Lady') && /[A-Z]/.test(words[i+1]) ) {
 
                 temp_female_words.push(words[i+1]);
+                // setHighlightClass(words[i+1], 'female');
                 //words.splice( i + 1, 1 );
 
             }
@@ -484,7 +507,8 @@ function applyContent (windowObject) {
 
                 //if( lastnames.indexOf(words[i+1]) >= 0 || lastnames_upper.indexOf(words[i + 1]) >= 0)
                // if( intials.indexOf(words[i + 1]) === -1)
-                     temp_female_last_names.push(words[i+1]);           
+                     temp_female_last_names.push(words[i+1]);      
+                    //  setHighlightClass(words[i+1], 'female');     
             
             }
             
@@ -649,6 +673,7 @@ function applyContent (windowObject) {
                     numObservations++;
                     console.log('num observations ++ female', words[i]);
                     temp_female_words.push(words[i]);
+                    // setHighlightClass(words[i], 'female');
                 }
 
             }
@@ -679,6 +704,7 @@ function applyContent (windowObject) {
                         numObservations++;
                         console.log('num observations ++ male', words[i]);
                         temp_male_words.push(words[i]);
+                        // setHighlightClass(words[i], 'male');
                     }
                 //}
 
@@ -711,7 +737,7 @@ function applyContent (windowObject) {
 
     const male_filtered = temp_male_words.filter(x => !male_name_no_count.has(x.toUpperCase()));
     temp_male_words = male_filtered;
-    console.log(temp_male_words);
+    console.log("temp_male_words = ", temp_male_words);
     //console.log("Male out", male_filtered);
 
     //const diff = temp_male_words.filter(x => !male_filtered.includes(x));
@@ -1295,6 +1321,7 @@ var female_do_not_count = 0;
 var female_name_no_count = [];
 var counter = 0;
 
+// Old highlight function. Not used. See highlightNew()
 function highlight () {
 
     console.log('highlighting');
@@ -1839,31 +1866,112 @@ function highlight () {
 };
 
 var highlightFlag = false;
+// helper 1 for highlightNew. Only try highlighting text nodes (not images, ads, banners)
+// function filterText(thisElement){
+//     // If parent class hidden, don't try to highlight
+//     // console.log("filterText thisElement = ", thisElement, "\nnodeType = ", thisElement.nodeType);
+//     if (thisElement.parentNode){
+//         var parentClassVisibility = thisElement.parentNode.style.visibility;
+//         if (parentClassVisibility === 'hidden') {
+//             return false;
+//         }
+//         // If element not in viewport, do not try to highlight
+//         if (!isElementInViewport(thisElement.parentNode)){
+//             return false;
+//         }
+//     }
+//     // Text nodes and do not try highlighting ads, banners, and images
+//     return thisElement.nodeType === 3 && thisElement.id !== 'adContent' && thisElement.id !== 'dockedBanner' && thisElement.id !== 'google_image_div';
+// }
+
+// helper 2 for highlightNew, replacing gendered words with a html class for highlighting
+// function replaceNodeText(regex, html) {
+//     if (this.nodeType === 3) {
+//         console.log("this.nodeValue = ", this.nodeValue);
+//         this.nodeValue = this.nodeValue.replace(regex, html);
+//     } else {
+//         console.log("this.nodeType = ", this.nodeType);
+//         // $(this).contents().each(function(index,elt){
+//         //     console.log("element = ", elt);
+//         // })
+//         $(this).contents().each(replaceNodeText(regex, html));
+//     }
+// }
+// function replaceText(thisElement, regex, html){
+//     var str = thisElement.nodeValue;
+//     str = str.replace(regex, html)
+//     console.log("replaceText string replaced: ", str);
+//     return str;
+// }
+
 function highlightNew() {
     if (highlightFlag) {
-        console.log("highlightFlag = false");
+        console.log("highlightFlag = true");
         let fem_words = new Set(temp_female_words);
         fem_words.forEach(function(word) {
             console.log("fem_words");
             let regex = new RegExp('\\b(' + word + ')\\b', "g");
-            $("body").children().each(function () {
-                $(this).html($(this).html().replace(regex, `<span class='fem-highlight'>${word}</span>`));
-            });
+            let html = `<span class='fem-highlight' style='border-style:solid; border-color:red'>${word}</span>`;
+            $("body").find("*").contents()
+            .filter( function (){
+                return this.nodeType === 3 && this.id !== 'adContent' && this.id !== 'dockedBanner' && this.id !== 'google_image_div';
+            })
+            .replaceWith( function(){
+                var str = this.nodeValue;
+                str = str.replace(regex, html);
+                // console.log("replaceText string replaced: ", str);
+                return str;
+            })
+            // .each(
+            //     function replaceNodeText() {
+            //         if (this.nodeType === 3) {
+            //             // console.log("this.nodeValue = ", this.nodeValue);
+            //             this.nodeValue = this.nodeValue.replace(regex, html);
+            //         } else {
+            //             // console.log("this.nodeType = ", this.nodeType);
+            //             $(this).contents().each(replaceNodeText());
+            //         }
+            //     }
+            //     // replaceNodeText(regex, `<span class='fem-highlight' style='border-style:solid; border-color:red'>${word}</span>`)
+            //  )
+                
             /*document.body.innerHTML = document.body.innerHTML.replace(regex, 
                 `<span class='fem-highlight'>${word}</span>`);*/
         });
         let male_words = new Set(temp_male_words);
         male_words.forEach(function(word) {
             let regex = new RegExp('\\b(' + word + ')\\b', "g");
-            $("body").children().each(function () {
-                $(this).html($(this).html().replace(regex, `<span class='male-highlight'>${word}</span>`));
-            });
+            let html = `<span class='male-highlight' style='border-style:solid; border-color:red'>${word}</span>`;
+            $("body").find("*").contents()
+            .filter( function (){
+                return this.nodeType === 3 && this.id !== 'adContent' && this.id !== 'dockedBanner' && this.id !== 'google_image_div';
+            })
+            .replaceWith( function(){
+                var str = this.nodeValue;
+                str = str.replace(regex, html);
+                // console.log("replaceText string replaced: ", str);
+                return str;
+            })
+            // .each(
+            //     function replaceNodeText() {
+            //         if (this.nodeType === 3) {
+            //             // console.log("this.nodeValue = ", this.nodeValue);
+            //             this.nodeValue = this.nodeValue.replace(regex, html);
+            //         } else {
+            //             // console.log("this.nodeType = ", this.nodeType);
+            //             $(this).contents().each(replaceNodeText());
+            //         }
+            //     }
+            //     // replaceNodeText(regex, `<span class='male-highlight' style='border-style:solid; border-color:red'>${word}</span>`)
+            //  )
+
             /*document.body.innerHTML = document.body.innerHTML.replace(regex, 
                 `<span class='male-highlight'>${word}</span>`);*/
         });
+        // highlightFlag = false;
     }
     else {
-        console.log("highlightFlag = true");
+        console.log("highlightFlag = false");
         var femalehighlight = $('[class=no-fem-highlight]');
         var malehighlight = $('[class=no-male-highlight]');
         for (var i = 0; i < femalehighlight.length; i++) {
@@ -2306,6 +2414,7 @@ chrome.runtime.onMessage.addListener(
             highlighting = true;
             // highlight();
             highlightNew();
+            // highlightFlag = false;
             //getLinks();
             // showHighlighting();
             showFrames();
