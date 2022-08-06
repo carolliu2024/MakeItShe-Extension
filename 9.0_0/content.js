@@ -1865,113 +1865,63 @@ function highlight () {
 
 };
 
-var highlightFlag = false;
-// helper 1 for highlightNew. Only try highlighting text nodes (not images, ads, banners)
-// function filterText(thisElement){
-//     // If parent class hidden, don't try to highlight
-//     // console.log("filterText thisElement = ", thisElement, "\nnodeType = ", thisElement.nodeType);
-//     if (thisElement.parentNode){
-//         var parentClassVisibility = thisElement.parentNode.style.visibility;
-//         if (parentClassVisibility === 'hidden') {
-//             return false;
-//         }
-//         // If element not in viewport, do not try to highlight
-//         if (!isElementInViewport(thisElement.parentNode)){
-//             return false;
-//         }
-//     }
-//     // Text nodes and do not try highlighting ads, banners, and images
-//     return thisElement.nodeType === 3 && thisElement.id !== 'adContent' && thisElement.id !== 'dockedBanner' && thisElement.id !== 'google_image_div';
-// }
-
-// helper 2 for highlightNew, replacing gendered words with a html class for highlighting
-// function replaceNodeText(regex, html) {
-//     if (this.nodeType === 3) {
-//         console.log("this.nodeValue = ", this.nodeValue);
-//         this.nodeValue = this.nodeValue.replace(regex, html);
-//     } else {
-//         console.log("this.nodeType = ", this.nodeType);
-//         // $(this).contents().each(function(index,elt){
-//         //     console.log("element = ", elt);
-//         // })
-//         $(this).contents().each(replaceNodeText(regex, html));
-//     }
-// }
-// function replaceText(thisElement, regex, html){
-//     var str = thisElement.nodeValue;
-//     str = str.replace(regex, html)
-//     console.log("replaceText string replaced: ", str);
-//     return str;
-// }
-
+var highlightFlag = false; // Has been highlighted at least once
 function highlightNew() {
-    if (highlightFlag) {
-        console.log("highlightFlag = true");
+    if (!highlightFlag) { // Has not been highlighted at least once
+        console.log("highlightFlag = false");
+        console.log("ONLY RUN ONCE");
         let fem_words = new Set(temp_female_words);
-        fem_words.forEach(function(word) {
-            console.log("fem_words");
-            let regex = new RegExp('\\b(' + word + ')\\b', "g");
-            let html = `<span class='fem-highlight' style='border-style:solid; border-color:red'>${word}</span>`;
-            $("body").find("*").contents()
-            .filter( function (){
-                return this.nodeType === 3 && this.id !== 'adContent' && this.id !== 'dockedBanner' && this.id !== 'google_image_div';
-            })
-            .replaceWith( function(){
-                var str = this.nodeValue;
-                str = str.replace(regex, html);
-                // console.log("replaceText string replaced: ", str);
-                return str;
-            })
-            // .each(
-            //     function replaceNodeText() {
-            //         if (this.nodeType === 3) {
-            //             // console.log("this.nodeValue = ", this.nodeValue);
-            //             this.nodeValue = this.nodeValue.replace(regex, html);
-            //         } else {
-            //             // console.log("this.nodeType = ", this.nodeType);
-            //             $(this).contents().each(replaceNodeText());
-            //         }
-            //     }
-            //     // replaceNodeText(regex, `<span class='fem-highlight' style='border-style:solid; border-color:red'>${word}</span>`)
-            //  )
-                
-            /*document.body.innerHTML = document.body.innerHTML.replace(regex, 
-                `<span class='fem-highlight'>${word}</span>`);*/
-        });
+        
+        $("body").find("*").contents()
+        .filter( function (){
+            return this.nodeType === 3 && this.id !== 'adContent' && this.id !== 'dockedBanner' && this.id !== 'google_image_div';
+        })
+        .replaceWith( function(){ // For each text
+            var str = this.nodeValue; // Get text
+            fem_words.forEach(function(word){ // loop through fem_words to replace them in str
+                // console.log("word = ",word);
+                let regex = new RegExp('\\b(' + word + ')\\b', "g");
+                let html_fem = `<span class='fem-highlight' >${word}</span>`;
+                str = str.replace(regex, html_fem);
+            });
+            return str; // Return str to replace original text
+        })
+        // Comments: recursive attempt at highlighting nested text
+        // .each(
+        //     function replaceNodeText() {
+        //         if (this.nodeType === 3) {
+        //             // console.log("this.nodeValue = ", this.nodeValue);
+        //             this.nodeValue = this.nodeValue.replace(regex, html);
+        //         } else {
+        //             // console.log("this.nodeType = ", this.nodeType);
+        //             $(this).contents().each(replaceNodeText());
+        //         }
+        //     }
+        //     // replaceNodeText(regex, `<span class='fem-highlight' style='border-style:solid; border-color:red'>${word}</span>`)
+        //  )
+        
         let male_words = new Set(temp_male_words);
-        male_words.forEach(function(word) {
-            let regex = new RegExp('\\b(' + word + ')\\b', "g");
-            let html = `<span class='male-highlight' style='border-style:solid; border-color:red'>${word}</span>`;
-            $("body").find("*").contents()
-            .filter( function (){
-                return this.nodeType === 3 && this.id !== 'adContent' && this.id !== 'dockedBanner' && this.id !== 'google_image_div';
-            })
-            .replaceWith( function(){
-                var str = this.nodeValue;
-                str = str.replace(regex, html);
-                // console.log("replaceText string replaced: ", str);
-                return str;
-            })
-            // .each(
-            //     function replaceNodeText() {
-            //         if (this.nodeType === 3) {
-            //             // console.log("this.nodeValue = ", this.nodeValue);
-            //             this.nodeValue = this.nodeValue.replace(regex, html);
-            //         } else {
-            //             // console.log("this.nodeType = ", this.nodeType);
-            //             $(this).contents().each(replaceNodeText());
-            //         }
-            //     }
-            //     // replaceNodeText(regex, `<span class='male-highlight' style='border-style:solid; border-color:red'>${word}</span>`)
-            //  )
+        $("body").find("*").contents()
+        .filter( function (){
+            return this.nodeType === 3 && this.id !== 'adContent' && this.id !== 'dockedBanner' && this.id !== 'google_image_div';
+        })
+        .replaceWith( function(){ // For each text
+            var str = this.nodeValue; // Get text
+            male_words.forEach(function(word){ // loop through male_words to replace them in str
+                let regex = new RegExp('\\b(' + word + ')\\b', "g");
+                let html_male = `<span class='male-highlight''>${word}</span>`;
+                str = str.replace(regex, html_male);
+            });
+            return str; // Return str to replace original text
+        })
 
-            /*document.body.innerHTML = document.body.innerHTML.replace(regex, 
-                `<span class='male-highlight'>${word}</span>`);*/
-        });
-        // highlightFlag = false;
+        /*document.body.innerHTML = document.body.innerHTML.replace(regex, 
+            `<span class='male-highlight'>${word}</span>`);*/
+
+        highlightFlag = true;
     }
     else {
-        console.log("highlightFlag = false");
+        console.log("highlightFlag = true");
         var femalehighlight = $('[class=no-fem-highlight]');
         var malehighlight = $('[class=no-male-highlight]');
         for (var i = 0; i < femalehighlight.length; i++) {
@@ -2414,7 +2364,6 @@ chrome.runtime.onMessage.addListener(
             highlighting = true;
             // highlight();
             highlightNew();
-            // highlightFlag = false;
             //getLinks();
             // showHighlighting();
             showFrames();
@@ -2435,7 +2384,7 @@ chrome.runtime.onMessage.addListener(
             console.log("request.greeting == 'nohighlighting'");
             // alert("Unhighlighting")
             //highlighting = false;
-            highlightFlag = true;
+            // highlightFlag = false;
             unHighlight();
             $(window).unbind('scroll');
             //showHighlighting();
