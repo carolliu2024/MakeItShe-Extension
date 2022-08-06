@@ -1865,9 +1865,10 @@ function highlight () {
 
 };
 
-var highlightFlag = false; // Has been highlighted at least once
+var highlightFlag = false; // Flag; Has been highlighted at least once?
 function highlightNew() {
     if (!highlightFlag) { // Has not been highlighted at least once
+        alert ("Green Frames: The article has a majority of female words\nBlue Frames: The article has a majority of male words\n\nTo remove the frames from the page, just uncheck the highlight button");
         console.log("highlightFlag = false");
         console.log("ONLY RUN ONCE");
         let fem_words = new Set(temp_female_words);
@@ -2359,7 +2360,6 @@ chrome.runtime.onMessage.addListener(
                 "from the extension");
         if (request.greeting == "highlighting"){
             console.log("request.greeting == 'highlighting'");
-            alert ("Green Frames: The article has a majority of female words\nBlue Frames: The article has a majority of male words\n\nTo remove the frames from the page, just uncheck the highlight button");
 
             highlighting = true;
             // highlight();
