@@ -288,8 +288,8 @@ function applyGoogleDocContent () {
         }
 
     
-    m_percent = Math.round( m_count / (m_count + f_count) * 100 );
-    f_percent = Math.round( f_count / (m_count + f_count) * 100 );
+    m_percent = Math.round( m_count / (m_count + f_count) * 10000 )/100;
+    f_percent = Math.round( f_count / (m_count + f_count) * 10000 )/100;
     
     if (m_percent + f_percent > 100 ) {
         f_percent = f_percent - 1;
@@ -325,7 +325,7 @@ function applyContent (windowObject) {
     if ( window.isDone ) return;
     
     // Find these tags in windowObject
-    $(windowObject).find("a, p, i, div,span, h1, h2, h3, h4, h5, li, label").contents().filter( function () {
+    $(windowObject).find("a, p, b, i, em, mark, textarea, div, span, h1, h2, h3, h4, h5, label, td, li").contents().filter( function () {
         
         var res = [];
         var res1 = [];
@@ -342,7 +342,7 @@ function applyContent (windowObject) {
         
         
     }).replaceWith( function () {
-        // Set word as no highlight, or highlight class
+        // Set word as no highlight, or highlight class?
         // function setHighlightClass(word, gender){
         //     let regex = new RegExp('\\b(' + word + ')\\b', "g");
         //     if (gender == 'male'){
@@ -351,8 +351,6 @@ function applyContent (windowObject) {
         //         $(this).html().replace(regex, `<span class='fem-highlight' style='border-style:solid; border-color:red'>${word}</span>`);
         //     }
         // }
-
-        // this = windowObject
         var hasit = this.parentNode.hasAttribute('passed');
         
         var att = document.createAttribute("passed");       // Create a "class" attribute
@@ -360,7 +358,7 @@ function applyContent (windowObject) {
         this.parentNode.setAttributeNode(att);
         
         var str = this.nodeValue;
-        console.log("str = ",str);
+        // console.log("str = ",str);
 
         var temp_words = str.split(/('|\(|,|-|:|;|\.|\/|\s+)/);
         var words = [];
@@ -714,8 +712,8 @@ function applyContent (windowObject) {
 
     if (m_count + f_count != 0) {
     
-        m_percent = Math.round( m_count / (m_count + f_count) * 100 );
-        f_percent = Math.round( f_count / (m_count + f_count) * 100 );
+        m_percent = Math.round( m_count / (m_count + f_count) * 10000 )/100;
+        f_percent = Math.round( f_count / (m_count + f_count) * 10000 )/100;
         
     }
     
@@ -745,8 +743,9 @@ function applyContent (windowObject) {
 
     if (temp_male_words.length + temp_female_words.length != 0) {
     
-        m_percent = Math.round( temp_male_words.length / (temp_male_words.length + temp_female_words.length) * 100 );
-        f_percent = Math.round( temp_female_words.length / (temp_male_words.length + temp_female_words.length) * 100 );
+        m_percent = Math.round( temp_male_words.length / (temp_male_words.length + temp_female_words.length) * 10000 )/100;
+        f_percent = Math.round( temp_female_words.length / (temp_male_words.length + temp_female_words.length) * 10000 )/100;
+        // console.log("f_percent real = ",temp_female_words.length / (temp_male_words.length + temp_female_words.length)*100);
     
     }
     
@@ -755,7 +754,7 @@ function applyContent (windowObject) {
     }
 
     console.log(m_percent);
-    console.log(f_percent);
+    console.log("f_percent = ",f_percent);
 
     return f_percent;
   
@@ -787,7 +786,7 @@ function applyLinks (windowObject) {
   
     //if ( window.isDone ) return;
 
-    $(windowObject).find("p, i, div,span, h1, h2, h3, h4, h5, li, label").contents().filter( function () {
+    $(windowObject).find("a, p, b, i, em, mark, textarea, div, span, h1, h2, h3, h4, h5, label, td, li").contents().filter( function () {
     //$(windowObject).contents().filter( function () {
 
         /*if (this.parentNode.nodeName === "SCRIPT" || this.parentNode.nodeName ==="STYLE" || this.parentNode.nodeName === "IMG"
@@ -1284,8 +1283,8 @@ function applyLinks (windowObject) {
         //console.log(temp_male_last_names);
 
     
-    links_m_percent = Math.round( links_m_count / (links_m_count + links_f_count) * 100 );
-    links_f_percent = Math.round( links_f_count / (links_m_count + links_f_count) * 100 );
+    links_m_percent = Math.round( links_m_count / (links_m_count + links_f_count) * 10000 )/100;
+    links_f_percent = Math.round( links_f_count / (links_m_count + links_f_count) * 10000 )/100;
     
     if (links_m_percent + links_f_percent > 100) {
         links_f_percent = links_f_percent - 1;
@@ -1301,8 +1300,8 @@ function applyLinks (windowObject) {
 
     window.isDone = true;
     
-    links_m_percent = Math.round( links_temp_male_words.length / (links_temp_male_words.length + links_temp_female_words.length) * 100 );
-    links_f_percent = Math.round( links_temp_female_words.length / (links_temp_male_words.length + links_temp_female_words.length) * 100 );
+    links_m_percent = Math.round( links_temp_male_words.length / (links_temp_male_words.length + links_temp_female_words.length) * 10000 )/100;
+    links_f_percent = Math.round( links_temp_female_words.length / (links_temp_male_words.length + links_temp_female_words.length) * 10000 )/100;
     
     if (links_m_percent + links_f_percent > 100) {
         links_f_percent = links_f_percent - 1;
@@ -1332,7 +1331,7 @@ function highlight () {
         temp_male_last_names = [];
     }
     counter++;
-        $('body').not(".ghost .thumbcaption .infobox vcard td").find("a, p, b, div, span, h1, h2, h3, h4, h5, label").contents().filter( function () {
+        $('body').not(".ghost .thumbcaption .infobox vcard td").find("a, p, i, div,span, h1, h2, h3, h4, h5, li, label").contents().filter( function () {
 
         
         var parentClass = this.parentNode.getAttribute('class');
@@ -1869,16 +1868,18 @@ var highlightFlag = false; // Flag; Has been highlighted at least once?
 function highlightNew() {
     if (!highlightFlag) { // Has not been highlighted at least once
         alert ("Green Frames: The article has a majority of female words\nBlue Frames: The article has a majority of male words\n\nTo remove the frames from the page, just uncheck the highlight button");
-        console.log("highlightFlag = false");
-        console.log("ONLY RUN ONCE");
+        // console.log("highlightFlag = false");
         let fem_words = new Set(temp_female_words);
-        
-        $("body").find("*").contents()
+
+        // Note: .find("*") may error on some (news) sites; "Blocked a frame with origin from accessing a cross-origin frame"
+        // Instead, here are (maybe not all?) possible tags that can contain text
+        $("body").find("a, p, b, i, em, mark, textarea, div, span, h1, h2, h3, h4, h5, label, td, li").contents()
         .filter( function (){
             return this.nodeType === 3 && this.id !== 'adContent' && this.id !== 'dockedBanner' && this.id !== 'google_image_div';
         })
         .replaceWith( function(){ // For each text
             var str = this.nodeValue; // Get text
+            // console.log("str = ",str);
             fem_words.forEach(function(word){ // loop through fem_words to replace them in str
                 // console.log("word = ",word);
                 let regex = new RegExp('\\b(' + word + ')\\b', "g");
@@ -1902,7 +1903,7 @@ function highlightNew() {
         //  )
         
         let male_words = new Set(temp_male_words);
-        $("body").find("*").contents()
+        $("body").find("a, p, b, i, em, mark, textarea, div, span, h1, h2, h3, h4, h5, label, td, li").contents()
         .filter( function (){
             return this.nodeType === 3 && this.id !== 'adContent' && this.id !== 'dockedBanner' && this.id !== 'google_image_div';
         })
@@ -1922,7 +1923,7 @@ function highlightNew() {
         highlightFlag = true;
     }
     else {
-        console.log("highlightFlag = true");
+        // console.log("highlightFlag = true");
         var femalehighlight = $('[class=no-fem-highlight]');
         var malehighlight = $('[class=no-male-highlight]');
         for (var i = 0; i < femalehighlight.length; i++) {
