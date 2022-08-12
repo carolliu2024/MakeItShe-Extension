@@ -459,14 +459,13 @@ function applyContent(windowObject) {
         }
 
         //find last names
-
-        if (allUppercase === false) {
+        if (allUppercase === false) {   // If words are not all uppercase (probably not a name?)
 
             var f_l_begin = 0;
 
             if (words.length > 2) {
 
-                for (var i = 0; i < words.length - 2; i++) {
+                for (var i = 0; i < words.length - 2; i++) {    // For every word except the last 2?
 
 
                     var thisLength = words[i].length;
@@ -498,17 +497,24 @@ function applyContent(windowObject) {
 
 
                     //if (femalefirstnames.indexOf(words[i]) >= 0 && /[A-Z]/.test(nextWord[0]) && nextWord.length > 1){
-                    if ((femalefirstnames.indexOf(words[i]) >= 0 || words[i] === 'Ms' || words[i] === 'Mrs' || words[i] === 'Miss') && words[i - 1] !== 'The' && excluded.indexOf(nextWord) === -1 && next_first !== '(' && initials.indexOf(nextWord) === -1 && last !== '.' && last !== '!' && last !== '?' && last !== ',' && last !== ';' && last !== ':' && last !== '/' && /[A-Z]/.test(nextWord[0]) && (!(/[A-Z]/.test(nextNextWord[0])) || nextNextWord === undefined || next_last === '.' || next_last === '!' || next_last === '?' || next_last === ',' || next_last === '/')) {
+                    // If word is found in female first names, or is Ms, then push the next word to last names.
+                    if ((femalefirstnames.indexOf(words[i]) >= 0 || words[i] === 'Ms' || words[i] === 'Mrs' || words[i] === 'Miss')
+                        && words[i - 1] !== 'The' && excluded.indexOf(nextWord) === -1 && next_first !== '(' && initials.indexOf(nextWord) === -1 
+                        && last !== '.' && last !== '!' && last !== '?' && last !== ',' && last !== ';' && last !== ':' && last !== '/' 
+                        && /[A-Z]/.test(nextWord[0]) && (!(/[A-Z]/.test(nextNextWord[0])) || nextNextWord === undefined 
+                        || next_last === '.' || next_last === '!' || next_last === '?' || next_last === ',' || next_last === '/')) {
 
 
                         //if( lastnames.indexOf(words[i+1]) >= 0 || lastnames_upper.indexOf(words[i + 1]) >= 0)
-                        // if( intials.indexOf(words[i + 1]) === -1)
                         temp_female_last_names.push(words[i + 1]);
                         //  setHighlightClass(words[i+1], 'female');     
 
                     }
-
-                    if (femalefirstnames.indexOf(words[words.length - 2]) >= 0 && /[A-Z]/.test((words[words.length - 1])[0]) && str.substr(str.indexOf(words[words.length - 1]) - 1, 1) !== '(' && next_last !== '/' && str.substr(str.indexOf(words[words.length - 2]) + (words[words.length - 2]).length, 1) !== ':') {
+                    // if 2nd-to-last word is fem first name, and last word is uppercase
+                    if (femalefirstnames.indexOf(words[words.length - 2]) >= 0 && /[A-Z]/.test((words[words.length - 1])[0]) 
+                        && str.substr(str.indexOf(words[words.length - 1]) - 1, 1) !== '(' 
+                        && next_last !== '/' 
+                        && str.substr(str.indexOf(words[words.length - 2]) + (words[words.length - 2]).length, 1) !== ':') {
                         temp_female_last_names.push(words[words.length - 1]);
                     }
                 }
@@ -558,6 +564,7 @@ function applyContent(windowObject) {
                         //if( lastnames.indexOf(words[i+1]) >= 0 || lastnames_upper.indexOf(words[i + 1]) >= 0)
                         // if( intials.indexOf(words[i + 1]) === -1)   
                         temp_male_last_names.push(words[i + 1]);
+                        console.log("pushing: ", words[i+1], " to temp_male_last_names");
                         console.log('PUSHING LAST NAME (I+1)');
 
                     }
@@ -642,6 +649,7 @@ function applyContent(windowObject) {
                     console.log("NEXT FIRST", next_first);
                     console.log("NEXT LAST", next_last);
                     if (words[i + 1] !== 'Is' && words[i + 1] !== 'And' && words[i + 1] !== 'Or' && words[i + 1] !== 'Are' && words[i + 1] !== 'Was') {
+                        // console.log("pushing: ", words[i+2], " to temp_male_last_names");
                         temp_male_last_names.push(words[i + 2]);
                     }
 
@@ -650,64 +658,76 @@ function applyContent(windowObject) {
             }
 
         }
-
-        for (var i = 0; i < words.length; i++) {
-
-            if (all_female_words.indexOf(words[i].toLowerCase()) >= 0 || femalefirstnames.indexOf(words[i]) >= 0 || femalefirstnames.indexOf(capitalize(words[i])) >= 0 || temp_female_last_names.indexOf(words[i]) >= 0 || ffnames.indexOf(words[i].toUpperCase()) >= 0 && excluded.indexOf(words[i]) === -1) {
-
-                if (femalefirstnames.indexOf(words[i]) >= 0 && (words[i - 1] === 'Lake' || words[i + 1] === 'County' || words[i + 1] === 'Lake' || words[i + 1] === 'School' || words[i + 1] === 'High' || words[i + 1] === 'Secondary' || words[i + 1] === 'Primary' || words[i + 1] === 'College' || words[i - 1] === 'Port' || words[i - 1] === 'Hurricane' || words[i - 1] === 's' || words[i + 1] === 't' || words[i + 1] === 'Mountain' || words[i + 1] === 'Park' || words[i + 1] === 'Institute' || words[i + 1] === 'School' || words[i - 2] === 'city' || words[i - 2] === 'City' || words[i + 1] === 'City' || words[i + 1] === 'Islands' || words[i + 1] === 'River' || words[i + 1] === 'award' || words[i + 1] === 'awards' || words[i + 1] === 'Park' || words[i + 1] === 'Institute' || words[i + 1] === 'School' || words[i + 1] === 'Highway' || words[i + 1] === 'area' || words[i + 1] === 'University' || words[i + 1] === 'College' || words[i + 1] === 'Center' || words[i + 1] === 'Building' || words[i + 1] === 'Circle' || words[i + 1] === 'Street' || words[i + 1] === 'Zoo' || words[i - 1] === 'San' || words[i - 1] === 'Saint' || words[i - 1] === 'Santa' || words[i - 1] === 'St' || words[i - 1] === 'Sao' || words[i - 1] === 'New' || words[i - 1] === 'O' || words[i - 1] === 'Mount' || words[i - 1] === 'Saint' || words[i - 1] === 'Centre' || words[i - 1] === 'Îles')) {
-                    female_do_not_count++;
-                    female_name_no_count = words[i];
-                }
-                else if (excluded.indexOf(words[i]) > 0) {
-
-                }
-                else {
-                    f_count++;
-                    numObservations++;
-                    console.log('num observations ++ female', words[i]);
-                    temp_female_words.push(words[i]);
-                    // setHighlightClass(words[i], 'female');
-                }
+        // gend is a string ("female" or "male"), other inputs are vars
+        function categorize(gendfirstnames, gend_do_not_count, gend_name_no_count, g_count, temp_gend_words, gend){
+            if (gendfirstnames.indexOf(words[i]) >= 0 && (words[i - 1] === 'Lake' || words[i + 1] === 'County' || words[i + 1] === 'Lake' || words[i + 1] === 'School' || words[i + 1] === 'High' || words[i + 1] === 'Secondary'
+                || words[i + 1] === 'Primary' || words[i + 1] === 'College' || words[i - 1] === 'Port' || words[i - 1] === 'Hurricane' || words[i - 1] === 's' || words[i + 1] === 't' || words[i + 1] === 'Mountain' || words[i + 1] === 'Park'
+                || words[i + 1] === 'Institute' || words[i + 1] === 'School' || words[i - 2] === 'city' || words[i - 2] === 'City' || words[i + 1] === 'City' || words[i + 1] === 'Islands' || words[i + 1] === 'River' || words[i + 1] === 'award' || words[i + 1] === 'awards' || words[i + 1] === 'Park' || words[i + 1] === 'Institute'
+                || words[i + 1] === 'School' || words[i + 1] === 'Highway' || words[i + 1] === 'area' || words[i + 1] === 'University' || words[i + 1] === 'College' || words[i + 1] === 'Center' || words[i + 1] === 'Building' || words[i + 1] === 'Circle' || words[i + 1] === 'Street' || words[i + 1] === 'Zoo' || words[i - 1] === 'San' || words[i - 1] === 'Saint'
+                || words[i - 1] === 'Santa' || words[i - 1] === 'St' || words[i - 1] === 'St.' || words[i - 1] === 'Sao'
+                || words[i - 1] === 'New' || words[i - 1] === 'O' || words[i - 1] === 'Mount' || words[i - 1] === 'Saint' || words[i - 1] === 'Centre' || words[i - 1] === 'Îles')) {
+                gend_do_not_count++;
+                gend_name_no_count.add(words[i].toUpperCase());
+            }
+            else if (excluded.indexOf(words[i]) > 0) {
 
             }
+            else {
+                g_count++;
+                numObservations++;
+                console.log('num observations ++', gend, words[i]);
+                temp_gend_words.push(words[i]);
+            }
+        }
+        
+        // Categorize each word as male or female
+        for (var i = 0; i < words.length; i++) {
+            // Check our temp last names lists first
+            if (temp_female_last_names.indexOf(words[i]) >= 0){
+                categorize(femalefirstnames, female_do_not_count, female_name_no_count, f_count, temp_female_words, "female");
+            } else if (temp_male_last_names.indexOf(words[i]) >= 0) {
+                categorize(malefirstnames, male_do_not_count, male_name_no_count, m_count, temp_male_words, "male");
+                
+                // if (malefirstnames.indexOf(words[i]) >= 0 && (words[i - 1] === 'Lake' || words[i + 1] === 'County' || words[i + 1] === 'Lake' || words[i + 1] === 'School' || words[i + 1] === 'High' || words[i + 1] === 'Secondary'
+                //     || words[i + 1] === 'Primary' || words[i + 1] === 'College' || words[i - 1] === 'Port' || words[i - 1] === 'Hurricane' || words[i - 1] === 's' || words[i + 1] === 't' || words[i + 1] === 'Mountain' || words[i + 1] === 'Park'
+                //     || words[i + 1] === 'Institute' || words[i + 1] === 'School' || words[i - 2] === 'city' || words[i - 2] === 'City' || words[i + 1] === 'City' || words[i + 1] === 'Islands' || words[i + 1] === 'River' || words[i + 1] === 'award' || words[i + 1] === 'awards' || words[i + 1] === 'Park' || words[i + 1] === 'Institute'
+                //     || words[i + 1] === 'School' || words[i + 1] === 'Highway' || words[i + 1] === 'area' || words[i + 1] === 'University' || words[i + 1] === 'College' || words[i + 1] === 'Center' || words[i + 1] === 'Building' || words[i + 1] === 'Circle' || words[i + 1] === 'Street' || words[i + 1] === 'Zoo' || words[i - 1] === 'San' || words[i - 1] === 'Saint'
+                //     || words[i - 1] === 'Santa' || words[i - 1] === 'St' || words[i - 1] === 'St.' || words[i - 1] === 'Sao'
+                //     || words[i - 1] === 'New' || words[i - 1] === 'O' || words[i - 1] === 'Mount' || words[i - 1] === 'Saint' || words[i - 1] === 'Centre' || words[i - 1] === 'Îles')) {
+                //     male_do_not_count++;
+                //     male_name_no_count.add(words[i].toUpperCase());
+                // }
+                // else if (words[i] === 'Everest' && (words[i - 1] === 'the' || words[i - 1] === 'climb')) {
 
+                // }
+                // else if (excluded.indexOf(words[i]) > 0) {
 
-            if (all_male_words.indexOf(words[i].toLowerCase()) >= 0 || malefirstnames.indexOf(words[i]) >= 0 || malefirstnames.indexOf(capitalize(words[i])) >= 0 || temp_male_last_names.indexOf(words[i]) >= 0 || mfnames.indexOf(words[i].toUpperCase()) >= 0 && excluded.indexOf(words[i]) === -1) {
+                // }
+                // else {
 
-                //if (temp_female_words.indexOf(words[i]) === -1) {
+                //     m_count++;
+                //     numObservations++;
+                //     console.log('num observations ++ male', words[i]);
+                //     temp_male_words.push(words[i]);
+                // }
+            }
+            // If word is in any of our female dictionaries,
+            else if (all_female_words.indexOf(words[i].toLowerCase()) >= 0 || femalefirstnames.indexOf(words[i]) >= 0 || femalefirstnames.indexOf(capitalize(words[i])) >= 0 || ffnames.indexOf(words[i].toUpperCase()) >= 0 && excluded.indexOf(words[i]) === -1) {
 
-                if (malefirstnames.indexOf(words[i]) >= 0 && (words[i - 1] === 'Lake' || words[i + 1] === 'County' || words[i + 1] === 'Lake' || words[i + 1] === 'School' || words[i + 1] === 'High' || words[i + 1] === 'Secondary'
-                    || words[i + 1] === 'Primary' || words[i + 1] === 'College' || words[i - 1] === 'Port' || words[i - 1] === 'Hurricane' || words[i - 1] === 's' || words[i + 1] === 't' || words[i + 1] === 'Mountain' || words[i + 1] === 'Park'
-                    || words[i + 1] === 'Institute' || words[i + 1] === 'School' || words[i - 2] === 'city' || words[i - 2] === 'City' || words[i + 1] === 'City' || words[i + 1] === 'Islands' || words[i + 1] === 'River' || words[i + 1] === 'award' || words[i + 1] === 'awards' || words[i + 1] === 'Park' || words[i + 1] === 'Institute'
-                    || words[i + 1] === 'School' || words[i + 1] === 'Highway' || words[i + 1] === 'area' || words[i + 1] === 'University' || words[i + 1] === 'College' || words[i + 1] === 'Center' || words[i + 1] === 'Building' || words[i + 1] === 'Circle' || words[i + 1] === 'Street' || words[i + 1] === 'Zoo' || words[i - 1] === 'San' || words[i - 1] === 'Saint'
-                    || words[i - 1] === 'Santa' || words[i - 1] === 'St' || words[i - 1] === 'St.' || words[i - 1] === 'Sao'
-                    || words[i - 1] === 'New' || words[i - 1] === 'O' || words[i - 1] === 'Mount' || words[i - 1] === 'Saint' || words[i - 1] === 'Centre' || words[i - 1] === 'Îles')) {
-                    male_do_not_count++;
-                    male_name_no_count.add(words[i].toUpperCase());
-                }
-                else if (words[i] === 'Everest' && (words[i - 1] === 'the' || words[i - 1] === 'climb')) {
+                categorize(femalefirstnames, female_do_not_count, female_name_no_count, f_count, temp_female_words, "female");
 
-                }
-                else if (excluded.indexOf(words[i]) > 0) {
+            } 
+            // If word is in any of our male dictionaries,
+            else if (all_male_words.indexOf(words[i].toLowerCase()) >= 0 || malefirstnames.indexOf(words[i]) >= 0 || malefirstnames.indexOf(capitalize(words[i])) >= 0 || mfnames.indexOf(words[i].toUpperCase()) >= 0 && excluded.indexOf(words[i]) === -1) {
 
-                }
-                else {
-
-                    m_count++;
-                    numObservations++;
-                    console.log('num observations ++ male', words[i]);
-                    temp_male_words.push(words[i]);
-                    // setHighlightClass(words[i], 'male');
-                }
-                //}
+                categorize(malefirstnames, male_do_not_count, male_name_no_count, m_count, temp_male_words, "male");
 
             }
 
         }
 
         if (m_count + f_count != 0) {
-
+            // Tried to round to 2 decimal places, but graph still rounds to whole number?
             m_percent = Math.round(m_count / (m_count + f_count) * 10000) / 100;
             f_percent = Math.round(f_count / (m_count + f_count) * 10000) / 100;
 
