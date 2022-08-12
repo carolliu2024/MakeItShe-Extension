@@ -686,6 +686,13 @@ function applyContent(windowObject) {
                 }
             }
         }
+        function prevWordGender(){
+            if (prev_gender == "female"){
+                categorize(femalefirstnames, female_do_not_count, female_name_no_count, f_count, temp_female_words, "female");
+            } else {
+                categorize(malefirstnames, male_do_not_count, male_name_no_count, m_count, temp_male_words, "male");
+            }
+        }
 
         // Categorize each word as male or female
         // If prev word is (gendered & uppercase), and next word is (uppercase & in dictionary), override
@@ -702,12 +709,7 @@ function applyContent(windowObject) {
                 // If prev word is (gendered & uppercase), and next word is (uppercase & in dictionary)...
                 if ((prev_gender !== "") && ( /[A-Z]/.test(words[i][0]) )){ 
                     // Categorize as prev word's gender
-                    if (prev_gender == "female"){
-                        categorize(femalefirstnames, female_do_not_count, female_name_no_count, f_count, temp_female_words, "female");
-                    } else {
-                        categorize(malefirstnames, male_do_not_count, male_name_no_count, m_count, temp_male_words, "male");
-                    }
-                    
+                    prevWordGender();
                 } else {
                     categorize(femalefirstnames, female_do_not_count, female_name_no_count, f_count, temp_female_words, "female");
                 }
@@ -716,11 +718,7 @@ function applyContent(windowObject) {
             else if (all_male_words.indexOf(words[i].toLowerCase()) >= 0 || malefirstnames.indexOf(words[i]) >= 0 || malefirstnames.indexOf(capitalize(words[i])) >= 0 || mfnames.indexOf(words[i].toUpperCase()) >= 0 && excluded.indexOf(words[i]) === -1) {
                 if ((prev_gender !== "") && ( /[A-Z]/.test(words[i][0]) )){ 
                     // Categorize as prev word's gender
-                    if (prev_gender == "female"){
-                        categorize(femalefirstnames, female_do_not_count, female_name_no_count, f_count, temp_female_words, "female");
-                    } else {
-                        categorize(malefirstnames, male_do_not_count, male_name_no_count, m_count, temp_male_words, "male");
-                    }
+                    prevWordGender();
                 } else {
                     categorize(malefirstnames, male_do_not_count, male_name_no_count, m_count, temp_male_words, "male");
                 }
