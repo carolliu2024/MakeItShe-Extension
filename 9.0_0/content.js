@@ -660,7 +660,8 @@ function applyContent(windowObject) {
         }
 
         let prev_gender = "";
-        // categorize(): gend is a string ("female" or "male"), other inputs are vars
+        // categorize(gend (string, "female"/"male"), other inputs are vars): Used to categorize a word into 
+        // temp_male_words or temp_female_words, which are used for graph count and highlighting
         function categorize(gendfirstnames, gend_do_not_count, gend_name_no_count, g_count, temp_gend_words, gend){
             if (gendfirstnames.indexOf(words[i]) >= 0 && (words[i - 1] === 'Lake' || words[i + 1] === 'County' || words[i + 1] === 'Lake' || words[i + 1] === 'School' || words[i + 1] === 'High' || words[i + 1] === 'Secondary'
                 || words[i + 1] === 'Primary' || words[i + 1] === 'College' || words[i - 1] === 'Port' || words[i - 1] === 'Hurricane' || words[i - 1] === 's' || words[i + 1] === 't' || words[i + 1] === 'Mountain' || words[i + 1] === 'Park'
@@ -686,6 +687,7 @@ function applyContent(windowObject) {
                 }
             }
         }
+        // prevWordGender(): Categorize a word as the previous word's gender. Used in for loop below.
         function prevWordGender(){
             if (prev_gender == "female"){
                 categorize(femalefirstnames, female_do_not_count, female_name_no_count, f_count, temp_female_words, "female");
