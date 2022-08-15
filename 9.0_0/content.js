@@ -701,31 +701,40 @@ function applyContent(windowObject) {
         }
 
         // Categorize each word as male or female
-        // If prev word is (gendered & uppercase), and next word is (uppercase & in dictionary), override
-        // and categorize it as prev word's gender. It is probably a last name that got missed by some code earlier
         for (var i = 0; i < words.length; i++) {
-            // Check our temp last names lists first
-            if (temp_female_last_names.indexOf(words[i]) >= 0){
+            // Check our temp last names lists first, and Gendered Pronouns (he, she, man, woman...)
+            if (temp_female_last_names.indexOf(words[i]) >= 0 || all_female_words.indexOf(words[i].toLowerCase()) >= 0){
                 categorize(femalefirstnames, female_do_not_count, female_name_no_count, f_count, temp_female_words, "female");
-            } else if (temp_male_last_names.indexOf(words[i]) >= 0) {
+            } else if (temp_male_last_names.indexOf(words[i]) >= 0 || all_male_words.indexOf(words[i].toLowerCase()) >= 0) {
                 categorize(malefirstnames, male_do_not_count, male_name_no_count, m_count, temp_male_words, "male");
             }
-            // If word is in any of our female dictionaries,
-            else if (all_female_words.indexOf(words[i].toLowerCase()) >= 0 || femalefirstnames.indexOf(words[i]) >= 0 || femalefirstnames.indexOf(capitalize(words[i])) >= 0 || ffnames.indexOf(words[i].toUpperCase()) >= 0 && excluded.indexOf(words[i]) === -1) {
+            // Name dictionary code below is separated from pronouns to distingush, for example, "mark" the word and "Mark" the name.
+
+            // If prev word is (gendered & uppercase), and next word is (uppercase & in dictionary), override
+            // and categorize it as prev word's gender. It is probably a last name that got missed by some code earlier
+            else if ( femalefirstnames.indexOf(words[i]) >= 0                
+                   || femalefirstnames.indexOf(capitalize(words[i])) >= 0 
+                   || ffnames.indexOf(words[i].toUpperCase()) >= 0 
+                   && excluded.indexOf(words[i]) === -1) 
+            { // If word is in any of our female name dictionaries,
                 // If prev word is (gendered & uppercase), and next word is (uppercase & in dictionary)...
                 if ((prev_gender !== "") && ( /[A-Z]/.test(words[i][0]) )){ 
-                    // Categorize as prev word's gender
-                    prevWordGender();
-                } else {
+                    // Categorize as prev word's gender; probably a last name
+                    prevWordGender()
+                } else if (/[A-Z]/.test(words[i][0])){ // If word is lowercase, it's not a name.
                     categorize(femalefirstnames, female_do_not_count, female_name_no_count, f_count, temp_female_words, "female");
                 }
             } 
             // If word is in any of our male dictionaries,
-            else if (all_male_words.indexOf(words[i].toLowerCase()) >= 0 || malefirstnames.indexOf(words[i]) >= 0 || malefirstnames.indexOf(capitalize(words[i])) >= 0 || mfnames.indexOf(words[i].toUpperCase()) >= 0 && excluded.indexOf(words[i]) === -1) {
+            else if ( malefirstnames.indexOf(words[i]) >= 0 
+                   || malefirstnames.indexOf(capitalize(words[i])) >= 0 
+                   || mfnames.indexOf(words[i].toUpperCase()) >= 0 
+                   && excluded.indexOf(words[i]) === -1) 
+            {
                 if ((prev_gender !== "") && ( /[A-Z]/.test(words[i][0]) )){ 
                     // Categorize as prev word's gender
                     prevWordGender();
-                } else {
+                } else if (/[A-Z]/.test(words[i][0])) { // If word is lowercase, it's not a name.
                     categorize(malefirstnames, male_do_not_count, male_name_no_count, m_count, temp_male_words, "male");
                 }
             } else {
