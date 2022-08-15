@@ -417,9 +417,11 @@ function applyContent(windowObject) {
 
             var w = words[i].replace(/[!?,.;`' ]/, '');
 
-            if (w === 'Mr' || w === 'Lord' && /[A-Z]/.test(words[i + 1])) {
-
-                temp_male_words.push(words[i + 1]);
+            if (w === 'Mr' || w === 'Lord' && /[A-Z]/.test(words[i + 1]) ) {
+                if (words[i+1].trim() !== "."){
+                    temp_male_words.push(words[i + 1]);
+                }
+                
                 // setHighlightClass(words[i+1], 'male');
 
                 //words.splice( i + 1, 1 );
@@ -427,8 +429,10 @@ function applyContent(windowObject) {
             }
 
             if ((w === 'Ms' || w === 'Mme' || w === 'Lady') && /[A-Z]/.test(words[i + 1])) {
-
-                temp_female_words.push(words[i + 1]);
+                if (words[i+1].trim() !== "."){
+                    temp_female_words.push(words[i + 1]);
+                }
+                
                 // setHighlightClass(words[i+1], 'female');
                 //words.splice( i + 1, 1 );
 
@@ -1926,8 +1930,11 @@ function highlightNew() {
                 var str = this.nodeValue; // Get text
                 male_words.forEach(function (word) { // loop through male_words to replace them in str
                     let regex = new RegExp('\\b(' + word + ')\\b', "g");
-                    let html_male = `<span class='male-highlight''>${word}</span>`;
+                    // console.log("REPLACED: ", word);
+                    let html_male = `<span class='male-highlight'>${word}</span>`;
                     str = str.replace(regex, html_male);
+                    
+                    
                 });
                 return str; // Return str to replace original text
             })
