@@ -37,7 +37,7 @@ function updateSiteStateList(site, state) {
 var m, f;
 
 function setStats(stats) {
-
+    console.log("setStats Running");
     if (!stats) {
         console.log ('no stats yet'); 
         
@@ -59,15 +59,14 @@ function setStats(stats) {
         return;
         }
     
-    console.log(stats.stats.done);
+    console.log("stats.stats.done = ",stats.stats.done);
     
     if (stats.stats.done === false) {
         console.log('again');
         chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-
-                chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', activate: true });
-                
-                chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', action: 'getStats' }, setStats);
+            chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', activate: true });
+            chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', action: 'getStats' }, setStats);
+            console.log("setStats3");
                 
         });
     }
@@ -362,6 +361,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(function () {
 
                     chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', action: 'getStats' }, setStats);
+                    console.log("setStats1");
 
                 }, 100);
             });
@@ -434,6 +434,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     setTimeout(function () {
     
                         chrome.tabs.sendMessage(tabs[0].id, { from: 'popup', action: 'getStats' }, setStats);
+                        console.log("setStats2");
     
                     }, 100);
                 });

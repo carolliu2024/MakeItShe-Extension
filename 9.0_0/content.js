@@ -339,7 +339,7 @@ function applyContent(windowObject) {
         return true;
 
 
-    }).replaceWith(function () {
+    }).each(function () {
         // Set word as no highlight, or highlight class?
         // function setHighlightClass(word, gender){
         //     let regex = new RegExp('\\b(' + word + ')\\b', "g");
@@ -662,6 +662,7 @@ function applyContent(windowObject) {
             }
 
         }
+        console.log("applyContent 1");
 
         let prev_gender = "";
         // categorize(gend (string, "female"/"male"), other inputs are vars): Used to categorize a word into 
@@ -742,17 +743,18 @@ function applyContent(windowObject) {
             }
 
         }
+        console.log("applyContent 2");
 
-        if (m_count + f_count != 0) {
-            // Tried to round to 2 decimal places, but graph still rounds to whole number?
-            m_percent = Math.round(m_count / (m_count + f_count) * 10000) / 100;
-            f_percent = Math.round(f_count / (m_count + f_count) * 10000) / 100;
+        // if (m_count + f_count != 0) {
+        //     // Tried to round to 2 decimal places, but graph still rounds to whole number?
+        //     m_percent = Math.round(m_count / (m_count + f_count) * 10000) / 100;
+        //     f_percent = Math.round(f_count / (m_count + f_count) * 10000) / 100;
 
-        }
+        // }
 
-        if (m_percent + f_percent > 100) {
-            f_percent = f_percent - 1;
-        }
+        // if (m_percent + f_percent > 100) {
+        //     f_percent = f_percent - 1;
+        // }
 
 
         //processed = true;
@@ -762,6 +764,7 @@ function applyContent(windowObject) {
     console.log("FEMALE", temp_female_words);
     console.log("MALE", temp_male_words);
     console.log("MALE NO COUNT", male_name_no_count);
+    console.log("applyContent 3, end");
 
     window.isDone = true;
 
@@ -1346,7 +1349,7 @@ function applyLinks(windowObject) {
 var male_do_not_count = 0;
 var male_name_no_count = new Set();
 var female_do_not_count = 0;
-var female_name_no_count = [];
+var female_name_no_count = new Set();
 var counter = 0;
 
 // Old highlight function. Not used. See highlightNew()
@@ -2177,6 +2180,7 @@ function hideHighlighting() {
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
 
     if ((msg.from === 'popup') && (msg.action === 'getStats')) {
+        console.log("getStats running");
 
         //location.reload();
         //applyGoogleDocContent();
@@ -2229,8 +2233,10 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
 
         }
         else {
-
+            console.log("applyContent constant?", "\n msg.from = ",msg.from);
             applyContent(document.body);
+            console.log("applyContent done");
+            
             //getLinks();
 
         }
