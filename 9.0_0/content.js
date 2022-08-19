@@ -418,7 +418,8 @@ function applyContent(windowObject) {
             var w = words[i].replace(/[!?,.;`' ]/, '');
 
             if (w === 'Mr' || w === 'Lord' && /[A-Z]/.test(words[i + 1]) ) {
-                if (words[i+1].trim() !== "."){
+                let nextWord = words[i+1].trim();
+                if (nextWord !== "."){
                     temp_male_words.push(words[i + 1]);
                 }
                 
@@ -1912,8 +1913,7 @@ function highlightNew() {
                 var str = this.nodeValue; // Get text
                 // console.log("str = ",str);
                 fem_words.forEach(function (word) { // loop through fem_words to replace them in str
-                    // console.log("word = ",word);
-                    let regex = new RegExp('\\b(' + word + ')\\b', "g");
+                    let regex = new RegExp('(?!male-highlight)\\b(' + word + ')\\b', "g");
                     let html_fem = `<span class='fem-highlight' >${word}</span>`;
                     str = str.replace(regex, html_fem);
                 });
@@ -1941,10 +1941,17 @@ function highlightNew() {
             .replaceWith(function () { // For each text
                 var str = this.nodeValue; // Get text
                 male_words.forEach(function (word) { // loop through male_words to replace them in str
-                    let regex = new RegExp('\\b(' + word + ')\\b', "g");
-                    // console.log("REPLACED: ", word);
+                    // Note: (?!male-highlight), so that we don't replace 'male' or anything in 'male-highlight'
+                    let regex = new RegExp('(?!male-highlight)\\b(' + word + ')\\b', "g");
+                    if (word == 'male'){
+                        console.log("REPLACED: ", word, "\nin ",str);
+                    }
+                    
                     let html_male = `<span class='male-highlight'>${word}</span>`;
                     str = str.replace(regex, html_male);
+                    if (word == 'male'){
+                        console.log("str AFTER male = ", str);
+                    }
                     
                     
                 });
