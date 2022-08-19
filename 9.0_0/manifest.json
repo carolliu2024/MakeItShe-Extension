@@ -9,7 +9,7 @@
    },
    "content_scripts": [ {
       "css": [ "style.css" ],
-      "js": [ "jquery.min.js", "data/associative.js", "data/words.js", "data/fnames.js", "data/firstnames.js", "data/frenchwords.js", "data/spanishwords.js", "content.js" ],
+      "js": [ "jquery.min.js", "data/associative.js", "data/words.js", "data/fnames.js", "data/firstnames.js", "data/frenchwords.js", "data/spanishwords.js", "data/nationalities.js","content.js" ],
       "matches": [ "*://*/*" ],
       "run_at": "document_end"
    } ],

@@ -5,6 +5,7 @@ console.log("content.js running");
 var turn_on = false; // Default
 var name_dict = window.name_dict;
 var word_dict = window.english_word_dict;
+var nationalities = window.nationalities;
 window.isDone = false;
 var numObservations = 0;
 
@@ -722,6 +723,9 @@ function applyContent(windowObject) {
                 // If prev word is (gendered & uppercase), and next word is (uppercase & in dictionary)...
                 if ((prev_gender !== "") && ( /[A-Z]/.test(words[i][0]) )){ 
                     // Categorize as prev word's gender; probably a last name
+                    if (words[i] == 'Indian'){
+                        console.log('Indian');
+                    }
                     prevWordGender()
                 } else if (/[A-Z]/.test(words[i][0])){ // If word is lowercase, it's not a name.
                     categorize(femalefirstnames, female_do_not_count, female_name_no_count, f_count, temp_female_words, "female");
@@ -744,7 +748,6 @@ function applyContent(windowObject) {
             }
 
         }
-        console.log("applyContent 2");
 
         // if (m_count + f_count != 0) {
         //     // Tried to round to 2 decimal places, but graph still rounds to whole number?
@@ -1943,15 +1946,15 @@ function highlightNew() {
                 male_words.forEach(function (word) { // loop through male_words to replace them in str
                     // Note: (?!male-highlight), so that we don't replace 'male' or anything in 'male-highlight'
                     let regex = new RegExp('(?!male-highlight)\\b(' + word + ')\\b', "g");
-                    if (word == 'male'){
-                        console.log("REPLACED: ", word, "\nin ",str);
-                    }
+                    // if (word == 'male'){
+                    //     console.log("REPLACED: ", word, "\nin ",str);
+                    // }
                     
                     let html_male = `<span class='male-highlight'>${word}</span>`;
                     str = str.replace(regex, html_male);
-                    if (word == 'male'){
-                        console.log("str AFTER male = ", str);
-                    }
+                    // if (word == 'male'){
+                    //     console.log("str AFTER male = ", str);
+                    // }
                     
                     
                 });
