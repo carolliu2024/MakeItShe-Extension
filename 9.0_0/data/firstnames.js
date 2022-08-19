@@ -12219,7 +12219,6 @@ window.femaleNames = [
   "Hima",
   "Icess",
   "Idaliz",
-  "Ikea",
   "Ikira",
   "Ilanna",
   "Ilaria",
