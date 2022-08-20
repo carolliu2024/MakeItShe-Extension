@@ -1,4 +1,4 @@
-window.ethnic = new Set([
+window.nationalities = new Set([
     'Afghan',
     'Albanian',
     'Algerian',

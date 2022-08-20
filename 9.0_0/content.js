@@ -679,7 +679,7 @@ function applyContent(windowObject) {
                 gend_do_not_count++;
                 gend_name_no_count.add(words[i].toUpperCase());
             }
-            else if (excluded.indexOf(words[i]) > 0) {
+            else if ((excluded.indexOf(words[i]) > 0) || nationalities.has(words[i])) {
 
             }
             else {
