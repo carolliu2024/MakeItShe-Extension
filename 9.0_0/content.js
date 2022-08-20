@@ -6,6 +6,7 @@ var turn_on = false; // Default
 var name_dict = window.name_dict;
 var word_dict = window.english_word_dict;
 var nationalities = window.nationalities;
+var groups = window.groups;
 window.isDone = false;
 var numObservations = 0;
 
@@ -670,17 +671,31 @@ function applyContent(windowObject) {
         // categorize(gend (string, "female"/"male"), other inputs are vars): Used to categorize a word into 
         // temp_male_words or temp_female_words, which are used for graph count and highlighting
         function categorize(gendfirstnames, gend_do_not_count, gend_name_no_count, g_count, temp_gend_words, gend){
+            console.log("words[i] = ", words[i], "\nBefore: ",words[i-1], "\nAfter: ", words[i+1]);
             if (gendfirstnames.indexOf(words[i]) >= 0 && (words[i - 1] === 'Lake' || words[i + 1] === 'County' || words[i + 1] === 'Lake' || words[i + 1] === 'School' || words[i + 1] === 'High' || words[i + 1] === 'Secondary'
                 || words[i + 1] === 'Primary' || words[i + 1] === 'College' || words[i - 1] === 'Port' || words[i - 1] === 'Hurricane' || words[i - 1] === 's' || words[i + 1] === 't' || words[i + 1] === 'Mountain' || words[i + 1] === 'Park'
                 || words[i + 1] === 'Institute' || words[i + 1] === 'School' || words[i - 2] === 'city' || words[i - 2] === 'City' || words[i + 1] === 'City' || words[i + 1] === 'Islands' || words[i + 1] === 'River' || words[i + 1] === 'award' || words[i + 1] === 'awards' || words[i + 1] === 'Park' || words[i + 1] === 'Institute'
                 || words[i + 1] === 'School' || words[i + 1] === 'Highway' || words[i + 1] === 'area' || words[i + 1] === 'University' || words[i + 1] === 'College' || words[i + 1] === 'Center' || words[i + 1] === 'Building' || words[i + 1] === 'Circle' || words[i + 1] === 'Street' || words[i + 1] === 'Zoo' || words[i - 1] === 'San' || words[i - 1] === 'Saint'
                 || words[i - 1] === 'Santa' || words[i - 1] === 'St' || words[i - 1] === 'St.' || words[i - 1] === 'Sao'
-                || words[i - 1] === 'New' || words[i - 1] === 'O' || words[i - 1] === 'Mount' || words[i - 1] === 'Saint' || words[i - 1] === 'Centre' || words[i - 1] === 'Îles')) {
+                || words[i - 1] === 'New' || words[i - 1] === 'O' || words[i - 1] === 'Mount' || words[i - 1] === 'Saint' || words[i - 1] === 'Centre' || words[i - 1] === 'Îles')
+                ) {
+                gend_do_not_count++;
+                gend_name_no_count.add(words[i].toUpperCase());
+            } else if (words[i] && groups.has(words[i].toLowerCase())){
+                // console.log("GROUPS: ", words[i]);
                 gend_do_not_count++;
                 gend_name_no_count.add(words[i].toUpperCase());
             }
-            else if ((excluded.indexOf(words[i]) > 0) || nationalities.has(words[i])) {
-
+            else if(words[i-1] && groups.has(words[i-1].toLowerCase())){
+                gend_do_not_count++;
+                gend_name_no_count.add(words[i].toUpperCase());
+            }
+            else if(words[i+1] && groups.has(words[i+1].toLowerCase())){
+                gend_do_not_count++;
+                gend_name_no_count.add(words[i].toUpperCase());
+            }
+            else if ((excluded.indexOf(words[i]) > 0) || nationalities.has(words[i]) ) {
+                
             }
             else {
                 g_count++;
