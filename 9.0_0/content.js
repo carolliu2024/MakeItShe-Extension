@@ -686,13 +686,17 @@ function applyContent(windowObject) {
                 gend_do_not_count++;
                 gend_name_no_count.add(words[i].toUpperCase());
             }
-            else if(words[i-1] && groups.has(words[i-1].toLowerCase())){
+            else if (words[i-1] && groups.has(words[i-1].toLowerCase())){
                 gend_do_not_count++;
                 gend_name_no_count.add(words[i].toUpperCase());
             }
-            else if(words[i+1] && groups.has(words[i+1].toLowerCase())){
+            else if (words[i+1] && groups.has(words[i+1].toLowerCase())){
                 gend_do_not_count++;
                 gend_name_no_count.add(words[i].toUpperCase());
+            }
+            else if (words[i-1] && words[i+1] && words[i-1] == "The") {
+                gend_do_not_count++;
+                gend_name_no_count.add(words[i+1].toUpperCase()); // e.g. ignore "Presidency" in "The Biden Presidency"
             }
             else if ((excluded.indexOf(words[i]) > 0) || nationalities.has(words[i]) ) {
                 
