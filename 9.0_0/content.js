@@ -311,7 +311,10 @@ function applyGoogleDocContent() {
 
 };
 
-
+// Check if a string is all uppercase, e.g. "FBI" and "F.B.I." would return true
+function isUpperCase(str) {
+    return str === str.toUpperCase();
+}
 
 
 // Male/Female word counting done here
@@ -510,6 +513,7 @@ function applyContent(windowObject) {
                     //if (femalefirstnames.indexOf(words[i]) >= 0 && /[A-Z]/.test(nextWord[0]) && nextWord.length > 1){
                     // If word is found in female first names, or is Ms, then push the next word to last names.
                     if ((femalefirstnames.indexOf(words[i]) >= 0 || words[i] === 'Ms' || words[i] === 'Mrs' || words[i] === 'Miss')
+                        && !isUpperCase(words[i+1])                // If next word is all uppercase, don't gender it
                         && words[i - 1] !== 'The' && excluded.indexOf(nextWord) === -1 && next_first !== '(' && initials.indexOf(nextWord) === -1 
                         && last !== '.' && last !== '!' && last !== '?' && last !== ',' && last !== ';' && last !== ':' && last !== '/' 
                         && /[A-Z]/.test(nextWord[0]) && (!(/[A-Z]/.test(nextNextWord[0])) || nextNextWord === undefined 
@@ -566,7 +570,9 @@ function applyContent(windowObject) {
                     m_l_begin = n;
 
                     //if (malefirstnames.indexOf(words[i]) >= 0 && /[A-Z]/.test(nextWord[0]) && nextWord.length > 1){
-                    if ((malefirstnames.indexOf(words[i]) >= 0 || words[i] === 'Mr' || words[i] === 'Mister') && words[i - 1] !== 'The'
+                    if ((malefirstnames.indexOf(words[i]) >= 0 || words[i] === 'Mr' || words[i] === 'Mister') 
+                        && !isUpperCase(words[i+1])                // If next word is all uppercase, don't gender it
+                        && words[i - 1] !== 'The'
                         && excluded.indexOf(nextWord) === -1 && next_first !== '(' && initials.indexOf(nextWord) === -1 && last !== '.'
                         && last !== '!' && last !== '?' && last !== ',' && last !== ';' && last !== ':' && last !== '/' && /[A-Z]/.test(nextWord[0])
                         && (!(/[A-Z]/.test(nextNextWord[0])) || nextNextWord === undefined || next_last === '.' || next_last === '!' || next_last === '?' || next_last === ',' || next_last === '/') 
@@ -580,6 +586,8 @@ function applyContent(windowObject) {
                         // if( intials.indexOf(words[i + 1]) === -1)   
                         temp_male_last_names.push(words[i + 1]);
                         maleNameDict[words[i + 1]] = words[i]; // e.g. Torres : Ruben
+                        
+
                         console.log("pushing: ", words[i+1], " to temp_male_last_names");
                         console.log('PUSHING LAST NAME (I+1)');
 
