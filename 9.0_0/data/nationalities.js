@@ -29,6 +29,7 @@ window.nationalities = new Set([
     'Botswanan'	,
     'Brazilian'	,
     'British',
+    'Briton',
     'Bruneian'	,
     'Bulgarian'	,
     'Burkinan'	,
