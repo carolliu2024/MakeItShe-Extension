@@ -78,7 +78,7 @@ for (var i = 0; i < all_female_words.length; i++) {
 //
 var temp_male_words = [];
 var temp_female_words = [];
-var temp_male_last_names = [];
+var temp_male_last_names = ["Biden", "Trump"];
 var temp_female_last_names = [];
 var counts = 0;
 
