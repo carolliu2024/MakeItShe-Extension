@@ -9559,7 +9559,7 @@ window.femaleNames = [
   "Ayssa",
   "Ayva",
   "Azya",
-  "Bali",
+  // "Bali",
   "Bari",
   "Bariah",
   "Bebe",
