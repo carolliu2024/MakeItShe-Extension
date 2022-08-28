@@ -1967,7 +1967,8 @@ function highlightNew() {
                     let regex = new RegExp('(?!male-highlight)\\b(' + word + ')\\b', "g");
                     if (maleNameDict[word]){
                         // e.g. if replacing "Chloe Torres", ignore "Ruben Torres". NOTE: unsure if this works?
-                        regex = new RegExp('(?!male-highlight)(?!'+ maleNameDict[word] +word+')\\b(' + word + ')\\b', "g");
+                        regex = new RegExp('(?!male-highlight | '+ maleNameDict[word] +'\\s*'+word+')\\b(' + word + ')\\b', "g");
+                        console.log("Reg Ignore: ",maleNameDict[word] +' '+word);
                     }
                     let html_fem = `<span class='fem-highlight' >${word}</span>`;
                     str = str.replace(regex, html_fem);
@@ -2000,7 +2001,7 @@ function highlightNew() {
                     let regex = new RegExp('(?!male-highlight)\\b(' + word + ')\\b', "g");
                     if (femNameDict[word]){
                         // e.g. if replacing "Chloe Torres", ignore "Ruben Torres"
-                        regex = new RegExp('(?!male-highlight)(?!'+ femNameDict[word] +word+')\\b(' + word + ')\\b', "g");
+                        regex = new RegExp('(?!male-highlight | '+ femNameDict[word] +'\\s*'+word+')\\b(' + word + ')\\b', "g");
                     }
                     
                     let html_male = `<span class='male-highlight'>${word}</span>`;
