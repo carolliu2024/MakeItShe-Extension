@@ -1965,13 +1965,22 @@ function highlightNew() {
                 // console.log("str = ",str);
                 fem_words.forEach(function (word) { // loop through fem_words to replace them in str
                     let regex = new RegExp('(?!male-highlight)\\b(' + word + ')\\b', "g");
-                    if (maleNameDict[word]){
-                        // e.g. if replacing "Chloe Torres", ignore "Ruben Torres". NOTE: unsure if this works?
-                        regex = new RegExp('(?!male-highlight | '+ maleNameDict[word] +'\\s*'+word+')\\b(' + word + ')\\b', "g");
-                        console.log("Reg Ignore: ",maleNameDict[word] +' '+word);
-                    }
                     let html_fem = `<span class='fem-highlight' >${word}</span>`;
-                    str = str.replace(regex, html_fem);
+                    if (maleNameDict[word]){ // Page contains same last name, but it was male
+                        // e.g. if replacing "Chloe Torres", ignore "Ruben Torres". NOTE: unsure if this works?
+                        // regex = new RegExp('(?!male-highlight | '+ maleNameDict[word] +'\\s*'+word+')\\b(' + word + ')\\b', "g");
+                        // console.log("Reg Ignore: ",maleNameDict[word] +' '+word);
+                        let regex2 = new RegExp('(' + femNameDict[word] +'.*' +')'+ word, "g");
+                        // Only replace the female occurrences
+                        console.log("STR BEFORE: ", str);
+                        str = str.replace(regex2, // e.g. Chloe Torres
+                                          `$1 <span class='fem-highlight'>${word}</span>`); 
+                        console.log("STR AFTER: ", str);
+                    } else {
+                        str = str.replace(regex, html_fem);
+                    }
+                    
+                    
                 });
                 return str; // Return str to replace original text
             })
@@ -1998,18 +2007,20 @@ function highlightNew() {
                 var str = this.nodeValue; // Get text
                 male_words.forEach(function (word) { // loop through male_words to replace them in str
                     // Note: (?!male-highlight), so that we don't replace 'male' or anything in 'male-highlight'
-                    let regex = new RegExp('(?!male-highlight)\\b(' + word + ')\\b', "g");
+                    var regex = new RegExp('(?!male-highlight)\\b(' + word + ')\\b', "g");
+                    let html_male = `<span class='male-highlight'>${word}</span>`;
                     if (femNameDict[word]){
                         // e.g. if replacing "Chloe Torres", ignore "Ruben Torres"
-                        regex = new RegExp('(?!male-highlight | '+ femNameDict[word] +'\\s*'+word+')\\b(' + word + ')\\b', "g");
+                        // regex = new RegExp('(?!male-highlight | '+ femNameDict[word] +'\\s*'+word+')\\b(' + word + ')\\b', "g");
+                        // Only replace the male occurrences
+                        let regex2 = new RegExp('(' + maleNameDict[word] + '.*' + ')' + word , "g");
+                        console.log("STR BEFORE: ", str);
+                        str = str.replace(regex2, // e.g. Ruben Torres
+                                          `$1 <span class='male-highlight' >${word}</span>`); 
+                        console.log("STR AFTER: ", str);
+                    } else {
+                        str = str.replace(regex, html_male);
                     }
-                    
-                    let html_male = `<span class='male-highlight'>${word}</span>`;
-                    str = str.replace(regex, html_male);
-                    // if (word == 'male'){
-                    //     console.log("str AFTER male = ", str);
-                    // }
-                    
                     
                 });
                 return str; // Return str to replace original text
