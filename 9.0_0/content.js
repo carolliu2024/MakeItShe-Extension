@@ -2,6 +2,14 @@
 // Content scripts: run on top of existing website. Are extra css and js files on top of a website.
 //                  Loaded once websites are opened, and active until corresponding tabs close
 // If you need to use another data file, add it to manifest.json too
+// MAIN 2 FUNCTIONS HERE: applyContent(), highlightNew()
+// The .addListener() functions are what call these 2 functions
+// applyContent() identifies a word as male/female, while highlightNew() goes through the page again to highlight it.
+
+// Carol's thought: the highlighting is slow on long pages; it would've been fastest to set the highlight classes
+// for each word while identifying them in applyContent, but I've just kept the highlightNew() function because it's already developed
+// and applyContent would need some structural changes.
+// Again, please write some comments so that future coders know what you're doing!!
 
 console.log("content.js running");
 var turn_on = false; // Default
