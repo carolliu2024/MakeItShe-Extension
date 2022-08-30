@@ -1,5 +1,5 @@
 // popup.js: supposed to be used as  UI; main functionality should be in background.js or content scripts
-// acts like an individual website
+// Acts like an individual website.
 // Note: chrome.storage.sync set and get are used to get and set flags, which can be communicated between popup.js and background.js
 // It might work to communicate with content.js too
 
@@ -7,7 +7,7 @@
 var siteStateList;
 var activeDomain, currentUrl;
 
-console.log("on is set");
+// console.log("on is set");
 // 'on' flag: true/false, indicates whether extension is turned on.
 chrome.storage.sync.get('on', obj => {
     console.log("on1?: ", obj.on); // Is extension "on"?

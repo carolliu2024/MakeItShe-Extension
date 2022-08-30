@@ -1,6 +1,8 @@
 // Main content script (check manifest.json for other content scripts)
 // Content scripts: run on top of existing website. Are extra css and js files on top of a website.
 //                  Loaded once websites are opened, and active until corresponding tabs close
+// If you need to use another data file, add it to manifest.json too
+
 console.log("content.js running");
 var turn_on = false; // Default
 var name_dict = window.name_dict;
