@@ -2003,7 +2003,7 @@ function highlight() {
 var highlightFlag = false; // Flag; Has been highlighted at least once?
 function highlightNew() {
     if (!highlightFlag) { // Has not been highlighted at least once
-        alert("Green Frames: The article has a majority of female words\nBlue Frames: The article has a majority of male words\n\nTo remove the frames from the page, just uncheck the highlight button");
+        // alert("Green Frames: The article has a majority of female words\nBlue Frames: The article has a majority of male words\n\nTo remove the frames from the page, just uncheck the highlight button");
         let fem_words = new Set(temp_female_words);
 
         // Note: .find("*") may error on some (news) sites; "Blocked a frame with origin from accessing a cross-origin frame"
