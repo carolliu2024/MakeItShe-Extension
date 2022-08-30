@@ -16,7 +16,8 @@ var lastnames = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Miller", "Da
 var initials = ["A.", "B.", "C.", "D.", "E.", "F.", "G.", "H.", "I.", "J.", "K.", "L.", "M.", "N.", "O.", "P.", "Q.", "R.", "S.", "T.", "U.", "V.", "W.", "X.", "Y.", "Z.", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var excluded = ["Of", "of", "Forbes", "Jr", "Junior", "Senior", "Sr", "Le", "le", "la", "La", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "VIIII", "X", "S", "s", "COVID", "Medical", "Prize", "San", "New", "O", "area", "Center", "Building", "Street", "Zoo", "Santa", "Saint", "St", "St.", "Sea", "New", "Centre", "Îles", "Lake", "County", "School", "High", "Secondary", "Primary", "College", "Port", "Hurricane", "Complex", "Management", "Mountain", "River", "Park", "Institute", "School", "Expedition", "Area", "University", "Center", "Building", "Circle", "Street", "Zoo", "San", "Saint", "Santa", "City", "Island", "Islands", "Award", "award", "awards", "Highway", "Mountain", "Mount", "Mt", "College", "University", "A", "Not", "Is", "Are", "The", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Expedition"];
 
-// Gendered dictionaries, lastName : firstName
+// Gendered dictionaries, {lastName : [firstName, # occurrences of this gender, first occurrence of lastName? ] }
+// Note: boolean only matters if last name occurs in both dicts
 var maleNameDict = {}; // Used just in case there are 2 ppl with same name, e.g. Ruben Torres and Chloe Torres
 var femNameDict = {}; 
 
@@ -316,6 +317,21 @@ function isUpperCase(str) {
     return str === str.toUpperCase();
 }
 
+function addGendDict(gendNameDict, first, last){
+    if (!gendNameDict[last]) { // first occurrence
+        // if (!maleNameDict[last] && !femNameDict[last]) { // neither dict has lastName
+        //     gendNameDict[last] = [ first, 1 , true]; // e.g. Torres : [Chloe, 1, True]
+        //     // console.log("torres, male: ",maleNameDict[last], "\nfem:", femNameDict[last]);
+        // } else {
+        //     gendNameDict[last] = [ first, 1 , false];
+        // }
+        gendNameDict[last] = [ first, 1 , false];
+    } else {
+        gendNameDict[ last ][1]++;
+        // console.log("torres2, male: ",maleNameDict[last], "\nfem:", femNameDict[last]);
+    }
+}
+
 
 // Male/Female word counting done here
 function applyContent(windowObject) {
@@ -519,12 +535,8 @@ function applyContent(windowObject) {
                         && /[A-Z]/.test(nextWord[0]) && (!(/[A-Z]/.test(nextNextWord[0])) || nextNextWord === undefined 
                         || next_last === '.' || next_last === '!' || next_last === '?' || next_last === ',' || next_last === '/')) {
 
-
-                        //if( lastnames.indexOf(words[i+1]) >= 0 || lastnames_upper.indexOf(words[i + 1]) >= 0)
                         temp_female_last_names.push(words[i + 1]);
-                        femNameDict[words[i + 1]] = words[i]; // e.g. Torres : Chloe
-                        //  setHighlightClass(words[i+1], 'female');     
-
+                        addGendDict(femNameDict, words[i], words[i + 1]);
                     }
                     // if 2nd-to-last word is fem first name, and last word is uppercase
                     if (femalefirstnames.indexOf(words[words.length - 2]) >= 0 && /[A-Z]/.test((words[words.length - 1])[0]) 
@@ -532,14 +544,14 @@ function applyContent(windowObject) {
                         && next_last !== '/' 
                         && str.substr(str.indexOf(words[words.length - 2]) + (words[words.length - 2]).length, 1) !== ':') {
                         temp_female_last_names.push(words[words.length - 1]);
-                        femNameDict[words[words.length - 1]] = words[words.length - 2]; // e.g. Torres : Chloe
+                        addGendDict(femNameDict, words[words.length - 2], words[words.length - 1]); // e.g. Torres : Chloe
                     }
                 }
             }
             else if (words.length === 2) {
                 if (femalefirstnames.indexOf(words[0]) >= 0 && excluded.indexOf(words[1]) === -1 && /[A-Z]/.test((words[1])[0]) && str.substr(str.indexOf(words[1]) - 1, 1) !== '(' && str.substr(str.indexOf(words[0]) + (words[0]).length, 1) !== ':') {
                     temp_female_last_names.push(words[1]);
-                    femNameDict[words[1]] = words[0]; // e.g. Torres : Chloe
+                    addGendDict(femNameDict, words[0], words[1]); // e.g. Torres : Chloe
                 }
             }
 
@@ -581,21 +593,17 @@ function applyContent(windowObject) {
                             && words[i + 1] !== 'Islands' && words[i + 1] !== 'award' && words[i + 1] !== 'awards' && words[i + 1] !== 'Park' && words[i + 1] !== 'Institute' && words[i + 1] !== 'School' && words[i + 1] !== 'area' && words[i + 1] !== 'University' && words[i + 1] !== 'Center' && words[i + 1] !== 'Building' && words[i + 1] !== 'Circle'
                             && words[i + 1] !== 'Street' && words[i + 1] !== 'Zoo' && words[i - 1] !== 'San' && words[i - 1] !== 'Saint' && words[i - 1] !== 'Santa' && words[i - 1] !== 'St'
                             && words[i - 1] !== 'St.' && words[i - 1] !== 'Sao' && words[i - 1] !== 'New' && words[i - 1] !== 'O' && words[i - 1] !== 's')) {
-
-                        //if( lastnames.indexOf(words[i+1]) >= 0 || lastnames_upper.indexOf(words[i + 1]) >= 0)
-                        // if( intials.indexOf(words[i + 1]) === -1)   
+  
                         temp_male_last_names.push(words[i + 1]);
-                        maleNameDict[words[i + 1]] = words[i]; // e.g. Torres : Ruben
-                        
+                        addGendDict(maleNameDict, words[i], words[i + 1]); // e.g. Torres : Ruben
 
                         console.log("pushing: ", words[i+1], " to temp_male_last_names");
                         console.log('PUSHING LAST NAME (I+1)');
-
                     }
 
                     if (malefirstnames.indexOf(words[words.length - 2]) >= 0 && /[A-Z]/.test((words[words.length - 1])[0]) && str.substr(str.indexOf(words[words.length - 1]) - 1, 1) !== '(' && next_last !== '/' && str.substr(str.indexOf(words[words.length - 2]) + (words[words.length - 2]).length, 1)) {
                         temp_male_last_names.push(words[words.length - 1]);
-                        maleNameDict[words[words.length - 1]] = words[words.length - 2]; // e.g. Torres : Ruben
+                        addGendDict(maleNameDict, words[words.length - 2], words[words.length - 1]); // e.g. Torres : Ruben
                     }
 
                 }
@@ -603,9 +611,29 @@ function applyContent(windowObject) {
             else if (words.length === 2) {
                 if (malefirstnames.indexOf(words[0]) >= 0 && excluded.indexOf(words[1]) === -1 && /[A-Z]/.test((words[1])[0]) && str.substr(str.indexOf(words[1]) - 1, 1) !== '(' && str.substr(str.indexOf(words[0]) + (words[0]).length, 1) !== ':') {
                     temp_male_last_names.push(words[1]);
-                    maleNameDict[words[1]] = words[0]; // e.g. Torres : Ruben
+                    addGendDict(maleNameDict, words[0], words[1]); // e.g. Torres : Ruben
                 }
             }
+            let femNames = Object.keys(femNameDict);
+            // Instead of setting first occurrence in addGendDict(), loop through words to find whether female or male "Torres" was first
+            for (let j=0; j < femNames.length; j++){ // For each name in femNameDict
+                let femName = femNames[j]; // Last names in fem dict
+                // If name in male dict and name has occurred in neither
+                // Loop through words 
+                let i=0;
+                while(i < words.length && maleNameDict[femName] && !maleNameDict[femName][2] && !femNameDict[femName][2]){ 
+                    if (words[i] == maleNameDict[femName][0]){ // First name
+                        maleNameDict[femName][2] = true;
+                        console.log("femName PASS: ", words[i], "male true", "\n", maleNameDict[femName]);
+                    } else if (words[i] == femNameDict[femName][0]){
+                        femNameDict[femName][2] = true;
+                        console.log("femName PASS: ", words[i], "fem true", "\n", femNameDict[femName]);
+                    }
+                    i++;
+                }
+                
+            }
+            
 
             var f_m_begin = 0;
 
@@ -744,9 +772,9 @@ function applyContent(windowObject) {
         for (var i = 0; i < words.length; i++) {
             
             // For temp last name lists, check if fem last name is preceded by specific first name
-            if (femNameDict[words[i]] && words[i-1] && femNameDict[words[i]] == words[i-1]) {
+            if (femNameDict[words[i]] && words[i-1] && femNameDict[words[i]][0] == words[i-1]) {
                 categorize(femalefirstnames, female_do_not_count, female_name_no_count, f_count, temp_female_words, "female");
-            } else if (maleNameDict[words[i]] && words[i-1] && maleNameDict[words[i]] == words[i-1]){
+            } else if (maleNameDict[words[i]] && words[i-1] && maleNameDict[words[i]][0] == words[i-1]){
                 categorize(malefirstnames, male_do_not_count, male_name_no_count, m_count, temp_male_words, "male");
             }
             // Check our temp last names lists first, and Gendered Pronouns (he, she, man, woman...)
@@ -1951,7 +1979,6 @@ var highlightFlag = false; // Flag; Has been highlighted at least once?
 function highlightNew() {
     if (!highlightFlag) { // Has not been highlighted at least once
         alert("Green Frames: The article has a majority of female words\nBlue Frames: The article has a majority of male words\n\nTo remove the frames from the page, just uncheck the highlight button");
-        // console.log("highlightFlag = false");
         let fem_words = new Set(temp_female_words);
 
         // Note: .find("*") may error on some (news) sites; "Blocked a frame with origin from accessing a cross-origin frame"
@@ -1967,15 +1994,11 @@ function highlightNew() {
                     let regex = new RegExp('(?!male-highlight)\\b(' + word + ')\\b', "g");
                     let html_fem = `<span class='fem-highlight' >${word}</span>`;
                     if (maleNameDict[word]){ // Page contains same last name, but it was male
-                        // e.g. if replacing "Chloe Torres", ignore "Ruben Torres". NOTE: unsure if this works?
-                        // regex = new RegExp('(?!male-highlight | '+ maleNameDict[word] +'\\s*'+word+')\\b(' + word + ')\\b', "g");
-                        // console.log("Reg Ignore: ",maleNameDict[word] +' '+word);
-                        let regex2 = new RegExp('(' + femNameDict[word] +'.*' +')'+ word, "g");
+                        // e.g. if replacing "Chloe Torres", ignore the "Torres" in "Ruben Torres".
+                        let regex2 = new RegExp('(' + femNameDict[word][0] +'.*' +')'+ word, "g");
                         // Only replace the female occurrences
-                        console.log("STR BEFORE: ", str);
                         str = str.replace(regex2, // e.g. Chloe Torres
-                                          `$1 <span class='fem-highlight'>${word}</span>`); 
-                        console.log("STR AFTER: ", str);
+                                          `$1 <span class='fem-highlight'>${word}</span>`); // $1 replaces first (...) in regex
                     } else {
                         str = str.replace(regex, html_fem);
                     }
@@ -1984,7 +2007,7 @@ function highlightNew() {
                 });
                 return str; // Return str to replace original text
             })
-        // Comments: recursive attempt at highlighting nested text
+        // Commented out: recursive attempt at highlighting nested text
         // .each(
         //     function replaceNodeText() {
         //         if (this.nodeType === 3) {
@@ -2009,15 +2032,41 @@ function highlightNew() {
                     // Note: (?!male-highlight), so that we don't replace 'male' or anything in 'male-highlight'
                     var regex = new RegExp('(?!male-highlight)\\b(' + word + ')\\b', "g");
                     let html_male = `<span class='male-highlight'>${word}</span>`;
-                    if (femNameDict[word]){
-                        // e.g. if replacing "Chloe Torres", ignore "Ruben Torres"
+                    if (femNameDict[word]){ // e.g. there's a female "Torres" in the article
                         // regex = new RegExp('(?!male-highlight | '+ femNameDict[word] +'\\s*'+word+')\\b(' + word + ')\\b', "g");
                         // Only replace the male occurrences
-                        let regex2 = new RegExp('(' + maleNameDict[word] + '.*' + ')' + word , "g");
-                        console.log("STR BEFORE: ", str);
+                        let regex2 = new RegExp('(' + maleNameDict[word][0] + '.*' + ')' + word , "g");
                         str = str.replace(regex2, // e.g. Ruben Torres
                                           `$1 <span class='male-highlight' >${word}</span>`); 
-                        console.log("STR AFTER: ", str);
+
+                        // Replace "Torres" (preceded by no first name) with most common gender occurrence.
+                        // If # of male and female "Torres" is the same, pick the first gender occurrence of it.
+                        if (maleNameDict[word]){
+                            let regex3 = new RegExp ('\\w* (?<!' + femNameDict[word][0] + '|' 
+                                                      + maleNameDict[word][0]
+                                                      + ')\\b' + word + '\\b', "g"); // e.g. find "Torres", no first name before 
+                            let femOccur = femNameDict[word][1];
+                            let maleOccur = maleNameDict[word][1];
+                            let html_fem = `<span class='fem-highlight'>${word}</span>`;
+                            console.log("word = ",word,"\nfemOccur = ", femOccur, "\nmaleOccur = ", maleOccur);
+
+                            
+                            if (femOccur < maleOccur) { // gender as male
+                                str = str.replace(regex3, html_male);
+                            } else if (femOccur > maleOccur){ // gender as female
+                                str = str.replace(regex3, html_fem);
+                            } else { // equal occurrences
+                                console.log("Torres fem true?: ",femNameDict[word][2], "\nmale true?",maleNameDict[word][2]);
+                                if (femNameDict[word][2]){ // If 1st occurrence of "Torres" was female, mark as female
+                                    str = str.replace(regex3, html_fem);
+                                    console.log("Torres; fem");
+                                } else {
+                                    str = str.replace(regex3, html_male);
+                                    console.log("Torres; male");
+                                }
+                            }
+                        }
+
                     } else {
                         str = str.replace(regex, html_male);
                     }
