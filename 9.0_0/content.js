@@ -722,6 +722,7 @@ function applyContent(windowObject) {
 
         }
 
+        // Carol's edits; below code can still be improved in terms of organization/readability
         let prev_gender = "";
         // categorize(gend (string, "female"/"male"), other inputs are vars): Used to categorize a word into 
         // temp_male_words or temp_female_words, which are used for graph count and highlighting

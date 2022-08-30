@@ -1,6 +1,9 @@
 // popup.js: supposed to be used as  UI; main functionality should be in background.js or content scripts
 // acts like an individual website
-// Please write comments for future programmers about what your code does
+// Note: chrome.storage.sync set and get are used to get and set flags, which can be communicated between popup.js and background.js
+// It might work to communicate with content.js too
+
+// Please write comments for future programmers about what your code does!! current code is disorganized
 var siteStateList;
 var activeDomain, currentUrl;
 
@@ -22,7 +25,7 @@ chrome.storage.sync.get('on', obj => {
 });
 
 
-
+// not used very much, but may need something similar to keep a page highlighted even when switching tabs?
 function updateSiteStateList(site, state) {
 
     siteStateList[site] = state;
