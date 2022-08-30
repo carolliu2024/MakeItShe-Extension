@@ -14,7 +14,7 @@ var firstnames = fnames;
 var lastnames = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Miller", "Davis", "Garcia", "Goodman", "Rodriguez", "Wilson", "Martinez", "Anderson", "Taylor", "Zhu", "Thomas", "Hernandez", "Moore", "Martin", "Jackson", "Thompson", "White", "Lopez", "Lee", "Gonzalez", "Harris", "Clark", "Lewis", "Robinson", "Walker", "Perez", "Hall", "Young", "Allen", "Sanchez", "Wright", "King", "Scott", "Green", "Baker", "Adams", "Nelson", "Hill", "Ramirez", "Campbell", "Mitchell", "Roberts", "Carter", "Phillips", "Evans", "Turner", "Torres", "Parker", "Collins", "Edwards", "Stewart", "Flores", "Morris", "Nguyen", "Murphy", "Rivera", "Cook", "Rogers", "Morgan", "Peterson", "Cooper", "Reed", "Bailey", "Bell", "Gomez", "Kelly", "Howard", "Ward", "Cox", "Diaz", "Richardson", "Wood", "Watson", "Brooks", "Bennett", "Gray", "James", "Reyes", "Cruz", "Hughes", "Price", "Myers", "Long", "Foster", "Sanders", "Ross", "Morales", "Powell", "Sullivan", "Russell", "Ortiz", "Jenkins", "Gutierrez", "Perry", "Butler", "Barnes", "Fisher", "Henderson", "Coleman", "Simmons", "Patterson", "Jordan", "Reynolds", "Hamilton", "Graham", "Kim", "Gonzales", "Alexander", "Ramos", "Wallace", "Griffin", "West", "Cole", "Hayes", "Chavez", "Gibson", "Bryant", "Ellis", "Stevens", "Murray", "Ford", "Marshall", "Owens", "Mcdonald", "Harrison", "Ruiz", "Kennedy", "Wells", "Alvarez", "Woods", "Mendoza", "Castillo", "Olson", "Webb", "Washington", "Tucker", "Freeman", "Burns", "Henry", "Vasquez", "Snyder", "Simpson", "Crawford", "Jimenez", "Porter", "Mason", "Shaw", "Gordon", "Wagner", "Hunter", "Romero", "Hicks", "ixon", "Hunt", "Palmer", "Robertson", "Black", "Holmes", "Stone", "Meyer", "Boyd", "Mills", "Warren", "Fox", "Rose", "Rice", "Moreno", "Schmidt", "Patel", "Ferguson", "Nichols", "Herrera", "Medina", "Ryan", "Fernandez", "Weaver", "Daniels", "Stephens", "Gardner", "Payne", "Kelley", "Dunn", "Pierce", "Arnold", "Tran", "Spencer", "Peters", "Hawkins", "Grant", "Hansen", "Castro", "Hoffman", "Hart", "Elliott", "Cunningham", "Knight", "Bradley", "Carroll", "Hudson", "Duncan", "Armstrong", "Berry", "Andrews", "Johnston", "Ray", "Lane", "Riley", "Carpenter", "Perkins", "Aguilar", "Silva", "Richards", "Willis", "Matthews", "Chapman", "Lawrence", "Garza", "Vargas", "Watkins", "Wheeler", "Larson", "Carlson", "Harper", "George", "Greene", "Burke", "Guzman", "Morrison", "Munoz", "Jacobs", "Obrien", "Lawson", "Franklin", "Lynch", "Bishop", "Carr", "Salazar", "Austin", "Mendez", "Gilbert", "Jensen", "Williamson", "Montgomery", "Harvey", "Oliver", "Howell", "Dean", "Hanson", "Weber", "Garrett", "Sims", "Burton", "Fuller", "Soto", "Mccoy", "Welch", "Chen", "Schultz", "Walters", "Reid", "Fields", "Walsh", "Little", "Fowler", "Bowman", "Davidson", "May", "Day", "Schneider", "Newman", "Brewer", "Lucas", "Holland", "Wong", "Banks", "Santos", "Curtis", "Pearson", "Delgado", "Valdez", "Pena", "Rios", "Douglas", "Sandoval", "Barrett", "Hopkins", "Keller", "Guerrero", "Stanley", "Bates", "Alvarado", "Beck", "Ortega", "Wade", "Estrada", "Contreras", "Barnett", "Caldwell", "Santiago", "Lambert", "Powers", "Chambers", "Nunez", "Craig", "Leonard", "Lowe", "Rhodes", "Byrd", "Gregory", "Shelton", "Frazier", "Becker", "Maldonado", "Fleming", "Vega", "Sutton", "Cohen", "Jennings", "Parks", "Mcdaniel", "Watts", "Barker", "Norris", "Vaughn", "Vazquez", "Holt", "Schwartz", "Steele", "Benson", "Neal", "Dominguez", "Horton", "Terry", "Wolfe", "Hale", "Lyons", "Graves", "Haynes", "Miles", "Park", "Warner", "Padilla", "Bush", "Thornton", "Mccarthy", "Mann", "Zimmerman", "Erickson", "Fletcher", "Mckinney", "Page", "Dawson", "Joseph", "Marquez", "Reeves", "Klein", "Espinoza", "Baldwin", "Moran", "Love", "Robbins", "Higgins", "Ball", "Cortez", "Le", "Griffith", "Bowen", "Sharp", "Cummings", "Ramsey", "Hardy", "Swanson", "Barber", "Acosta", "Luna", "Chandler", "Blair", "Daniel", "Cross", "Simon", "Dennis", "Oconnor", "Quinn", "Gross", "Navarro", "Moss", "Fitzgerald", "Doyle", "Mclaughlin", "Rojas", "Rodgers", "Stevenson", "Singh", "Yang", "Figueroa", "Harmon", "Newton", "Paul", "Manning", "Garner", "Mcgee", "Reese", "Francis", "Burgess", "Adkins", "Goodman", "Curry", "Brady", "Christensen", "Potter", "Walton", "Goodwin", "Mullins", "Molina", "Webster", "Fischer", "Campos", "Avila", "Sherman", "Todd", "Chang", "Blake", "Malone", "Wolf", "Hodges", "Juarez", "Gill", "Farmer", "Hines", "Gallagher", "Duran", "Hubbard", "Cannon", "Miranda", "Wang", "Saunders", "Tate", "Mack", "Hammond", "Carrillo", "Townsend", "Wise", "Ingram", "Barton", "Mejia", "Ayala", "Schroeder", "Hampton", "Rowe", "Parsons", "Frank", "Waters", "Strickland", "Osborne", "Maxwell", "Chan", "Deleon", "Norman", "Harrington", "Casey", "Patton", "Logan", "Bowers", "Mueller", "Glover", "Floyd", "Hartman", "Buchanan", "Cobb", "French", "Kramer", "Mccormick", "Clarke", "Tyler", "Gibbs", "Moody", "Conner", "Sparks", "Mcguire", "Leon", "Bauer", "Norton", "Pope", "Flynn", "Hogan", "Robles", "Salinas", "Yates", "Lindsey", "Lloyd", "Marsh", "Mcbride", "Owen", "Solis", "Pham", "Lang", "Pratt", "Lara", "Brock", "Ballard", "Trujillo", "Shaffer", "Drake", "Roman", "Aguirre", "Morton", "Stokes", "Lamb", "Pacheco", "Patrick", "Cochran", "Shepherd", "Cain", "Burnett", "Hess", "Li", "Cervantes", "Olsen", "Briggs", "Ochoa", "Cabrera", "Velasquez", "Montoya", "Roth", "Meyers", "Cardenas", "Fuentes", "Weiss", "Hoover", "Wilkins", "Nicholson", "Underwood", "Short", "Carson", "Morrow", "Colon", "Holloway", "Summers", "Bryan", "Petersen", "Mckenzie", "Serrano", "Wilcox", "Carey", "Clayton", "Poole", "Calderon", "Gallegos", "Greer", "Rivas", "Guerra", "Decker", "Collier", "Wall", "Whitaker", "Bass", "Flowers", "Davenport", "Conley", "Houston", "Huff", "Copeland", "Hood", "Monroe", "Massey", "Roberson", "Combs", "Franco", "Larsen", "Pittman", "Randall", "Skinner", "Wilkinson", "Kirby", "Cameron", "Bridges", "Anthony", "Richard", "Kirk", "Bruce", "Singleton", "Mathis", "Bradford", "Boone", "Abbott", "Charles", "Allison", "Sweeney", "Atkinson", "Horn", "Jefferson", "Rosales", "York", "Christian", "Phelps", "Farrell", "Castaneda", "Nash", "Dickerson", "Bond", "Wyatt", "Foley", "Chase", "Gates", "Vincent", "Mathews", "Hodge", "Garrison", "Trevino", "Villarreal", "Heath", "Dalton", "Valencia", "Callahan", "Hensley", "Atkins", "Huffman", "Roy", "Boyer", "Shields", "Lin", "Hancock", "Grimes", "Glenn", "Cline", "Delacruz", "Camacho", "Dillon", "Parrish", "Oneill", "Melton", "Booth", "Kane", "Berg", "Harrell", "Pitts", "Savage", "Wiggins", "Brennan", "Salas", "Marks", "Russo", "Sawyer", "Baxter", "Golden", "Hutchinson", "Liu", "Walter", "Mcdowell", "Wiley", "Rich", "Humphrey", "Johns", "Koch", "Suarez", "Hobbs", "Beard", "Gilmore", "Ibarra", "Keith", "Macias", "Khan", "Andrade", "Ware", "Stephenson", "Henson", "Wilkerson", "Dyer", "Mcclure", "Blackwell", "Mercado", "Tanner", "Eaton", "Clay", "Barron", "Beasley", "Oneal", "Preston", "Small", "Wu", "Zamora", "Macdonald", "Vance", "Snow", "Mcclain", "Stafford", "Orozco", "Barry", "English", "Shannon", "Kline", "Jacobson", "Woodard", "Huang", "Kemp", "Mosley", "Prince", "Merritt", "Hurst", "Villanueva", "Roach", "Nolan", "Lam", "Yoder", "Mccullough", "Lester", "Santana", "Valenzuela", "Winters", "Barrera", "Leach", "Orr", "Berger", "Mckee", "Strong", "Conway", "Stein", "Whitehead", "Bullock", "Escobar", "Knox", "Meadows", "Solomon", "Velez", "Odonnell", "Kerr", "Stout", "Blankenship", "Browning", "Kent", "Lozano", "Bartlett", "Pruitt", "Buck", "Barr", "Gaines", "Durham", "Gentry", "Mcintyre", "Sloan", "Melendez", "Rocha", "Herman", "Sexton", "Moon", "Hendricks", "Rangel", "Stark", "Lowery", "Hardin", "Hull", "Sellers", "Ellison", "Calhoun", "Gillespie", "Mora", "Knapp", "Mccall", "Morse", "Dorsey", "Weeks", "Nielsen", "Livingston", "Leblanc", "Mclean", "Bradshaw", "Glass", "Middleton", "Buckley", "Schaefer", "Frost", "Howe", "House", "Mcintosh", "Ho", "Pennington", "Reilly", "Hebert", "Mcfarland", "Hickman", "Noble", "Spears", "Conrad", "Arias", "Galvan", "Velazquez", "Huynh", "Frederick", "Randolph", "Cantu", "Fitzpatrick", "Mahoney", "Peck", "Villa", "Michael", "Donovan", "Mcconnell", "Walls", "Boyle", "Mayer", "Zuniga", "Giles", "Pineda", "Pace", "Hurley", "Mays", "Mcmillan", "Crosby", "Ayers", "Case", "Bentley", "Shepard", "Everett", "Pugh", "David", "Mcmahon", "Dunlap", "Bender", "Hahn", "Harding", "Acevedo", "Raymond", "Blackburn", "Duffy", "Landry", "Dougherty", "Bautista", "Shah", "Potts", "Arroyo", "Valentine", "Meza", "Gould", "Vaughan", "Fry", "Rush", "Avery", "Herring", "Dodson", "Clements", "Sampson", "Tapia", "Bean", "Lynn", "Crane", "Farley", "Cisneros", "Benton", "Ashley", "Mckay", "Finley", "Best", "Blevins", "Friedman", "Moses", "Sosa", "Blanchard", "Huber", "Frye", "Krueger", "Bernard", "Rosario", "Rubio", "Mullen", "Benjamin", "Haley", "Chung", "Moyer", "Choi", "Horne", "Yu", "Woodward", "Ali", "Nixon", "Hayden", "Rivers", "Estes", "Mccarty", "Richmond", "Stuart", "Maynard", "Brandt", "Oconnell", "Hanna", "Sanford", "Sheppard", "Church", "Burch", "Levy", "Rasmussen", "Coffey", "Ponce", "Faulkner", "Donaldson", "Schmitt", "Novak", "Costa", "Montes", "Booker", "Cordova", "Waller", "Arellano", "Maddox", "Mata", "Bonilla", "Stanton", "Compton", "Kaufman", "Dudley", "Mcpherson", "Beltran", "Dickson", "Mccann", "Villegas", "Proctor", "Hester", "Cantrell", "Daugherty", "Cherry", "Bray", "Davila", "Rowland", "Levine", "Madden", "Spence", "Good", "Irwin", "Werner", "Krause", "Petty", "Whitney", "Baird", "Hooper", "Pollard", "Zavala", "Jarvis", "Holden", "Haas", "Hendrix", "Mcgrath", "Bird", "Lucero", "Terrell", "Riggs", "Joyce", "Mercer", "Rollins", "Galloway", "Duke", "Odom", "Andersen", "Downs", "Hatfield", "Benitez", "Archer", "Huerta", "Travis", "Mcneil", "Hinton", "Zhang", "Hays", "Mayo", "Fritz", "Branch", "Mooney", "Ewing", "Ritter", "Esparza", "Frey", "Braun", "Gay", "Riddle", "Haney", "Kaiser", "Holder", "Chaney", "Mcknight", "Gamble", "Vang", "Cooley", "Carney", "Cowan", "Forbes", "Ferrell", "Davies", "Barajas", "Shea", "Osborn", "Bright", "Cuevas", "Bolton", "Murillo", "Lutz", "Duarte", "Kidd", "Key", "Cooke"];
 //var lastnames_upper = ["SMITH","JOHNSON","WILLIAMS","BROWN","JONES","MILLER","DAVIS","GARCIA","RODRIGUEZ","WILSON","MARTINEZ","ANDERSON","TAYLOR","THOMAS","HERNANDEZ","MOORE","MARTIN","JACKSON","THOMPSON","WHITE","LOPEZ","LEE","GONZALEZ","HARRIS","CLARK","LEWIS","ROBINSON","WALKER","PEREZ","HALL","YOUNG","ALLEN","SANCHEZ","WRIGHT","KING","SCOTT","GREEN","BAKER","ADAMS","NELSON","HILL","RAMIREZ","CAMPBELL","MITCHELL","ROBERTS","CARTER","PHILLIPS","EVANS","TURNER","TORRES","PARKER","COLLINS","EDWARDS","STEWART","FLORES","MORRIS","NGUYEN","MURPHY","RIVERA","COOK","ROGERS","MORGAN","PETERSON","COOPER","REED","BAILEY","BELL","GOMEZ","KELLY","HOWARD","WARD","COX","DIAZ","RICHARDSON","WOOD","WATSON","BROOKS","BENNETT","GRAY","JAMES","REYES","CRUZ","HUGHES","PRICE","MYERS","LONG","FOSTER","SANDERS","ROSS","MORALES","POWELL","SULLIVAN","RUSSELL","ORTIZ","JENKINS","GUTIERREZ","PERRY","BUTLER","BARNES","FISHER","HENDERSON","COLEMAN","SIMMONS","PATTERSON","JORDAN","REYNOLDS","HAMILTON","GRAHAM","KIM","GONZALES","ALEXANDER","RAMOS","WALLACE","GRIFFIN","WEST","COLE","HAYES","CHAVEZ","GIBSON","BRYANT","ELLIS","STEVENS","MURRAY","FORD","MARSHALL","OWENS","MCDONALD","HARRISON","RUIZ","KENNEDY","WELLS","ALVAREZ","WOODS","MENDOZA","CASTILLO","OLSON","WEBB","WASHINGTON","TUCKER","FREEMAN","BURNS","HENRY","VASQUEZ","SNYDER","SIMPSON","CRAWFORD","JIMENEZ","PORTER","MASON","SHAW","GORDON","WAGNER","HUNTER","ROMERO","HICKS","IXON","HUNT","PALMER","ROBERTSON","BLACK","HOLMES","STONE","MEYER","BOYD","MILLS","WARREN","FOX","ROSE","RICE","MORENO","SCHMIDT","PATEL","FERGUSON","NICHOLS","HERRERA","MEDINA","RYAN","FERNANDEZ","WEAVER","DANIELS","STEPHENS","GARDNER","PAYNE","KELLEY","DUNN","PIERCE","ARNOLD","TRAN","SPENCER","PETERS","HAWKINS","GRANT","HANSEN","CASTRO","HOFFMAN","HART","ELLIOTT","CUNNINGHAM","KNIGHT","BRADLEY","CARROLL","HUDSON","DUNCAN","ARMSTRONG","BERRY","ANDREWS","JOHNSTON","RAY","LANE","RILEY","CARPENTER","PERKINS","AGUILAR","SILVA","RICHARDS","WILLIS","MATTHEWS","CHAPMAN","LAWRENCE","GARZA","VARGAS","WATKINS","WHEELER","LARSON","CARLSON","HARPER","GEORGE","GREENE","BURKE","GUZMAN","MORRISON","MUNOZ","JACOBS","OBRIEN","LAWSON","FRANKLIN","LYNCH","BISHOP","CARR","SALAZAR","AUSTIN","MENDEZ","GILBERT","JENSEN","WILLIAMSON","MONTGOMERY","HARVEY","OLIVER","HOWELL","DEAN","HANSON","WEBER","GARRETT","SIMS","BURTON","FULLER","SOTO","MCCOY","WELCH","CHEN","SCHULTZ","WALTERS","REID","FIELDS","WALSH","LITTLE","FOWLER","BOWMAN","DAVIDSON","MAY","DAY","SCHNEIDER","NEWMAN","BREWER","LUCAS","HOLLAND","WONG","BANKS","SANTOS","CURTIS","PEARSON","DELGADO","VALDEZ","PENA","RIOS","DOUGLAS","SANDOVAL","BARRETT","HOPKINS","KELLER","GUERRERO","STANLEY","BATES","ALVARADO","BECK","ORTEGA","WADE","ESTRADA","CONTRERAS","BARNETT","CALDWELL","SANTIAGO","LAMBERT","POWERS","CHAMBERS","NUNEZ","CRAIG","LEONARD","LOWE","RHODES","BYRD","GREGORY","SHELTON","FRAZIER","BECKER","MALDONADO","FLEMING","VEGA","SUTTON","COHEN","JENNINGS","PARKS","MCDANIEL","WATTS","BARKER","NORRIS","VAUGHN","VAZQUEZ","HOLT","SCHWARTZ","STEELE","BENSON","NEAL","DOMINGUEZ","HORTON","TERRY","WOLFE","HALE","LYONS","GRAVES","HAYNES","MILES","PARK","WARNER","PADILLA","BUSH","THORNTON","MCCARTHY","MANN","ZIMMERMAN","ERICKSON","FLETCHER","MCKINNEY","PAGE","DAWSON","JOSEPH","MARQUEZ","REEVES","KLEIN","ESPINOZA","BALDWIN","MORAN","LOVE","ROBBINS","HIGGINS","BALL","CORTEZ","LE","GRIFFITH","BOWEN","SHARP","CUMMINGS","RAMSEY","HARDY","SWANSON","BARBER","ACOSTA","LUNA","CHANDLER","BLAIR","DANIEL","CROSS","SIMON","DENNIS","OCONNOR","QUINN","GROSS","NAVARRO","MOSS","FITZGERALD","DOYLE","MCLAUGHLIN","ROJAS","RODGERS","STEVENSON","SINGH","YANG","FIGUEROA","HARMON","NEWTON","PAUL","MANNING","GARNER","MCGEE","REESE","FRANCIS","BURGESS","ADKINS","GOODMAN","CURRY","BRADY","CHRISTENSEN","POTTER","WALTON","GOODWIN","MULLINS","MOLINA","WEBSTER","FISCHER","CAMPOS","AVILA","SHERMAN","TODD","CHANG","BLAKE","MALONE","WOLF","HODGES","JUAREZ","GILL","FARMER","HINES","GALLAGHER","DURAN","HUBBARD","CANNON","MIRANDA","WANG","SAUNDERS","TATE","MACK","HAMMOND","CARRILLO","TOWNSEND","WISE","INGRAM","BARTON","MEJIA","AYALA","SCHROEDER","HAMPTON","ROWE","PARSONS","FRANK","WATERS","STRICKLAND","OSBORNE","MAXWELL","CHAN","DELEON","NORMAN","HARRINGTON","CASEY","PATTON","LOGAN","BOWERS","MUELLER","GLOVER","FLOYD","HARTMAN","BUCHANAN","COBB","FRENCH","KRAMER","MCCORMICK","CLARKE","TYLER","GIBBS","MOODY","CONNER","SPARKS","MCGUIRE","LEON","BAUER","NORTON","POPE","FLYNN","HOGAN","ROBLES","SALINAS","YATES","LINDSEY","LLOYD","MARSH","MCBRIDE","OWEN","SOLIS","PHAM","LANG","PRATT","LARA","BROCK","BALLARD","TRUJILLO","SHAFFER","DRAKE","ROMAN","AGUIRRE","MORTON","STOKES","LAMB","PACHECO","PATRICK","COCHRAN","SHEPHERD","CAIN","BURNETT","HESS","LI","CERVANTES","OLSEN","BRIGGS","OCHOA","CABRERA","VELASQUEZ","MONTOYA","ROTH","MEYERS","CARDENAS","FUENTES","WEISS","HOOVER","WILKINS","NICHOLSON","UNDERWOOD","SHORT","CARSON","MORROW","COLON","HOLLOWAY","SUMMERS","BRYAN","PETERSEN","MCKENZIE","SERRANO","WILCOX","CAREY","CLAYTON","POOLE","CALDERON","GALLEGOS","GREER","RIVAS","GUERRA","DECKER","COLLIER","WALL","WHITAKER","BASS","FLOWERS","DAVENPORT","CONLEY","HOUSTON","HUFF","COPELAND","HOOD","MONROE","MASSEY","ROBERSON","COMBS","FRANCO","LARSEN","PITTMAN","RANDALL","SKINNER","WILKINSON","KIRBY","CAMERON","BRIDGES","ANTHONY","RICHARD","KIRK","BRUCE","SINGLETON","MATHIS","BRADFORD","BOONE","ABBOTT","CHARLES","ALLISON","SWEENEY","ATKINSON","HORN","JEFFERSON","ROSALES","YORK","CHRISTIAN","PHELPS","FARRELL","CASTANEDA","NASH","DICKERSON","BOND","WYATT","FOLEY","CHASE","GATES","VINCENT","MATHEWS","HODGE","GARRISON","TREVINO","VILLARREAL","HEATH","DALTON","VALENCIA","CALLAHAN","HENSLEY","ATKINS","HUFFMAN","ROY","BOYER","SHIELDS","LIN","HANCOCK","GRIMES","GLENN","CLINE","DELACRUZ","CAMACHO","DILLON","PARRISH","ONEILL","MELTON","BOOTH","KANE","BERG","HARRELL","PITTS","SAVAGE","WIGGINS","BRENNAN","SALAS","MARKS","RUSSO","SAWYER","BAXTER","GOLDEN","HUTCHINSON","LIU","WALTER","MCDOWELL","WILEY","RICH","HUMPHREY","JOHNS","KOCH","SUAREZ","HOBBS","BEARD","GILMORE","IBARRA","KEITH","MACIAS","KHAN","ANDRADE","WARE","STEPHENSON","HENSON","WILKERSON","DYER","MCCLURE","BLACKWELL","MERCADO","TANNER","EATON","CLAY","BARRON","BEASLEY","ONEAL","PRESTON","SMALL","WU","ZAMORA","MACDONALD","VANCE","SNOW","MCCLAIN","STAFFORD","OROZCO","BARRY","ENGLISH","SHANNON","KLINE","JACOBSON","WOODARD","HUANG","KEMP","MOSLEY","PRINCE","MERRITT","HURST","VILLANUEVA","ROACH","NOLAN","LAM","YODER","MCCULLOUGH","LESTER","SANTANA","VALENZUELA","WINTERS","BARRERA","LEACH","ORR","BERGER","MCKEE","STRONG","CONWAY","STEIN","WHITEHEAD","BULLOCK","ESCOBAR","KNOX","MEADOWS","SOLOMON","VELEZ","ODONNELL","KERR","STOUT","BLANKENSHIP","BROWNING","KENT","LOZANO","BARTLETT","PRUITT","BUCK","BARR","GAINES","DURHAM","GENTRY","MCINTYRE","SLOAN","MELENDEZ","ROCHA","HERMAN","SEXTON","MOON","HENDRICKS","RANGEL","STARK","LOWERY","HARDIN","HULL","SELLERS","ELLISON","CALHOUN","GILLESPIE","MORA","KNAPP","MCCALL","MORSE","DORSEY","WEEKS","NIELSEN","LIVINGSTON","LEBLANC","MCLEAN","BRADSHAW","GLASS","MIDDLETON","BUCKLEY","SCHAEFER","FROST","HOWE","HOUSE","MCINTOSH","HO","PENNINGTON","REILLY","HEBERT","MCFARLAND","HICKMAN","NOBLE","SPEARS","CONRAD","ARIAS","GALVAN","VELAZQUEZ","HUYNH","FREDERICK","RANDOLPH","CANTU","FITZPATRICK","MAHONEY","PECK","VILLA","MICHAEL","DONOVAN","MCCONNELL","WALLS","BOYLE","MAYER","ZUNIGA","GILES","PINEDA","PACE","HURLEY","MAYS","MCMILLAN","CROSBY","AYERS","CASE","BENTLEY","SHEPARD","EVERETT","PUGH","DAVID","MCMAHON","DUNLAP","BENDER","HAHN","HARDING","ACEVEDO","RAYMOND","BLACKBURN","DUFFY","LANDRY","DOUGHERTY","BAUTISTA","SHAH","POTTS","ARROYO","VALENTINE","MEZA","GOULD","VAUGHAN","FRY","RUSH","AVERY","HERRING","DODSON","CLEMENTS","SAMPSON","TAPIA","BEAN","LYNN","CRANE","FARLEY","CISNEROS","BENTON","ASHLEY","MCKAY","FINLEY","BEST","BLEVINS","FRIEDMAN","MOSES","SOSA","BLANCHARD","HUBER","FRYE","KRUEGER","BERNARD","ROSARIO","RUBIO","MULLEN","BENJAMIN","HALEY","CHUNG","MOYER","CHOI","HORNE","YU","WOODWARD","ALI","NIXON","HAYDEN","RIVERS","ESTES","MCCARTY","RICHMOND","STUART","MAYNARD","BRANDT","OCONNELL","HANNA","SANFORD","SHEPPARD","CHURCH","BURCH","LEVY","RASMUSSEN","COFFEY","PONCE","FAULKNER","DONALDSON","SCHMITT","NOVAK","COSTA","MONTES","BOOKER","CORDOVA","WALLER","ARELLANO","MADDOX","MATA","BONILLA","STANTON","COMPTON","KAUFMAN","DUDLEY","MCPHERSON","BELTRAN","DICKSON","MCCANN","VILLEGAS","PROCTOR","HESTER","CANTRELL","DAUGHERTY","CHERRY","BRAY","DAVILA","ROWLAND","LEVINE","MADDEN","SPENCE","GOOD","IRWIN","WERNER","KRAUSE","PETTY","WHITNEY","BAIRD","HOOPER","POLLARD","ZAVALA","JARVIS","HOLDEN","HAAS","HENDRIX","MCGRATH","BIRD","LUCERO","TERRELL","RIGGS","JOYCE","MERCER","ROLLINS","GALLOWAY","DUKE","ODOM","ANDERSEN","DOWNS","HATFIELD","BENITEZ","ARCHER","HUERTA","TRAVIS","MCNEIL","HINTON","ZHANG","HAYS","MAYO","FRITZ","BRANCH","MOONEY","EWING","RITTER","ESPARZA","FREY","BRAUN","GAY","RIDDLE","HANEY","KAISER","HOLDER","CHANEY","MCKNIGHT","GAMBLE","VANG","COOLEY","CARNEY","COWAN","FORBES","FERRELL","DAVIES","BARAJAS","SHEA","OSBORN","BRIGHT","CUEVAS","BOLTON","MURILLO","LUTZ","DUARTE","KIDD","KEY","COOKE"];
 var initials = ["A.", "B.", "C.", "D.", "E.", "F.", "G.", "H.", "I.", "J.", "K.", "L.", "M.", "N.", "O.", "P.", "Q.", "R.", "S.", "T.", "U.", "V.", "W.", "X.", "Y.", "Z.", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-var excluded = ["Of", "of", "Forbes", "Jr", "Junior", "Senior", "Sr", "Le", "le", "la", "La", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "VIIII", "X", "S", "s", "COVID", "Medical", "Prize", "San", "New", "O", "area", "Center", "Building", "Street", "Zoo", "Santa", "Saint", "St", "St.", "Sea", "New", "Centre", "Îles", "Lake", "County", "School", "High", "Secondary", "Primary", "College", "Port", "Hurricane", "Complex", "Management", "Mountain", "River", "Park", "Institute", "School", "Expedition", "Area", "University", "Center", "Building", "Circle", "Street", "Zoo", "San", "Saint", "Santa", "City", "Island", "Islands", "Award", "award", "awards", "Highway", "Mountain", "Mount", "Mt", "College", "University", "A", "Not", "Is", "Are", "The", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Expedition"];
+var excluded = ["Of", "of", "Forbes", "Jr", "Junior", "Senior", "Sr", "Le", "le", "la", "La", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "VIIII", "X", "S", "s", "COVID", "Medical", "Prize", "San", "New", "O", "area", "Center", "Building", "Street", "Zoo", "Santa", "Saint", "St", "St.", "Sea", "New", "Centre", "Îles", "Lake", "County", "School", "High", "Secondary", "Primary", "College", "Port", "Hurricane", "Complex", "Management", "Mountain", "River", "Park", "Institute", "School", "Expedition", "Area", "University", "Center", "Building", "Circle", "Street", "Zoo", "San", "Saint", "Santa", "City", "Island", "Islands", "Award", "award", "awards", "Highway", "Mountain", "Mount", "Mt", "College", "University", "A", "Not", "Is", "Are", "The", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Expedition", "Museum"];
 
 // Gendered dictionaries, {lastName : [firstName, # occurrences of this gender, first occurrence of lastName? ] }
 // Note: boolean only matters if last name occurs in both dicts
@@ -79,7 +79,7 @@ for (var i = 0; i < all_female_words.length; i++) {
 //
 var temp_male_words = [];
 var temp_female_words = [];
-var temp_male_last_names = ["Biden", "Trump"];
+var temp_male_last_names = ["Biden", "Trump", "Obama"];
 var temp_female_last_names = [];
 var counts = 0;
 
@@ -457,6 +457,9 @@ function applyContent(windowObject) {
             if ((w === 'Ms' || w === 'Mme' || w === 'Lady') && /[A-Z]/.test(words[i + 1])) {
                 if (words[i+1].trim() !== "."){
                     temp_female_words.push(words[i + 1]);
+                    if (words[i+1] == "Barack"){
+                        console.log("Barack?", words[i]);
+                    }
                 }
                 
                 // setHighlightClass(words[i+1], 'female');
@@ -533,7 +536,13 @@ function applyContent(windowObject) {
                         && words[i - 1] !== 'The' && excluded.indexOf(nextWord) === -1 && next_first !== '(' && initials.indexOf(nextWord) === -1 
                         && last !== '.' && last !== '!' && last !== '?' && last !== ',' && last !== ';' && last !== ':' && last !== '/' 
                         && /[A-Z]/.test(nextWord[0]) && (!(/[A-Z]/.test(nextNextWord[0])) || nextNextWord === undefined 
-                        || next_last === '.' || next_last === '!' || next_last === '?' || next_last === ',' || next_last === '/')) {
+                        || next_last === '.' || next_last === '!' || next_last === '?' || next_last === ',' || next_last === '/')
+                        && (words[i - 1] !== 'Lake' && words[i + 1] !== 'County' && words[i + 1] !== 'Lake' && words[i + 1] !== 'School' && words[i + 1] !== 'Elementary' && words[i + 2] !== 'Elementary'
+                            && words[i + 1] !== 'High' && words[i + 1] !== 'Secondary' && words[i + 1] !== 'Primary' && words[i + 1] !== 'College' && words[i - 1] !== 'Port' && words[i + 1] !== 'Mountain' && words[i - 2] !== 'City' && words[i - 2] !== 'city' && words[i + 1] !== 'City' && words[i + 1] !== 'Highway'
+                            && words[i + 1] !== 'Islands' && words[i + 1] !== 'award' && words[i + 1] !== 'awards' && words[i + 1] !== 'Park' && words[i + 1] !== 'Institute' && words[i + 1] !== 'School' && words[i + 1] !== 'area' && words[i + 1] !== 'University' && words[i + 1] !== 'Center' && words[i + 1] !== 'Building' && words[i + 1] !== 'Circle'
+                            && words[i + 1] !== 'Street' && words[i + 1] !== 'Zoo' && words[i - 1] !== 'San' && words[i - 1] !== 'Saint' && words[i - 1] !== 'Santa' && words[i - 1] !== 'St'
+                            && words[i - 1] !== 'St.' && words[i - 1] !== 'Sao' && words[i - 1] !== 'New' && words[i - 1] !== 'O' && words[i - 1] !== 's')) 
+                    {
 
                         temp_female_last_names.push(words[i + 1]);
                         addGendDict(femNameDict, words[i], words[i + 1]);
@@ -717,7 +726,7 @@ function applyContent(windowObject) {
         // categorize(gend (string, "female"/"male"), other inputs are vars): Used to categorize a word into 
         // temp_male_words or temp_female_words, which are used for graph count and highlighting
         function categorize(gendfirstnames, gend_do_not_count, gend_name_no_count, g_count, temp_gend_words, gend){
-            console.log("words[i] = ", words[i], "\nBefore: ",words[i-1], "\nAfter: ", words[i+1]);
+            // console.log("words[i] = ", words[i], "\nBefore: ",words[i-1], "\nAfter: ", words[i+1]);
             if (gendfirstnames.indexOf(words[i]) >= 0 && (words[i - 1] === 'Lake' || words[i + 1] === 'County' || words[i + 1] === 'Lake' || words[i + 1] === 'School' || words[i + 1] === 'High' || words[i + 1] === 'Secondary'
                 || words[i + 1] === 'Primary' || words[i + 1] === 'College' || words[i - 1] === 'Port' || words[i - 1] === 'Hurricane' || words[i - 1] === 's' || words[i + 1] === 't' || words[i + 1] === 'Mountain' || words[i + 1] === 'Park'
                 || words[i + 1] === 'Institute' || words[i + 1] === 'School' || words[i - 2] === 'city' || words[i - 2] === 'City' || words[i + 1] === 'City' || words[i + 1] === 'Islands' || words[i + 1] === 'River' || words[i + 1] === 'award' || words[i + 1] === 'awards' || words[i + 1] === 'Park' || words[i + 1] === 'Institute'
@@ -727,23 +736,35 @@ function applyContent(windowObject) {
                 ) {
                 gend_do_not_count++;
                 gend_name_no_count.add(words[i].toUpperCase());
+                if (words[i] == "Barack"){
+                    console.log("BarackH11");
+                }
             } else if (words[i] && groups.has(words[i].toLowerCase())){
                 // console.log("GROUPS: ", words[i]);
+                if (words[i] == "Barack"){
+                    console.log("BarackH12");
+                }
                 gend_do_not_count++;
                 gend_name_no_count.add(words[i].toUpperCase());
             }
             else if (words[i-1] && groups.has(words[i-1].toLowerCase())){
                 gend_do_not_count++;
                 gend_name_no_count.add(words[i].toUpperCase());
+                if (words[i] == "Barack"){
+                    console.log("BarackH13");
+                }
             }
             else if (words[i+1] && groups.has(words[i+1].toLowerCase())){
                 gend_do_not_count++;
                 gend_name_no_count.add(words[i].toUpperCase());
+                if (words[i] == "Barack"){
+                    console.log("BarackH14");
+                }
             }
-            else if (words[i-1] && words[i+1] && words[i-1] == "The") {
-                gend_do_not_count++;
-                gend_name_no_count.add(words[i+1].toUpperCase()); // e.g. ignore "Presidency" in "The Biden Presidency"
-            }
+            // else if (words[i-1] && words[i+1] && words[i-1] == "The") {
+            //     gend_do_not_count++;
+            //     gend_name_no_count.add(words[i+1].toUpperCase()); // e.g. ignore "Presidency" in "The Biden Presidency"
+            // }
             else if ((excluded.indexOf(words[i]) > 0) || nationalities.has(words[i]) ) {
                 
             }
@@ -797,11 +818,8 @@ function applyContent(windowObject) {
                    && excluded.indexOf(words[i]) === -1) 
             { // If word is in any of our female name dictionaries,
                 // If prev word is (gendered & uppercase), and next word is (uppercase & in dictionary)...
-                if ((prev_gender !== "") && ( /[A-Z]/.test(words[i][0]) )){ 
+                if ((prev_gender !== "") && ( /[A-Z]/.test(words[i][0]) ) && (temp_male_last_names.indexOf(words[i-1] === -1))){ 
                     // Categorize as prev word's gender; probably a last name
-                    if (words[i] == 'Indian'){
-                        console.log('Indian');
-                    }
                     prevWordGender()
                 } else if (/[A-Z]/.test(words[i][0])){ // If word is lowercase, it's not a name.
                     categorize(femalefirstnames, female_do_not_count, female_name_no_count, f_count, temp_female_words, "female");
@@ -813,11 +831,18 @@ function applyContent(windowObject) {
                    || mfnames.indexOf(words[i].toUpperCase()) >= 0 
                    && excluded.indexOf(words[i]) === -1) 
             {
-                if ((prev_gender !== "") && ( /[A-Z]/.test(words[i][0]) )){ 
+                if ((prev_gender !== "") && ( /[A-Z]/.test(words[i][0]) ) && (!temp_female_last_names.indexOf(words[i-1]))){ 
+                    if (words[i] == "Barack"){
+                        console.log("Barack5: ", prev_gender, "\ntemp_female_last_names?: ",temp_female_last_names.indexOf(words[i-1]));
+                    }
                     // Categorize as prev word's gender
                     prevWordGender();
+                    
                 } else if (/[A-Z]/.test(words[i][0])) { // If word is lowercase, it's not a name.
                     categorize(malefirstnames, male_do_not_count, male_name_no_count, m_count, temp_male_words, "male");
+                    if (words[i] == "Barack"){
+                        console.log("Barack6");
+                    }
                 }
             } else {
                 prev_gender = ""; // word is not gendered
@@ -1993,9 +2018,9 @@ function highlightNew() {
                 fem_words.forEach(function (word) { // loop through fem_words to replace them in str
                     let regex = new RegExp('(?!male-highlight)\\b(' + word + ')\\b', "g");
                     let html_fem = `<span class='fem-highlight' >${word}</span>`;
-                    if (maleNameDict[word]){ // Page contains same last name, but it was male
+                    if (maleNameDict[word] && femNameDict[word]){ // Page contains same last name, but it was male
                         // e.g. if replacing "Chloe Torres", ignore the "Torres" in "Ruben Torres".
-                        let regex2 = new RegExp('(' + femNameDict[word][0] +'.*' +')'+ word, "g");
+                        let regex2 = new RegExp('(' + femNameDict[word][0] +'.*?' +')'+ word, "g");
                         // Only replace the female occurrences
                         str = str.replace(regex2, // e.g. Chloe Torres
                                           `$1 <span class='fem-highlight'>${word}</span>`); // $1 replaces first (...) in regex
@@ -2030,44 +2055,59 @@ function highlightNew() {
                 var str = this.nodeValue; // Get text
                 male_words.forEach(function (word) { // loop through male_words to replace them in str
                     // Note: (?!male-highlight), so that we don't replace 'male' or anything in 'male-highlight'
+                    if (word == "Barack"){
+                        console.log("BarackH0");
+                    }
                     var regex = new RegExp('(?!male-highlight)\\b(' + word + ')\\b', "g");
                     let html_male = `<span class='male-highlight'>${word}</span>`;
-                    if (femNameDict[word]){ // e.g. there's a female "Torres" in the article
+                    if (femNameDict[word] && maleNameDict[word]){ // e.g. there's a female "Torres" in the article
+                        if (word == "Barack"){
+                            console.log("BarackH1");
+                        }
+                        // if (word == "Barack"){
+                        //     print("Barack1\n", femNameDict[word],"\n", maleNameDict[word]);
+                        // }
                         // regex = new RegExp('(?!male-highlight | '+ femNameDict[word] +'\\s*'+word+')\\b(' + word + ')\\b', "g");
                         // Only replace the male occurrences
-                        let regex2 = new RegExp('(' + maleNameDict[word][0] + '.*' + ')' + word , "g");
+                        let regex2 = new RegExp('(' + maleNameDict[word][0] + '.*?' + ')' + word , "g");
                         str = str.replace(regex2, // e.g. Ruben Torres
                                           `$1 <span class='male-highlight' >${word}</span>`); 
 
                         // Replace "Torres" (preceded by no first name) with most common gender occurrence.
                         // If # of male and female "Torres" is the same, pick the first gender occurrence of it.
                         if (maleNameDict[word]){
+                            if (word == "Barack"){
+                                console.log("BarackH2");
+                            }
                             let regex3 = new RegExp ('\\w* (?<!' + femNameDict[word][0] + '|' 
                                                       + maleNameDict[word][0]
-                                                      + ')\\b' + word + '\\b', "g"); // e.g. find "Torres", no first name before 
+                                                      + ')' + word , "g"); // e.g. find "Torres", no first name before 
                             let femOccur = femNameDict[word][1];
                             let maleOccur = maleNameDict[word][1];
-                            let html_fem = `<span class='fem-highlight'>${word}</span>`;
-                            console.log("word = ",word,"\nfemOccur = ", femOccur, "\nmaleOccur = ", maleOccur);
+                            let html_fem = ` <span class='fem-highlight'>${word}</span>`;
+                            // console.log("word = ",word,"\nfemOccur = ", femOccur, "\nmaleOccur = ", maleOccur);
 
                             
                             if (femOccur < maleOccur) { // gender as male
-                                str = str.replace(regex3, html_male);
+                                str = str.replace(regex3, ' '+html_male);
                             } else if (femOccur > maleOccur){ // gender as female
                                 str = str.replace(regex3, html_fem);
                             } else { // equal occurrences
-                                console.log("Torres fem true?: ",femNameDict[word][2], "\nmale true?",maleNameDict[word][2]);
+                                // console.log("Torres fem true?: ",femNameDict[word][2], "\nmale true?",maleNameDict[word][2]);
                                 if (femNameDict[word][2]){ // If 1st occurrence of "Torres" was female, mark as female
                                     str = str.replace(regex3, html_fem);
-                                    console.log("Torres; fem");
+                                    // console.log("Torres; fem");
                                 } else {
-                                    str = str.replace(regex3, html_male);
-                                    console.log("Torres; male");
+                                    str = str.replace(regex3, ' '+html_male);
+                                    // console.log("Torres; male");
                                 }
                             }
                         }
 
                     } else {
+                        if (word == "Barack"){
+                            console.log("BarackH");
+                        }
                         str = str.replace(regex, html_male);
                     }
                     
